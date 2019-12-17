@@ -311,30 +311,58 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.4.0-dev,true,process,process.hash.sha512,keyword,extended,,SHA512 hash.
 1.4.0-dev,true,process,process.name,keyword,extended,ssh,Process name.
 1.4.0-dev,true,process,process.name.text,text,extended,ssh,Process name.
-1.4.0-dev,true,process,process.parent.args,keyword,extended,"['ssh', '-l', 'user', '10.0.0.16']",Array of process arguments.
+1.4.0-dev,true,process,process.parent.args,keyword,extended,"['/usr/bin/ssh', '-l', 'user', '10.0.0.16']",Array of process arguments.
 1.4.0-dev,true,process,process.parent.args_count,long,extended,4,Length of the process.args array.
 1.4.0-dev,true,process,process.parent.command_line,keyword,extended,/usr/bin/ssh -l user 10.0.0.16,Full command line that started the process.
-1.4.0-dev,true,process,process.parent.command_line.text,text,extended,/usr/bin/ssh -l user 10.0.0.16,Full command line that started the process.
+1.4.0-dev,true,process,process.command_line.text,text,extended,/usr/bin/ssh -l user 10.0.0.16,Full command line that started the process.
 1.4.0-dev,true,process,process.parent.executable,keyword,extended,/usr/bin/ssh,Absolute path to the process executable.
-1.4.0-dev,true,process,process.parent.executable.text,text,extended,/usr/bin/ssh,Absolute path to the process executable.
+1.4.0-dev,true,process,process.executable.text,text,extended,/usr/bin/ssh,Absolute path to the process executable.
 1.4.0-dev,true,process,process.parent.exit_code,long,extended,137,The exit code of the process.
+1.4.0-dev,true,process,process.parent.md5,keyword,extended,,MD5 hash.
 1.4.0-dev,true,process,process.parent.name,keyword,extended,ssh,Process name.
-1.4.0-dev,true,process,process.parent.name.text,text,extended,ssh,Process name.
+1.4.0-dev,true,process,process.name.text,text,extended,ssh,Process name.
 1.4.0-dev,true,process,process.parent.pgid,long,extended,,Identifier of the group of processes the process belongs to.
 1.4.0-dev,true,process,process.parent.pid,long,core,4242,Process id.
 1.4.0-dev,true,process,process.parent.ppid,long,extended,4241,Parent process' pid.
+1.4.0-dev,true,process,process.parent.sha1,keyword,extended,,SHA1 hash.
+1.4.0-dev,true,process,process.parent.sha256,keyword,extended,,SHA256 hash.
+1.4.0-dev,true,process,process.parent.sha512,keyword,extended,,SHA512 hash.
 1.4.0-dev,true,process,process.parent.start,date,extended,2016-05-23T08:05:34.853Z,The time the process started.
 1.4.0-dev,true,process,process.parent.thread.id,long,extended,4242,Thread ID.
 1.4.0-dev,true,process,process.parent.thread.name,keyword,extended,thread-0,Thread name.
 1.4.0-dev,true,process,process.parent.title,keyword,extended,,Process title.
-1.4.0-dev,true,process,process.parent.title.text,text,extended,,Process title.
+1.4.0-dev,true,process,process.title.text,text,extended,,Process title.
 1.4.0-dev,true,process,process.parent.uptime,long,extended,1325,Seconds the process has been up.
 1.4.0-dev,true,process,process.parent.working_directory,keyword,extended,/home/alice,The working directory of the process.
-1.4.0-dev,true,process,process.parent.working_directory.text,text,extended,/home/alice,The working directory of the process.
+1.4.0-dev,true,process,process.working_directory.text,text,extended,/home/alice,The working directory of the process.
 1.4.0-dev,true,process,process.pgid,long,extended,,Identifier of the group of processes the process belongs to.
 1.4.0-dev,true,process,process.pid,long,core,4242,Process id.
 1.4.0-dev,true,process,process.ppid,long,extended,4241,Parent process' pid.
 1.4.0-dev,true,process,process.start,date,extended,2016-05-23T08:05:34.853Z,The time the process started.
+1.4.0-dev,true,process,process.target.args,keyword,extended,"['/usr/bin/ssh', '-l', 'user', '10.0.0.16']",Array of process arguments.
+1.4.0-dev,true,process,process.target.args_count,long,extended,4,Length of the process.args array.
+1.4.0-dev,true,process,process.target.command_line,keyword,extended,/usr/bin/ssh -l user 10.0.0.16,Full command line that started the process.
+1.4.0-dev,true,process,process.command_line.text,text,extended,/usr/bin/ssh -l user 10.0.0.16,Full command line that started the process.
+1.4.0-dev,true,process,process.target.executable,keyword,extended,/usr/bin/ssh,Absolute path to the process executable.
+1.4.0-dev,true,process,process.executable.text,text,extended,/usr/bin/ssh,Absolute path to the process executable.
+1.4.0-dev,true,process,process.target.exit_code,long,extended,137,The exit code of the process.
+1.4.0-dev,true,process,process.target.md5,keyword,extended,,MD5 hash.
+1.4.0-dev,true,process,process.target.name,keyword,extended,ssh,Process name.
+1.4.0-dev,true,process,process.name.text,text,extended,ssh,Process name.
+1.4.0-dev,true,process,process.target.pgid,long,extended,,Identifier of the group of processes the process belongs to.
+1.4.0-dev,true,process,process.target.pid,long,core,4242,Process id.
+1.4.0-dev,true,process,process.target.ppid,long,extended,4241,Parent process' pid.
+1.4.0-dev,true,process,process.target.sha1,keyword,extended,,SHA1 hash.
+1.4.0-dev,true,process,process.target.sha256,keyword,extended,,SHA256 hash.
+1.4.0-dev,true,process,process.target.sha512,keyword,extended,,SHA512 hash.
+1.4.0-dev,true,process,process.target.start,date,extended,2016-05-23T08:05:34.853Z,The time the process started.
+1.4.0-dev,true,process,process.target.thread.id,long,extended,4242,Thread ID.
+1.4.0-dev,true,process,process.target.thread.name,keyword,extended,thread-0,Thread name.
+1.4.0-dev,true,process,process.target.title,keyword,extended,,Process title.
+1.4.0-dev,true,process,process.title.text,text,extended,,Process title.
+1.4.0-dev,true,process,process.target.uptime,long,extended,1325,Seconds the process has been up.
+1.4.0-dev,true,process,process.target.working_directory,keyword,extended,/home/alice,The working directory of the process.
+1.4.0-dev,true,process,process.working_directory.text,text,extended,/home/alice,The working directory of the process.
 1.4.0-dev,true,process,process.thread.id,long,extended,4242,Thread ID.
 1.4.0-dev,true,process,process.thread.name,keyword,extended,thread-0,Thread name.
 1.4.0-dev,true,process,process.title,keyword,extended,,Process title.

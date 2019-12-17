@@ -2392,131 +2392,6 @@
 
         Sometimes called program name or similar.'
       example: ssh
-    - name: parent.args
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: 'Array of process arguments.
-
-        May be filtered to protect sensitive information.'
-      example:
-      - ssh
-      - -l
-      - user
-      - 10.0.0.16
-    - name: parent.args_count
-      level: extended
-      type: long
-      description: 'Length of the process.args array.
-
-        This field can be useful for querying or performing bucket analysis on how
-        many arguments were provided to start a process. More arguments may be an
-        indication of suspicious activity.'
-      example: 4
-    - name: parent.command_line
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      multi_fields:
-      - name: text
-        type: text
-        norms: false
-      description: 'Full command line that started the process, including the absolute
-        path to the executable, and all arguments.
-
-        Some arguments may be filtered to protect sensitive information.'
-      example: /usr/bin/ssh -l user 10.0.0.16
-    - name: parent.executable
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      multi_fields:
-      - name: text
-        type: text
-        norms: false
-      description: Absolute path to the process executable.
-      example: /usr/bin/ssh
-    - name: parent.exit_code
-      level: extended
-      type: long
-      description: 'The exit code of the process, if this is a termination event.
-
-        The field should be absent if there is no exit code for the event (e.g. process
-        start).'
-      example: 137
-    - name: parent.name
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      multi_fields:
-      - name: text
-        type: text
-        norms: false
-      description: 'Process name.
-
-        Sometimes called program name or similar.'
-      example: ssh
-    - name: parent.pgid
-      level: extended
-      type: long
-      format: string
-      description: Identifier of the group of processes the process belongs to.
-    - name: parent.pid
-      level: core
-      type: long
-      format: string
-      description: Process id.
-      example: 4242
-    - name: parent.ppid
-      level: extended
-      type: long
-      format: string
-      description: Parent process' pid.
-      example: 4241
-    - name: parent.start
-      level: extended
-      type: date
-      description: The time the process started.
-      example: '2016-05-23T08:05:34.853Z'
-    - name: parent.thread.id
-      level: extended
-      type: long
-      format: string
-      description: Thread ID.
-      example: 4242
-    - name: parent.thread.name
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: Thread name.
-      example: thread-0
-    - name: parent.title
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      multi_fields:
-      - name: text
-        type: text
-        norms: false
-      description: 'Process title.
-
-        The proctitle, some times the same as process name. Can also be different:
-        for example a browser setting its title to the web page currently opened.'
-    - name: parent.uptime
-      level: extended
-      type: long
-      description: Seconds the process has been up.
-      example: 1325
-    - name: parent.working_directory
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      multi_fields:
-      - name: text
-        type: text
-        norms: false
-      description: The working directory of the process.
-      example: /home/alice
     - name: pgid
       level: extended
       type: long
@@ -2534,6 +2409,152 @@
       format: string
       description: Parent process' pid.
       example: 4241
+    - name: process.args
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: 'Array of process arguments, starting with the absolute path to
+        the executable.
+
+        May be filtered to protect sensitive information.'
+      example:
+      - /usr/bin/ssh
+      - -l
+      - user
+      - 10.0.0.16
+    - name: process.args_count
+      level: extended
+      type: long
+      description: 'Length of the process.args array.
+
+        This field can be useful for querying or performing bucket analysis on how
+        many arguments were provided to start a process. More arguments may be an
+        indication of suspicious activity.'
+      example: 4
+    - name: process.command_line
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      multi_fields:
+      - name: text
+        type: text
+        norms: false
+      description: 'Full command line that started the process, including the absolute
+        path to the executable, and all arguments.
+
+        Some arguments may be filtered to protect sensitive information.'
+      example: /usr/bin/ssh -l user 10.0.0.16
+    - name: process.executable
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      multi_fields:
+      - name: text
+        type: text
+        norms: false
+      description: Absolute path to the process executable.
+      example: /usr/bin/ssh
+    - name: process.exit_code
+      level: extended
+      type: long
+      description: 'The exit code of the process, if this is a termination event.
+
+        The field should be absent if there is no exit code for the event (e.g. process
+        start).'
+      example: 137
+    - name: process.hash.md5
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: MD5 hash.
+    - name: process.hash.sha1
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: SHA1 hash.
+    - name: process.hash.sha256
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: SHA256 hash.
+    - name: process.hash.sha512
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: SHA512 hash.
+    - name: process.name
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      multi_fields:
+      - name: text
+        type: text
+        norms: false
+      description: 'Process name.
+
+        Sometimes called program name or similar.'
+      example: ssh
+    - name: process.pgid
+      level: extended
+      type: long
+      format: string
+      description: Identifier of the group of processes the process belongs to.
+    - name: process.pid
+      level: core
+      type: long
+      format: string
+      description: Process id.
+      example: 4242
+    - name: process.ppid
+      level: extended
+      type: long
+      format: string
+      description: Parent process' pid.
+      example: 4241
+    - name: process.start
+      level: extended
+      type: date
+      description: The time the process started.
+      example: '2016-05-23T08:05:34.853Z'
+    - name: process.thread.id
+      level: extended
+      type: long
+      format: string
+      description: Thread ID.
+      example: 4242
+    - name: process.thread.name
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: Thread name.
+      example: thread-0
+    - name: process.title
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      multi_fields:
+      - name: text
+        type: text
+        norms: false
+      description: 'Process title.
+
+        The proctitle, some times the same as process name. Can also be different:
+        for example a browser setting its title to the web page currently opened.'
+    - name: process.uptime
+      level: extended
+      type: long
+      description: Seconds the process has been up.
+      example: 1325
+    - name: process.working_directory
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      multi_fields:
+      - name: text
+        type: text
+        norms: false
+      description: The working directory of the process.
+      example: /home/alice
     - name: start
       level: extended
       type: date

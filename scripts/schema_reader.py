@@ -1,6 +1,7 @@
 import glob
 import os
 import yaml
+import copy
 
 # File loading stuff
 
@@ -78,6 +79,8 @@ def schema_fields_as_dictionary(schema):
     for order, field in enumerate(field_array):
         field['order'] = order
         schema['fields'][field['name']] = field
+        if 'fields' in field:
+            schema_fields_as_dictionary(field)
 
 # Field definitions
 
@@ -121,15 +124,27 @@ def field_set_multi_field_defaults(parent_field):
         mf['flat_name'] = parent_field['flat_name'] + '.' + mf['name']
 
 
+
+
+
 def duplicate_reusable_fieldsets(schema, fields_flat, fields_nested):
     """Copies reusable field definitions to their expected places"""
     # Note: across this schema reader, functions are modifying dictionaries passed
     # as arguments, which is usually a risk of unintended side effects.
     # Here it simplifies the nesting of 'group' under 'user',
     # which is in turn reusable in a few places.
+    # Make a deep copy of the schema so groups don't end up with recursive references.
+    # Process.yml makes use of this, duplicating all "process" fields under "process.parent"
+    # and "process.target" as well.
+    schema_copy = copy.deepcopy(schema)
+    schema = schema_copy
     if 'reusable' in schema:
-        for new_nesting in schema['reusable']['expected']:
-
+        for new_full_nesting in schema['reusable']['expected']:
+            drop_group_name = False
+            if 'drop_group_name' in schema['reusable']:
+                drop_group_name = schema['reusable']['drop_group_name']
+                print drop_group_name
+            new_nesting = new_full_nesting.split('.')[0]
             # List field set names expected under another field set.
             # E.g. host.nestings = [ 'geo', 'os', 'user' ]
             if 'nestings' not in fields_nested[new_nesting]:
@@ -142,8 +157,10 @@ def duplicate_reusable_fieldsets(schema, fields_flat, fields_nested):
                 copied_field = field.copy()
                 if 'multi_fields' in copied_field:
                     copied_field['multi_fields'] = map(lambda mf: mf.copy(), copied_field['multi_fields'])
-
-                destination_name = new_nesting + '.' + field['flat_name']
+                if drop_group_name:
+                    destination_name = new_full_nesting + '.' + field['name']
+                else:
+                    destination_name = new_full_nesting + '.' + field['flat_name']
                 copied_field['flat_name'] = destination_name
                 copied_field['original_fieldset'] = schema['name']
 
@@ -170,7 +187,6 @@ def finalize_schemas(fields_nested, fields_flat):
     # fields array replaced with a fields dictionary.
     for schema_name in fields_nested:
         schema = fields_nested[schema_name]
-
         duplicate_reusable_fieldsets(schema, fields_flat, fields_nested)
 
 
