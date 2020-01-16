@@ -3865,606 +3865,6 @@ package.version:
   order: 1
   short: Package version
   type: keyword
-parent.process.args:
-  dashed_name: parent-process-args
-  description: 'Array of process arguments, starting with the absolute path to the
-    executable.
-
-    May be filtered to protect sensitive information.'
-  example:
-  - /usr/bin/ssh
-  - -l
-  - user
-  - 10.0.0.16
-  flat_name: parent.process.args
-  ignore_above: 1024
-  level: extended
-  name: args
-  order: 6
-  original_fieldset: process
-  short: Array of process arguments.
-  type: keyword
-parent.process.args_count:
-  dashed_name: parent-process-args-count
-  description: 'Length of the process.args array.
-
-    This field can be useful for querying or performing bucket analysis on how many
-    arguments were provided to start a process. More arguments may be an indication
-    of suspicious activity.'
-  example: 4
-  flat_name: parent.process.args_count
-  level: extended
-  name: args_count
-  order: 7
-  original_fieldset: process
-  short: Length of the process.args array.
-  type: long
-parent.process.command_line:
-  dashed_name: parent-process-command-line
-  description: 'Full command line that started the process, including the absolute
-    path to the executable, and all arguments.
-
-    Some arguments may be filtered to protect sensitive information.'
-  example: /usr/bin/ssh -l user 10.0.0.16
-  flat_name: parent.process.command_line
-  ignore_above: 1024
-  level: extended
-  multi_fields:
-  - flat_name: parent.process.command_line.text
-    name: text
-    norms: false
-    type: text
-  name: command_line
-  order: 5
-  original_fieldset: process
-  short: Full command line that started the process.
-  type: keyword
-parent.process.executable:
-  dashed_name: parent-process-executable
-  description: Absolute path to the process executable.
-  example: /usr/bin/ssh
-  flat_name: parent.process.executable
-  ignore_above: 1024
-  level: extended
-  multi_fields:
-  - flat_name: parent.process.executable.text
-    name: text
-    norms: false
-    type: text
-  name: executable
-  order: 8
-  original_fieldset: process
-  short: Absolute path to the process executable.
-  type: keyword
-parent.process.exit_code:
-  dashed_name: parent-process-exit-code
-  description: 'The exit code of the process, if this is a termination event.
-
-    The field should be absent if there is no exit code for the event (e.g. process
-    start).'
-  example: 137
-  flat_name: parent.process.exit_code
-  level: extended
-  name: exit_code
-  order: 13
-  original_fieldset: process
-  short: The exit code of the process.
-  type: long
-parent.process.hash.imphash:
-  dashed_name: parent-process-hash-imphash
-  description: Imphash.
-  flat_name: parent.process.hash.imphash
-  ignore_above: 1024
-  level: extended
-  name: imphash
-  order: 4
-  original_fieldset: hash
-  short: Imphash.
-  type: keyword
-parent.process.hash.md5:
-  dashed_name: parent-process-hash-md5
-  description: MD5 hash.
-  flat_name: parent.process.hash.md5
-  ignore_above: 1024
-  level: extended
-  name: md5
-  order: 0
-  original_fieldset: hash
-  short: MD5 hash.
-  type: keyword
-parent.process.hash.sha1:
-  dashed_name: parent-process-hash-sha1
-  description: SHA1 hash.
-  flat_name: parent.process.hash.sha1
-  ignore_above: 1024
-  level: extended
-  name: sha1
-  order: 1
-  original_fieldset: hash
-  short: SHA1 hash.
-  type: keyword
-parent.process.hash.sha256:
-  dashed_name: parent-process-hash-sha256
-  description: SHA256 hash.
-  flat_name: parent.process.hash.sha256
-  ignore_above: 1024
-  level: extended
-  name: sha256
-  order: 2
-  original_fieldset: hash
-  short: SHA256 hash.
-  type: keyword
-parent.process.hash.sha512:
-  dashed_name: parent-process-hash-sha512
-  description: SHA512 hash.
-  flat_name: parent.process.hash.sha512
-  ignore_above: 1024
-  level: extended
-  name: sha512
-  order: 3
-  original_fieldset: hash
-  short: SHA512 hash.
-  type: keyword
-parent.process.name:
-  dashed_name: parent-process-name
-  description: 'Process name.
-
-    Sometimes called program name or similar.'
-  example: ssh
-  flat_name: parent.process.name
-  ignore_above: 1024
-  level: extended
-  multi_fields:
-  - flat_name: parent.process.name.text
-    name: text
-    norms: false
-    type: text
-  name: name
-  order: 1
-  original_fieldset: process
-  short: Process name.
-  type: keyword
-parent.process.pgid:
-  dashed_name: parent-process-pgid
-  description: Identifier of the group of processes the process belongs to.
-  flat_name: parent.process.pgid
-  format: string
-  level: extended
-  name: pgid
-  order: 4
-  original_fieldset: process
-  short: Identifier of the group of processes the process belongs to.
-  type: long
-parent.process.pid:
-  dashed_name: parent-process-pid
-  description: Process id.
-  example: 4242
-  flat_name: parent.process.pid
-  format: string
-  level: core
-  name: pid
-  order: 0
-  original_fieldset: process
-  short: Process id.
-  type: long
-parent.process.ppid:
-  dashed_name: parent-process-ppid
-  description: Parent process' pid.
-  example: 4241
-  flat_name: parent.process.ppid
-  format: string
-  level: extended
-  name: ppid
-  order: 3
-  original_fieldset: process
-  short: Parent process' pid.
-  type: long
-parent.process.service_names:
-  dashed_name: parent-process-service-names
-  description: Service names associated with the process.
-  flat_name: parent.process.service_names
-  ignore_above: 1024
-  level: extended
-  name: service_names
-  order: 14
-  original_fieldset: process
-  short: Service names associated with the process.
-  type: keyword
-parent.process.start:
-  dashed_name: parent-process-start
-  description: The time the process started.
-  example: '2016-05-23T08:05:34.853Z'
-  flat_name: parent.process.start
-  level: extended
-  name: start
-  order: 10
-  original_fieldset: process
-  short: The time the process started.
-  type: date
-parent.process.title:
-  dashed_name: parent-process-title
-  description: 'Process title.
-
-    The proctitle, some times the same as process name. Can also be different: for
-    example a browser setting its title to the web page currently opened.'
-  flat_name: parent.process.title
-  ignore_above: 1024
-  level: extended
-  multi_fields:
-  - flat_name: parent.process.title.text
-    name: text
-    norms: false
-    type: text
-  name: title
-  order: 9
-  original_fieldset: process
-  short: Process title.
-  type: keyword
-parent.process.token.domain:
-  dashed_name: parent-process-token-domain
-  description: TODO
-  flat_name: parent.process.token.domain
-  ignore_above: 1024
-  level: extended
-  name: domain
-  order: 1
-  original_fieldset: token
-  short: TODO
-  type: keyword
-parent.process.token.impersonation_level:
-  dashed_name: parent-process-token-impersonation-level
-  description: Impersonation level. Only valid for impersonation tokens.
-  flat_name: parent.process.token.impersonation_level
-  ignore_above: 1024
-  level: extended
-  name: impersonation_level
-  order: 4
-  original_fieldset: token
-  short: Impersonation level. Only valid for impersonation tokens.
-  type: keyword
-parent.process.token.integrity_level:
-  dashed_name: parent-process-token-integrity-level
-  description: Numeric integrity level.
-  flat_name: parent.process.token.integrity_level
-  level: extended
-  name: integrity_level
-  order: 5
-  original_fieldset: token
-  short: Numeric integrity level.
-  type: long
-parent.process.token.integrity_level_name:
-  dashed_name: parent-process-token-integrity-level-name
-  description: Human readable integrity level.
-  flat_name: parent.process.token.integrity_level_name
-  ignore_above: 1024
-  level: extended
-  name: integrity_level_name
-  order: 6
-  original_fieldset: token
-  short: Human readable integrity level.
-  type: keyword
-parent.process.token.is_appcontainer:
-  dashed_name: parent-process-token-is-appcontainer
-  description: Whether or not this is an appcontainer token.
-  flat_name: parent.process.token.is_appcontainer
-  level: extended
-  name: is_appcontainer
-  order: 7
-  original_fieldset: token
-  short: Whether or not this is an appcontainer token.
-  type: boolean
-parent.process.token.privileges:
-  dashed_name: parent-process-token-privileges
-  description: Array describing the privileges associated with the token.
-  flat_name: parent.process.token.privileges
-  level: extended
-  name: privileges
-  order: 8
-  original_fieldset: token
-  short: Array describing the privileges associated with the token.
-  type: nested
-parent.process.token.privileges.description:
-  dashed_name: parent-process-token-privileges-description
-  description: Description of the privilege.
-  flat_name: parent.process.token.privileges.description
-  ignore_above: 1024
-  level: extended
-  name: privileges.description
-  order: 11
-  original_fieldset: token
-  short: Description of the privilege.
-  type: keyword
-parent.process.token.privileges.enabled:
-  dashed_name: parent-process-token-privileges-enabled
-  description: Whether or not the privilege is enabled.
-  flat_name: parent.process.token.privileges.enabled
-  level: extended
-  name: privileges.enabled
-  order: 10
-  original_fieldset: token
-  short: Whether or not the privilege is enabled.
-  type: boolean
-parent.process.token.privileges.name:
-  dashed_name: parent-process-token-privileges-name
-  description: Name of the privilege.
-  flat_name: parent.process.token.privileges.name
-  ignore_above: 1024
-  level: extended
-  name: privileges.name
-  order: 9
-  original_fieldset: token
-  short: Name of the privilege.
-  type: keyword
-parent.process.token.sid:
-  dashed_name: parent-process-token-sid
-  description: TODO
-  flat_name: parent.process.token.sid
-  ignore_above: 1024
-  level: extended
-  name: sid
-  order: 2
-  original_fieldset: token
-  short: TODO
-  type: keyword
-parent.process.token.type:
-  dashed_name: parent-process-token-type
-  description: Type of the token, either primary or impersonation.
-  flat_name: parent.process.token.type
-  ignore_above: 1024
-  level: extended
-  name: type
-  order: 3
-  original_fieldset: token
-  short: Type of the token, either primary or impersonation.
-  type: keyword
-parent.process.token.user:
-  dashed_name: parent-process-token-user
-  description: Username of token owner.
-  flat_name: parent.process.token.user
-  ignore_above: 1024
-  level: extended
-  name: user
-  order: 0
-  original_fieldset: token
-  short: Username of token owner.
-  type: keyword
-parent.process.uptime:
-  dashed_name: parent-process-uptime
-  description: Seconds the process has been up.
-  example: 1325
-  flat_name: parent.process.uptime
-  level: extended
-  name: uptime
-  order: 11
-  original_fieldset: process
-  short: Seconds the process has been up.
-  type: long
-parent.process.user:
-  dashed_name: parent-process-user
-  description: User associated with the process.
-  flat_name: parent.process.user
-  ignore_above: 1024
-  level: core
-  name: user
-  order: 2
-  original_fieldset: process
-  short: User associated with the process.
-  type: keyword
-parent.process.working_directory:
-  dashed_name: parent-process-working-directory
-  description: The working directory of the process.
-  example: /home/alice
-  flat_name: parent.process.working_directory
-  ignore_above: 1024
-  level: extended
-  multi_fields:
-  - flat_name: parent.process.working_directory.text
-    name: text
-    norms: false
-    type: text
-  name: working_directory
-  order: 12
-  original_fieldset: process
-  short: The working directory of the process.
-  type: keyword
-parent.thread.id:
-  dashed_name: parent-thread-id
-  description: Thread id.
-  example: 3147
-  flat_name: parent.thread.id
-  level: core
-  name: id
-  order: 0
-  original_fieldset: thread
-  short: Thread id.
-  type: long
-parent.thread.name:
-  dashed_name: parent-thread-name
-  description: Thread name.
-  example: thread-0
-  flat_name: parent.thread.name
-  ignore_above: 1024
-  level: extended
-  name: name
-  order: 1
-  original_fieldset: thread
-  short: Thread name.
-  type: keyword
-parent.thread.service_name:
-  dashed_name: parent-thread-service-name
-  description: Service associated with the thread.
-  example: VaultSvc
-  flat_name: parent.thread.service_name
-  ignore_above: 1024
-  level: extended
-  name: service_name
-  order: 5
-  original_fieldset: thread
-  short: Service associated with the thread.
-  type: keyword
-parent.thread.start:
-  dashed_name: parent-thread-start
-  description: The time the thread started.
-  example: '2016-05-23T08:05:34.853Z'
-  flat_name: parent.thread.start
-  level: extended
-  name: start
-  order: 2
-  original_fieldset: thread
-  short: The time the thread started.
-  type: date
-parent.thread.start_address:
-  dashed_name: parent-thread-start-address
-  description: Memory address where the thread started.
-  example: 5442508
-  flat_name: parent.thread.start_address
-  ignore_above: 1024
-  level: extended
-  name: start_address
-  order: 3
-  original_fieldset: thread
-  short: Memory address where the thread started.
-  type: keyword
-parent.thread.start_address_module:
-  dashed_name: parent-thread-start-address-module
-  description: TODO
-  example: C:\Program Files\VMware\VMware Tools\vmtoolsd.exe
-  flat_name: parent.thread.start_address_module
-  ignore_above: 1024
-  level: extended
-  name: start_address_module
-  order: 4
-  original_fieldset: thread
-  short: TODO
-  type: keyword
-parent.thread.token.domain:
-  dashed_name: parent-thread-token-domain
-  description: TODO
-  flat_name: parent.thread.token.domain
-  ignore_above: 1024
-  level: extended
-  name: domain
-  order: 1
-  original_fieldset: token
-  short: TODO
-  type: keyword
-parent.thread.token.impersonation_level:
-  dashed_name: parent-thread-token-impersonation-level
-  description: Impersonation level. Only valid for impersonation tokens.
-  flat_name: parent.thread.token.impersonation_level
-  ignore_above: 1024
-  level: extended
-  name: impersonation_level
-  order: 4
-  original_fieldset: token
-  short: Impersonation level. Only valid for impersonation tokens.
-  type: keyword
-parent.thread.token.integrity_level:
-  dashed_name: parent-thread-token-integrity-level
-  description: Numeric integrity level.
-  flat_name: parent.thread.token.integrity_level
-  level: extended
-  name: integrity_level
-  order: 5
-  original_fieldset: token
-  short: Numeric integrity level.
-  type: long
-parent.thread.token.integrity_level_name:
-  dashed_name: parent-thread-token-integrity-level-name
-  description: Human readable integrity level.
-  flat_name: parent.thread.token.integrity_level_name
-  ignore_above: 1024
-  level: extended
-  name: integrity_level_name
-  order: 6
-  original_fieldset: token
-  short: Human readable integrity level.
-  type: keyword
-parent.thread.token.is_appcontainer:
-  dashed_name: parent-thread-token-is-appcontainer
-  description: Whether or not this is an appcontainer token.
-  flat_name: parent.thread.token.is_appcontainer
-  level: extended
-  name: is_appcontainer
-  order: 7
-  original_fieldset: token
-  short: Whether or not this is an appcontainer token.
-  type: boolean
-parent.thread.token.privileges:
-  dashed_name: parent-thread-token-privileges
-  description: Array describing the privileges associated with the token.
-  flat_name: parent.thread.token.privileges
-  level: extended
-  name: privileges
-  order: 8
-  original_fieldset: token
-  short: Array describing the privileges associated with the token.
-  type: nested
-parent.thread.token.privileges.description:
-  dashed_name: parent-thread-token-privileges-description
-  description: Description of the privilege.
-  flat_name: parent.thread.token.privileges.description
-  ignore_above: 1024
-  level: extended
-  name: privileges.description
-  order: 11
-  original_fieldset: token
-  short: Description of the privilege.
-  type: keyword
-parent.thread.token.privileges.enabled:
-  dashed_name: parent-thread-token-privileges-enabled
-  description: Whether or not the privilege is enabled.
-  flat_name: parent.thread.token.privileges.enabled
-  level: extended
-  name: privileges.enabled
-  order: 10
-  original_fieldset: token
-  short: Whether or not the privilege is enabled.
-  type: boolean
-parent.thread.token.privileges.name:
-  dashed_name: parent-thread-token-privileges-name
-  description: Name of the privilege.
-  flat_name: parent.thread.token.privileges.name
-  ignore_above: 1024
-  level: extended
-  name: privileges.name
-  order: 9
-  original_fieldset: token
-  short: Name of the privilege.
-  type: keyword
-parent.thread.token.sid:
-  dashed_name: parent-thread-token-sid
-  description: TODO
-  flat_name: parent.thread.token.sid
-  ignore_above: 1024
-  level: extended
-  name: sid
-  order: 2
-  original_fieldset: token
-  short: TODO
-  type: keyword
-parent.thread.token.type:
-  dashed_name: parent-thread-token-type
-  description: Type of the token, either primary or impersonation.
-  flat_name: parent.thread.token.type
-  ignore_above: 1024
-  level: extended
-  name: type
-  order: 3
-  original_fieldset: token
-  short: Type of the token, either primary or impersonation.
-  type: keyword
-parent.thread.token.user:
-  dashed_name: parent-thread-token-user
-  description: Username of token owner.
-  flat_name: parent.thread.token.user
-  ignore_above: 1024
-  level: extended
-  name: user
-  order: 0
-  original_fieldset: token
-  short: Username of token owner.
-  type: keyword
 process.args:
   dashed_name: process-args
   description: 'Array of process arguments, starting with the absolute path to the
@@ -4480,7 +3880,7 @@ process.args:
   ignore_above: 1024
   level: extended
   name: args
-  order: 6
+  order: 10
   original_fieldset: process
   short: Array of process arguments.
   type: keyword
@@ -4495,7 +3895,7 @@ process.args_count:
   flat_name: process.args_count
   level: extended
   name: args_count
-  order: 7
+  order: 12
   original_fieldset: process
   short: Length of the process.args array.
   type: long
@@ -4515,7 +3915,7 @@ process.command_line:
     norms: false
     type: text
   name: command_line
-  order: 5
+  order: 8
   original_fieldset: process
   short: Full command line that started the process.
   type: keyword
@@ -4532,7 +3932,7 @@ process.executable:
     norms: false
     type: text
   name: executable
-  order: 8
+  order: 14
   original_fieldset: process
   short: Absolute path to the process executable.
   type: keyword
@@ -4546,7 +3946,7 @@ process.exit_code:
   flat_name: process.exit_code
   level: extended
   name: exit_code
-  order: 13
+  order: 28
   original_fieldset: process
   short: The exit code of the process.
   type: long
@@ -4620,9 +4020,229 @@ process.name:
     norms: false
     type: text
   name: name
-  order: 1
+  order: 2
   original_fieldset: process
   short: Process name.
+  type: keyword
+process.parent.args:
+  dashed_name: process-parent-args
+  description: 'Array of process arguments.
+
+    May be filtered to protect sensitive information.'
+  example:
+  - ssh
+  - -l
+  - user
+  - 10.0.0.16
+  flat_name: process.parent.args
+  ignore_above: 1024
+  level: extended
+  name: parent.args
+  order: 11
+  original_fieldset: process
+  short: Array of process arguments.
+  type: keyword
+process.parent.args_count:
+  dashed_name: process-parent-args-count
+  description: 'Length of the process.args array.
+
+    This field can be useful for querying or performing bucket analysis on how many
+    arguments were provided to start a process. More arguments may be an indication
+    of suspicious activity.'
+  example: 4
+  flat_name: process.parent.args_count
+  level: extended
+  name: parent.args_count
+  order: 13
+  original_fieldset: process
+  short: Length of the process.args array.
+  type: long
+process.parent.command_line:
+  dashed_name: process-parent-command-line
+  description: 'Full command line that started the process, including the absolute
+    path to the executable, and all arguments.
+
+    Some arguments may be filtered to protect sensitive information.'
+  example: /usr/bin/ssh -l user 10.0.0.16
+  flat_name: process.parent.command_line
+  ignore_above: 1024
+  level: extended
+  multi_fields:
+  - flat_name: process.parent.command_line.text
+    name: text
+    norms: false
+    type: text
+  name: parent.command_line
+  order: 9
+  original_fieldset: process
+  short: Full command line that started the process.
+  type: keyword
+process.parent.executable:
+  dashed_name: process-parent-executable
+  description: Absolute path to the process executable.
+  example: /usr/bin/ssh
+  flat_name: process.parent.executable
+  ignore_above: 1024
+  level: extended
+  multi_fields:
+  - flat_name: process.parent.executable.text
+    name: text
+    norms: false
+    type: text
+  name: parent.executable
+  order: 15
+  original_fieldset: process
+  short: Absolute path to the process executable.
+  type: keyword
+process.parent.exit_code:
+  dashed_name: process-parent-exit-code
+  description: 'The exit code of the process, if this is a termination event.
+
+    The field should be absent if there is no exit code for the event (e.g. process
+    start).'
+  example: 137
+  flat_name: process.parent.exit_code
+  level: extended
+  name: parent.exit_code
+  order: 29
+  original_fieldset: process
+  short: The exit code of the process.
+  type: long
+process.parent.name:
+  dashed_name: process-parent-name
+  description: 'Process name.
+
+    Sometimes called program name or similar.'
+  example: ssh
+  flat_name: process.parent.name
+  ignore_above: 1024
+  level: extended
+  multi_fields:
+  - flat_name: process.parent.name.text
+    name: text
+    norms: false
+    type: text
+  name: parent.name
+  order: 3
+  original_fieldset: process
+  short: Process name.
+  type: keyword
+process.parent.pgid:
+  dashed_name: process-parent-pgid
+  description: Identifier of the group of processes the process belongs to.
+  flat_name: process.parent.pgid
+  format: string
+  level: extended
+  name: parent.pgid
+  order: 7
+  original_fieldset: process
+  short: Identifier of the group of processes the process belongs to.
+  type: long
+process.parent.pid:
+  dashed_name: process-parent-pid
+  description: Process id.
+  example: 4242
+  flat_name: process.parent.pid
+  format: string
+  level: core
+  name: parent.pid
+  order: 1
+  original_fieldset: process
+  short: Process id.
+  type: long
+process.parent.ppid:
+  dashed_name: process-parent-ppid
+  description: Parent process' pid.
+  example: 4241
+  flat_name: process.parent.ppid
+  format: string
+  level: extended
+  name: parent.ppid
+  order: 5
+  original_fieldset: process
+  short: Parent process' pid.
+  type: long
+process.parent.start:
+  dashed_name: process-parent-start
+  description: The time the process started.
+  example: '2016-05-23T08:05:34.853Z'
+  flat_name: process.parent.start
+  level: extended
+  name: parent.start
+  order: 23
+  original_fieldset: process
+  short: The time the process started.
+  type: date
+process.parent.thread.id:
+  dashed_name: process-parent-thread-id
+  description: Thread ID.
+  example: 4242
+  flat_name: process.parent.thread.id
+  format: string
+  level: extended
+  name: parent.thread.id
+  order: 19
+  original_fieldset: process
+  short: Thread ID.
+  type: long
+process.parent.thread.name:
+  dashed_name: process-parent-thread-name
+  description: Thread name.
+  example: thread-0
+  flat_name: process.parent.thread.name
+  ignore_above: 1024
+  level: extended
+  name: parent.thread.name
+  order: 21
+  original_fieldset: process
+  short: Thread name.
+  type: keyword
+process.parent.title:
+  dashed_name: process-parent-title
+  description: 'Process title.
+
+    The proctitle, some times the same as process name. Can also be different: for
+    example a browser setting its title to the web page currently opened.'
+  flat_name: process.parent.title
+  ignore_above: 1024
+  level: extended
+  multi_fields:
+  - flat_name: process.parent.title.text
+    name: text
+    norms: false
+    type: text
+  name: parent.title
+  order: 17
+  original_fieldset: process
+  short: Process title.
+  type: keyword
+process.parent.uptime:
+  dashed_name: process-parent-uptime
+  description: Seconds the process has been up.
+  example: 1325
+  flat_name: process.parent.uptime
+  level: extended
+  name: parent.uptime
+  order: 25
+  original_fieldset: process
+  short: Seconds the process has been up.
+  type: long
+process.parent.working_directory:
+  dashed_name: process-parent-working-directory
+  description: The working directory of the process.
+  example: /home/alice
+  flat_name: process.parent.working_directory
+  ignore_above: 1024
+  level: extended
+  multi_fields:
+  - flat_name: process.parent.working_directory.text
+    name: text
+    norms: false
+    type: text
+  name: parent.working_directory
+  order: 27
+  original_fieldset: process
+  short: The working directory of the process.
   type: keyword
 process.pgid:
   dashed_name: process-pgid
@@ -4631,7 +4251,7 @@ process.pgid:
   format: string
   level: extended
   name: pgid
-  order: 4
+  order: 6
   original_fieldset: process
   short: Identifier of the group of processes the process belongs to.
   type: long
@@ -4655,21 +4275,10 @@ process.ppid:
   format: string
   level: extended
   name: ppid
-  order: 3
+  order: 4
   original_fieldset: process
   short: Parent process' pid.
   type: long
-process.service_names:
-  dashed_name: process-service-names
-  description: Service names associated with the process.
-  flat_name: process.service_names
-  ignore_above: 1024
-  level: extended
-  name: service_names
-  order: 14
-  original_fieldset: process
-  short: Service names associated with the process.
-  type: keyword
 process.start:
   dashed_name: process-start
   description: The time the process started.
@@ -4677,10 +4286,34 @@ process.start:
   flat_name: process.start
   level: extended
   name: start
-  order: 10
+  order: 22
   original_fieldset: process
   short: The time the process started.
   type: date
+process.thread.id:
+  dashed_name: process-thread-id
+  description: Thread ID.
+  example: 4242
+  flat_name: process.thread.id
+  format: string
+  level: extended
+  name: thread.id
+  order: 18
+  original_fieldset: process
+  short: Thread ID.
+  type: long
+process.thread.name:
+  dashed_name: process-thread-name
+  description: Thread name.
+  example: thread-0
+  flat_name: process.thread.name
+  ignore_above: 1024
+  level: extended
+  name: thread.name
+  order: 20
+  original_fieldset: process
+  short: Thread name.
+  type: keyword
 process.title:
   dashed_name: process-title
   description: 'Process title.
@@ -4696,7 +4329,7 @@ process.title:
     norms: false
     type: text
   name: title
-  order: 9
+  order: 16
   original_fieldset: process
   short: Process title.
   type: keyword
@@ -4835,21 +4468,10 @@ process.uptime:
   flat_name: process.uptime
   level: extended
   name: uptime
-  order: 11
+  order: 24
   original_fieldset: process
   short: Seconds the process has been up.
   type: long
-process.user:
-  dashed_name: process-user
-  description: User associated with the process.
-  flat_name: process.user
-  ignore_above: 1024
-  level: core
-  name: user
-  order: 2
-  original_fieldset: process
-  short: User associated with the process.
-  type: keyword
 process.working_directory:
   dashed_name: process-working-directory
   description: The working directory of the process.
@@ -4863,7 +4485,7 @@ process.working_directory:
     norms: false
     type: text
   name: working_directory
-  order: 12
+  order: 26
   original_fieldset: process
   short: The working directory of the process.
   type: keyword
@@ -5993,7 +5615,7 @@ target.process.args:
   ignore_above: 1024
   level: extended
   name: args
-  order: 6
+  order: 10
   original_fieldset: process
   short: Array of process arguments.
   type: keyword
@@ -6008,7 +5630,7 @@ target.process.args_count:
   flat_name: target.process.args_count
   level: extended
   name: args_count
-  order: 7
+  order: 12
   original_fieldset: process
   short: Length of the process.args array.
   type: long
@@ -6028,7 +5650,7 @@ target.process.command_line:
     norms: false
     type: text
   name: command_line
-  order: 5
+  order: 8
   original_fieldset: process
   short: Full command line that started the process.
   type: keyword
@@ -6045,7 +5667,7 @@ target.process.executable:
     norms: false
     type: text
   name: executable
-  order: 8
+  order: 14
   original_fieldset: process
   short: Absolute path to the process executable.
   type: keyword
@@ -6059,7 +5681,7 @@ target.process.exit_code:
   flat_name: target.process.exit_code
   level: extended
   name: exit_code
-  order: 13
+  order: 28
   original_fieldset: process
   short: The exit code of the process.
   type: long
@@ -6133,9 +5755,229 @@ target.process.name:
     norms: false
     type: text
   name: name
-  order: 1
+  order: 2
   original_fieldset: process
   short: Process name.
+  type: keyword
+target.process.parent.args:
+  dashed_name: target-process-parent-args
+  description: 'Array of process arguments.
+
+    May be filtered to protect sensitive information.'
+  example:
+  - ssh
+  - -l
+  - user
+  - 10.0.0.16
+  flat_name: target.process.parent.args
+  ignore_above: 1024
+  level: extended
+  name: parent.args
+  order: 11
+  original_fieldset: process
+  short: Array of process arguments.
+  type: keyword
+target.process.parent.args_count:
+  dashed_name: target-process-parent-args-count
+  description: 'Length of the process.args array.
+
+    This field can be useful for querying or performing bucket analysis on how many
+    arguments were provided to start a process. More arguments may be an indication
+    of suspicious activity.'
+  example: 4
+  flat_name: target.process.parent.args_count
+  level: extended
+  name: parent.args_count
+  order: 13
+  original_fieldset: process
+  short: Length of the process.args array.
+  type: long
+target.process.parent.command_line:
+  dashed_name: target-process-parent-command-line
+  description: 'Full command line that started the process, including the absolute
+    path to the executable, and all arguments.
+
+    Some arguments may be filtered to protect sensitive information.'
+  example: /usr/bin/ssh -l user 10.0.0.16
+  flat_name: target.process.parent.command_line
+  ignore_above: 1024
+  level: extended
+  multi_fields:
+  - flat_name: target.process.parent.command_line.text
+    name: text
+    norms: false
+    type: text
+  name: parent.command_line
+  order: 9
+  original_fieldset: process
+  short: Full command line that started the process.
+  type: keyword
+target.process.parent.executable:
+  dashed_name: target-process-parent-executable
+  description: Absolute path to the process executable.
+  example: /usr/bin/ssh
+  flat_name: target.process.parent.executable
+  ignore_above: 1024
+  level: extended
+  multi_fields:
+  - flat_name: target.process.parent.executable.text
+    name: text
+    norms: false
+    type: text
+  name: parent.executable
+  order: 15
+  original_fieldset: process
+  short: Absolute path to the process executable.
+  type: keyword
+target.process.parent.exit_code:
+  dashed_name: target-process-parent-exit-code
+  description: 'The exit code of the process, if this is a termination event.
+
+    The field should be absent if there is no exit code for the event (e.g. process
+    start).'
+  example: 137
+  flat_name: target.process.parent.exit_code
+  level: extended
+  name: parent.exit_code
+  order: 29
+  original_fieldset: process
+  short: The exit code of the process.
+  type: long
+target.process.parent.name:
+  dashed_name: target-process-parent-name
+  description: 'Process name.
+
+    Sometimes called program name or similar.'
+  example: ssh
+  flat_name: target.process.parent.name
+  ignore_above: 1024
+  level: extended
+  multi_fields:
+  - flat_name: target.process.parent.name.text
+    name: text
+    norms: false
+    type: text
+  name: parent.name
+  order: 3
+  original_fieldset: process
+  short: Process name.
+  type: keyword
+target.process.parent.pgid:
+  dashed_name: target-process-parent-pgid
+  description: Identifier of the group of processes the process belongs to.
+  flat_name: target.process.parent.pgid
+  format: string
+  level: extended
+  name: parent.pgid
+  order: 7
+  original_fieldset: process
+  short: Identifier of the group of processes the process belongs to.
+  type: long
+target.process.parent.pid:
+  dashed_name: target-process-parent-pid
+  description: Process id.
+  example: 4242
+  flat_name: target.process.parent.pid
+  format: string
+  level: core
+  name: parent.pid
+  order: 1
+  original_fieldset: process
+  short: Process id.
+  type: long
+target.process.parent.ppid:
+  dashed_name: target-process-parent-ppid
+  description: Parent process' pid.
+  example: 4241
+  flat_name: target.process.parent.ppid
+  format: string
+  level: extended
+  name: parent.ppid
+  order: 5
+  original_fieldset: process
+  short: Parent process' pid.
+  type: long
+target.process.parent.start:
+  dashed_name: target-process-parent-start
+  description: The time the process started.
+  example: '2016-05-23T08:05:34.853Z'
+  flat_name: target.process.parent.start
+  level: extended
+  name: parent.start
+  order: 23
+  original_fieldset: process
+  short: The time the process started.
+  type: date
+target.process.parent.thread.id:
+  dashed_name: target-process-parent-thread-id
+  description: Thread ID.
+  example: 4242
+  flat_name: target.process.parent.thread.id
+  format: string
+  level: extended
+  name: parent.thread.id
+  order: 19
+  original_fieldset: process
+  short: Thread ID.
+  type: long
+target.process.parent.thread.name:
+  dashed_name: target-process-parent-thread-name
+  description: Thread name.
+  example: thread-0
+  flat_name: target.process.parent.thread.name
+  ignore_above: 1024
+  level: extended
+  name: parent.thread.name
+  order: 21
+  original_fieldset: process
+  short: Thread name.
+  type: keyword
+target.process.parent.title:
+  dashed_name: target-process-parent-title
+  description: 'Process title.
+
+    The proctitle, some times the same as process name. Can also be different: for
+    example a browser setting its title to the web page currently opened.'
+  flat_name: target.process.parent.title
+  ignore_above: 1024
+  level: extended
+  multi_fields:
+  - flat_name: target.process.parent.title.text
+    name: text
+    norms: false
+    type: text
+  name: parent.title
+  order: 17
+  original_fieldset: process
+  short: Process title.
+  type: keyword
+target.process.parent.uptime:
+  dashed_name: target-process-parent-uptime
+  description: Seconds the process has been up.
+  example: 1325
+  flat_name: target.process.parent.uptime
+  level: extended
+  name: parent.uptime
+  order: 25
+  original_fieldset: process
+  short: Seconds the process has been up.
+  type: long
+target.process.parent.working_directory:
+  dashed_name: target-process-parent-working-directory
+  description: The working directory of the process.
+  example: /home/alice
+  flat_name: target.process.parent.working_directory
+  ignore_above: 1024
+  level: extended
+  multi_fields:
+  - flat_name: target.process.parent.working_directory.text
+    name: text
+    norms: false
+    type: text
+  name: parent.working_directory
+  order: 27
+  original_fieldset: process
+  short: The working directory of the process.
   type: keyword
 target.process.pgid:
   dashed_name: target-process-pgid
@@ -6144,7 +5986,7 @@ target.process.pgid:
   format: string
   level: extended
   name: pgid
-  order: 4
+  order: 6
   original_fieldset: process
   short: Identifier of the group of processes the process belongs to.
   type: long
@@ -6168,21 +6010,10 @@ target.process.ppid:
   format: string
   level: extended
   name: ppid
-  order: 3
+  order: 4
   original_fieldset: process
   short: Parent process' pid.
   type: long
-target.process.service_names:
-  dashed_name: target-process-service-names
-  description: Service names associated with the process.
-  flat_name: target.process.service_names
-  ignore_above: 1024
-  level: extended
-  name: service_names
-  order: 14
-  original_fieldset: process
-  short: Service names associated with the process.
-  type: keyword
 target.process.start:
   dashed_name: target-process-start
   description: The time the process started.
@@ -6190,10 +6021,34 @@ target.process.start:
   flat_name: target.process.start
   level: extended
   name: start
-  order: 10
+  order: 22
   original_fieldset: process
   short: The time the process started.
   type: date
+target.process.thread.id:
+  dashed_name: target-process-thread-id
+  description: Thread ID.
+  example: 4242
+  flat_name: target.process.thread.id
+  format: string
+  level: extended
+  name: thread.id
+  order: 18
+  original_fieldset: process
+  short: Thread ID.
+  type: long
+target.process.thread.name:
+  dashed_name: target-process-thread-name
+  description: Thread name.
+  example: thread-0
+  flat_name: target.process.thread.name
+  ignore_above: 1024
+  level: extended
+  name: thread.name
+  order: 20
+  original_fieldset: process
+  short: Thread name.
+  type: keyword
 target.process.title:
   dashed_name: target-process-title
   description: 'Process title.
@@ -6209,7 +6064,7 @@ target.process.title:
     norms: false
     type: text
   name: title
-  order: 9
+  order: 16
   original_fieldset: process
   short: Process title.
   type: keyword
@@ -6348,21 +6203,10 @@ target.process.uptime:
   flat_name: target.process.uptime
   level: extended
   name: uptime
-  order: 11
+  order: 24
   original_fieldset: process
   short: Seconds the process has been up.
   type: long
-target.process.user:
-  dashed_name: target-process-user
-  description: User associated with the process.
-  flat_name: target.process.user
-  ignore_above: 1024
-  level: core
-  name: user
-  order: 2
-  original_fieldset: process
-  short: User associated with the process.
-  type: keyword
 target.process.working_directory:
   dashed_name: target-process-working-directory
   description: The working directory of the process.
@@ -6376,7 +6220,7 @@ target.process.working_directory:
     norms: false
     type: text
   name: working_directory
-  order: 12
+  order: 26
   original_fieldset: process
   short: The working directory of the process.
   type: keyword

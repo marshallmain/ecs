@@ -64,8 +64,6 @@ all fields are defined.
 
 | <<ecs-package,Package>> | These fields contain information about an installed software package.
 
-| <<ecs-parent,Parent>> | These fields contain information about a parent.
-
 | <<ecs-process,Process>> | These fields contain information about a process.
 
 | <<ecs-registry,Registry>> | Fields related to Windows Registry operations.

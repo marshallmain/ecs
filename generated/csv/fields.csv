@@ -300,61 +300,6 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,package,package.size,long,extended,62231,Package size in bytes.
 1.5.0-dev,true,package,package.type,keyword,extended,rpm,Package type
 1.5.0-dev,true,package,package.version,keyword,extended,1.12.9,Package version
-1.5.0-dev,true,parent,parent.process.args,keyword,extended,"['/usr/bin/ssh', '-l', 'user', '10.0.0.16']",Array of process arguments.
-1.5.0-dev,true,parent,parent.process.args_count,long,extended,4,Length of the process.args array.
-1.5.0-dev,true,parent,parent.process.command_line,keyword,extended,/usr/bin/ssh -l user 10.0.0.16,Full command line that started the process.
-1.5.0-dev,true,parent,parent.process.command_line.text,text,extended,/usr/bin/ssh -l user 10.0.0.16,Full command line that started the process.
-1.5.0-dev,true,parent,parent.process.executable,keyword,extended,/usr/bin/ssh,Absolute path to the process executable.
-1.5.0-dev,true,parent,parent.process.executable.text,text,extended,/usr/bin/ssh,Absolute path to the process executable.
-1.5.0-dev,true,parent,parent.process.exit_code,long,extended,137,The exit code of the process.
-1.5.0-dev,true,parent,parent.process.hash.imphash,keyword,extended,,Imphash.
-1.5.0-dev,true,parent,parent.process.hash.md5,keyword,extended,,MD5 hash.
-1.5.0-dev,true,parent,parent.process.hash.sha1,keyword,extended,,SHA1 hash.
-1.5.0-dev,true,parent,parent.process.hash.sha256,keyword,extended,,SHA256 hash.
-1.5.0-dev,true,parent,parent.process.hash.sha512,keyword,extended,,SHA512 hash.
-1.5.0-dev,true,parent,parent.process.name,keyword,extended,ssh,Process name.
-1.5.0-dev,true,parent,parent.process.name.text,text,extended,ssh,Process name.
-1.5.0-dev,true,parent,parent.process.pgid,long,extended,,Identifier of the group of processes the process belongs to.
-1.5.0-dev,true,parent,parent.process.pid,long,core,4242,Process id.
-1.5.0-dev,true,parent,parent.process.ppid,long,extended,4241,Parent process' pid.
-1.5.0-dev,true,parent,parent.process.service_names,keyword,extended,,Service names associated with the process.
-1.5.0-dev,true,parent,parent.process.start,date,extended,2016-05-23T08:05:34.853Z,The time the process started.
-1.5.0-dev,true,parent,parent.process.title,keyword,extended,,Process title.
-1.5.0-dev,true,parent,parent.process.title.text,text,extended,,Process title.
-1.5.0-dev,true,parent,parent.process.token.domain,keyword,extended,,TODO
-1.5.0-dev,true,parent,parent.process.token.impersonation_level,keyword,extended,,Impersonation level. Only valid for impersonation tokens.
-1.5.0-dev,true,parent,parent.process.token.integrity_level,long,extended,,Numeric integrity level.
-1.5.0-dev,true,parent,parent.process.token.integrity_level_name,keyword,extended,,Human readable integrity level.
-1.5.0-dev,true,parent,parent.process.token.is_appcontainer,boolean,extended,,Whether or not this is an appcontainer token.
-1.5.0-dev,true,parent,parent.process.token.privileges,nested,extended,,Array describing the privileges associated with the token.
-1.5.0-dev,true,parent,parent.process.token.privileges.description,keyword,extended,,Description of the privilege.
-1.5.0-dev,true,parent,parent.process.token.privileges.enabled,boolean,extended,,Whether or not the privilege is enabled.
-1.5.0-dev,true,parent,parent.process.token.privileges.name,keyword,extended,,Name of the privilege.
-1.5.0-dev,true,parent,parent.process.token.sid,keyword,extended,,TODO
-1.5.0-dev,true,parent,parent.process.token.type,keyword,extended,,"Type of the token, either primary or impersonation."
-1.5.0-dev,true,parent,parent.process.token.user,keyword,extended,,Username of token owner.
-1.5.0-dev,true,parent,parent.process.uptime,long,extended,1325,Seconds the process has been up.
-1.5.0-dev,true,parent,parent.process.user,keyword,core,,User associated with the process.
-1.5.0-dev,true,parent,parent.process.working_directory,keyword,extended,/home/alice,The working directory of the process.
-1.5.0-dev,true,parent,parent.process.working_directory.text,text,extended,/home/alice,The working directory of the process.
-1.5.0-dev,true,parent,parent.thread.id,long,core,3147,Thread id.
-1.5.0-dev,true,parent,parent.thread.name,keyword,extended,thread-0,Thread name.
-1.5.0-dev,true,parent,parent.thread.service_name,keyword,extended,VaultSvc,Service associated with the thread.
-1.5.0-dev,true,parent,parent.thread.start,date,extended,2016-05-23T08:05:34.853Z,The time the thread started.
-1.5.0-dev,true,parent,parent.thread.start_address,keyword,extended,5442508,Memory address where the thread started.
-1.5.0-dev,true,parent,parent.thread.start_address_module,keyword,extended,C:\Program Files\VMware\VMware Tools\vmtoolsd.exe,TODO
-1.5.0-dev,true,parent,parent.thread.token.domain,keyword,extended,,TODO
-1.5.0-dev,true,parent,parent.thread.token.impersonation_level,keyword,extended,,Impersonation level. Only valid for impersonation tokens.
-1.5.0-dev,true,parent,parent.thread.token.integrity_level,long,extended,,Numeric integrity level.
-1.5.0-dev,true,parent,parent.thread.token.integrity_level_name,keyword,extended,,Human readable integrity level.
-1.5.0-dev,true,parent,parent.thread.token.is_appcontainer,boolean,extended,,Whether or not this is an appcontainer token.
-1.5.0-dev,true,parent,parent.thread.token.privileges,nested,extended,,Array describing the privileges associated with the token.
-1.5.0-dev,true,parent,parent.thread.token.privileges.description,keyword,extended,,Description of the privilege.
-1.5.0-dev,true,parent,parent.thread.token.privileges.enabled,boolean,extended,,Whether or not the privilege is enabled.
-1.5.0-dev,true,parent,parent.thread.token.privileges.name,keyword,extended,,Name of the privilege.
-1.5.0-dev,true,parent,parent.thread.token.sid,keyword,extended,,TODO
-1.5.0-dev,true,parent,parent.thread.token.type,keyword,extended,,"Type of the token, either primary or impersonation."
-1.5.0-dev,true,parent,parent.thread.token.user,keyword,extended,,Username of token owner.
 1.5.0-dev,true,process,process.args,keyword,extended,"['/usr/bin/ssh', '-l', 'user', '10.0.0.16']",Array of process arguments.
 1.5.0-dev,true,process,process.args_count,long,extended,4,Length of the process.args array.
 1.5.0-dev,true,process,process.command_line,keyword,extended,/usr/bin/ssh -l user 10.0.0.16,Full command line that started the process.
@@ -369,11 +314,32 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,process,process.hash.sha512,keyword,extended,,SHA512 hash.
 1.5.0-dev,true,process,process.name,keyword,extended,ssh,Process name.
 1.5.0-dev,true,process,process.name.text,text,extended,ssh,Process name.
+1.5.0-dev,true,process,process.parent.args,keyword,extended,"['ssh', '-l', 'user', '10.0.0.16']",Array of process arguments.
+1.5.0-dev,true,process,process.parent.args_count,long,extended,4,Length of the process.args array.
+1.5.0-dev,true,process,process.parent.command_line,keyword,extended,/usr/bin/ssh -l user 10.0.0.16,Full command line that started the process.
+1.5.0-dev,true,process,process.parent.command_line.text,text,extended,/usr/bin/ssh -l user 10.0.0.16,Full command line that started the process.
+1.5.0-dev,true,process,process.parent.executable,keyword,extended,/usr/bin/ssh,Absolute path to the process executable.
+1.5.0-dev,true,process,process.parent.executable.text,text,extended,/usr/bin/ssh,Absolute path to the process executable.
+1.5.0-dev,true,process,process.parent.exit_code,long,extended,137,The exit code of the process.
+1.5.0-dev,true,process,process.parent.name,keyword,extended,ssh,Process name.
+1.5.0-dev,true,process,process.parent.name.text,text,extended,ssh,Process name.
+1.5.0-dev,true,process,process.parent.pgid,long,extended,,Identifier of the group of processes the process belongs to.
+1.5.0-dev,true,process,process.parent.pid,long,core,4242,Process id.
+1.5.0-dev,true,process,process.parent.ppid,long,extended,4241,Parent process' pid.
+1.5.0-dev,true,process,process.parent.start,date,extended,2016-05-23T08:05:34.853Z,The time the process started.
+1.5.0-dev,true,process,process.parent.thread.id,long,extended,4242,Thread ID.
+1.5.0-dev,true,process,process.parent.thread.name,keyword,extended,thread-0,Thread name.
+1.5.0-dev,true,process,process.parent.title,keyword,extended,,Process title.
+1.5.0-dev,true,process,process.parent.title.text,text,extended,,Process title.
+1.5.0-dev,true,process,process.parent.uptime,long,extended,1325,Seconds the process has been up.
+1.5.0-dev,true,process,process.parent.working_directory,keyword,extended,/home/alice,The working directory of the process.
+1.5.0-dev,true,process,process.parent.working_directory.text,text,extended,/home/alice,The working directory of the process.
 1.5.0-dev,true,process,process.pgid,long,extended,,Identifier of the group of processes the process belongs to.
 1.5.0-dev,true,process,process.pid,long,core,4242,Process id.
 1.5.0-dev,true,process,process.ppid,long,extended,4241,Parent process' pid.
-1.5.0-dev,true,process,process.service_names,keyword,extended,,Service names associated with the process.
 1.5.0-dev,true,process,process.start,date,extended,2016-05-23T08:05:34.853Z,The time the process started.
+1.5.0-dev,true,process,process.thread.id,long,extended,4242,Thread ID.
+1.5.0-dev,true,process,process.thread.name,keyword,extended,thread-0,Thread name.
 1.5.0-dev,true,process,process.title,keyword,extended,,Process title.
 1.5.0-dev,true,process,process.title.text,text,extended,,Process title.
 1.5.0-dev,true,process,process.token.domain,keyword,extended,,TODO
@@ -389,7 +355,6 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,process,process.token.type,keyword,extended,,"Type of the token, either primary or impersonation."
 1.5.0-dev,true,process,process.token.user,keyword,extended,,Username of token owner.
 1.5.0-dev,true,process,process.uptime,long,extended,1325,Seconds the process has been up.
-1.5.0-dev,true,process,process.user,keyword,core,,User associated with the process.
 1.5.0-dev,true,process,process.working_directory,keyword,extended,/home/alice,The working directory of the process.
 1.5.0-dev,true,process,process.working_directory.text,text,extended,/home/alice,The working directory of the process.
 1.5.0-dev,true,registry,registry.data.bytes,keyword,extended,ZQBuAC0AVQBTAAAAZQBuAAAAAAA=,Original bytes written with base64 encoding.
@@ -497,11 +462,32 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,target,target.process.hash.sha512,keyword,extended,,SHA512 hash.
 1.5.0-dev,true,target,target.process.name,keyword,extended,ssh,Process name.
 1.5.0-dev,true,target,target.process.name.text,text,extended,ssh,Process name.
+1.5.0-dev,true,target,target.process.parent.args,keyword,extended,"['ssh', '-l', 'user', '10.0.0.16']",Array of process arguments.
+1.5.0-dev,true,target,target.process.parent.args_count,long,extended,4,Length of the process.args array.
+1.5.0-dev,true,target,target.process.parent.command_line,keyword,extended,/usr/bin/ssh -l user 10.0.0.16,Full command line that started the process.
+1.5.0-dev,true,target,target.process.parent.command_line.text,text,extended,/usr/bin/ssh -l user 10.0.0.16,Full command line that started the process.
+1.5.0-dev,true,target,target.process.parent.executable,keyword,extended,/usr/bin/ssh,Absolute path to the process executable.
+1.5.0-dev,true,target,target.process.parent.executable.text,text,extended,/usr/bin/ssh,Absolute path to the process executable.
+1.5.0-dev,true,target,target.process.parent.exit_code,long,extended,137,The exit code of the process.
+1.5.0-dev,true,target,target.process.parent.name,keyword,extended,ssh,Process name.
+1.5.0-dev,true,target,target.process.parent.name.text,text,extended,ssh,Process name.
+1.5.0-dev,true,target,target.process.parent.pgid,long,extended,,Identifier of the group of processes the process belongs to.
+1.5.0-dev,true,target,target.process.parent.pid,long,core,4242,Process id.
+1.5.0-dev,true,target,target.process.parent.ppid,long,extended,4241,Parent process' pid.
+1.5.0-dev,true,target,target.process.parent.start,date,extended,2016-05-23T08:05:34.853Z,The time the process started.
+1.5.0-dev,true,target,target.process.parent.thread.id,long,extended,4242,Thread ID.
+1.5.0-dev,true,target,target.process.parent.thread.name,keyword,extended,thread-0,Thread name.
+1.5.0-dev,true,target,target.process.parent.title,keyword,extended,,Process title.
+1.5.0-dev,true,target,target.process.parent.title.text,text,extended,,Process title.
+1.5.0-dev,true,target,target.process.parent.uptime,long,extended,1325,Seconds the process has been up.
+1.5.0-dev,true,target,target.process.parent.working_directory,keyword,extended,/home/alice,The working directory of the process.
+1.5.0-dev,true,target,target.process.parent.working_directory.text,text,extended,/home/alice,The working directory of the process.
 1.5.0-dev,true,target,target.process.pgid,long,extended,,Identifier of the group of processes the process belongs to.
 1.5.0-dev,true,target,target.process.pid,long,core,4242,Process id.
 1.5.0-dev,true,target,target.process.ppid,long,extended,4241,Parent process' pid.
-1.5.0-dev,true,target,target.process.service_names,keyword,extended,,Service names associated with the process.
 1.5.0-dev,true,target,target.process.start,date,extended,2016-05-23T08:05:34.853Z,The time the process started.
+1.5.0-dev,true,target,target.process.thread.id,long,extended,4242,Thread ID.
+1.5.0-dev,true,target,target.process.thread.name,keyword,extended,thread-0,Thread name.
 1.5.0-dev,true,target,target.process.title,keyword,extended,,Process title.
 1.5.0-dev,true,target,target.process.title.text,text,extended,,Process title.
 1.5.0-dev,true,target,target.process.token.domain,keyword,extended,,TODO
@@ -517,7 +503,6 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,target,target.process.token.type,keyword,extended,,"Type of the token, either primary or impersonation."
 1.5.0-dev,true,target,target.process.token.user,keyword,extended,,Username of token owner.
 1.5.0-dev,true,target,target.process.uptime,long,extended,1325,Seconds the process has been up.
-1.5.0-dev,true,target,target.process.user,keyword,core,,User associated with the process.
 1.5.0-dev,true,target,target.process.working_directory,keyword,extended,/home/alice,The working directory of the process.
 1.5.0-dev,true,target,target.process.working_directory.text,text,extended,/home/alice,The working directory of the process.
 1.5.0-dev,true,target,target.thread.id,long,core,3147,Thread id.

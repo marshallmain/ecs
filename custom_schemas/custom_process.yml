@@ -12,7 +12,6 @@
   reusable:
     top_level: true
     expected:
-      - parent
       - target
   type: group
   fields:
