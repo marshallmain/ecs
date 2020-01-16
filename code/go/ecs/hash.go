@@ -35,4 +35,7 @@ type Hash struct {
 
 	// SHA512 hash.
 	Sha512 string `ecs:"sha512"`
+
+	// Imphash.
+	Imphash string `ecs:"imphash"`
 }

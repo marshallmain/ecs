@@ -64,6 +64,114 @@
       description: >
         TODO
 
+    - name: memory_region.memory_address
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
+    - name: memory_region.length
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
+    - name: memory_region.unbacked_on_disk
+      level: custom
+      type: boolean
+      description: >
+        TODO
+
+    - name: memory_region.bytes
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
+    - name: memory_region.memory
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
+    - name: memory_region.histogram
+      level: custom
+      type: nested
+      description: >
+        TODO
+
+    - name: memory_region.histogram.histogram_flavor
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
+    - name: memory_region.histogram.histogram_resolution
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
+    - name: memory_region.histogram.histogram_array
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
+    - name: memory_region.permission
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
+    - name: memory_region.allocation_base
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
+    - name: memory_region.region_base
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
+    - name: memory_region.region_size
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
+    - name: memory_region.region_tag
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
+    - name: memory_region.type
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
+    - name: memory_region.protection
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
+    - name: memory_region.allocation_protection
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
+    - name: memory_region.module_path
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
     - name: thread
       level: custom
       type: nested
