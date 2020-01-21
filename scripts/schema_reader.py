@@ -77,7 +77,7 @@ def schema_fields_as_dictionary(schema):
     field_array = schema.pop('fields')
     schema['fields'] = {}
     for order, field in enumerate(field_array):
-        field['order'] = order
+        # field['order'] = order
         nested_levels = field['name'].split('.')
         nested_schema = schema['fields']
         for level in nested_levels[:-1]:
@@ -93,8 +93,8 @@ def schema_fields_as_dictionary(schema):
 
 
 def field_set_defaults(field):
-    if field['type'] == 'keyword':
-        dict_set_default(field, 'ignore_above', 1024)
+    #if field['type'] == 'keyword':
+        # dict_set_default(field, 'ignore_above', 1024)
     if field['type'] == 'text':
         dict_set_default(field, 'norms', False)
     if field['type'] == 'object':
@@ -201,7 +201,7 @@ def cleanup_fields_recursive(fields, prefix):
             field_details = copy.deepcopy(field['field_details'])
             new_flat_name = prefix + name
             field_details['flat_name'] = new_flat_name
-            field_details['dashed_name'] = new_flat_name.replace('.', '-').replace('_', '-')
+            #field_details['dashed_name'] = new_flat_name.replace('.', '-').replace('_', '-')
             dict_clean_string_values(field_details)
             field_set_defaults(field_details)
             field['field_details'] = field_details

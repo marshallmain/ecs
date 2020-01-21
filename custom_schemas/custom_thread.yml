@@ -8,7 +8,6 @@
   reusable:
     top_level: false
     expected:
-      - parent
       - target
   type: group
   fields:
