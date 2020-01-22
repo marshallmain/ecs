@@ -1,15 +1,16 @@
 ---
-- name: module_info
-  title: Module Info
+- name: modules
+  title: Modules
   group: 2
-  short: These fields contain information about a module.
+  short: These fields contain information about a list of modules.
   description: >
-    These fields contain information about a module.
+    These fields contain information about a list of modules.
   reusable:
     top_level: false
     expected:
       - process
-  type: group
+  type: nested
+  level: custom
   fields:
     - name: path
       level: custom

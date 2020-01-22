@@ -344,9 +344,110 @@ type: keyword
 
 ==== Field Reuse
 
-The `authenticode` fields are expected to be nested at: `module_info.authenticode`, `process.authenticode`, `process.pe_info.authenticode`.
+The `authenticode` fields are expected to be nested at: `modules.authenticode`, `process.authenticode`, `process.pe_info.authenticode`.
 
 Note also that the `authenticode` fields are not expected to be used directly at the top level.
+
+
+
+
+[[ecs-call_stack]]
+=== Call Stack Fields
+
+TODO
+
+==== Call Stack Field Details
+
+[options="header"]
+|=====
+| Field  | Description | Level
+
+// ===============================================================
+
+| call_stack.instruction_pointer
+| TODO
+
+type: keyword
+
+
+
+| custom
+
+// ===============================================================
+
+| call_stack.memory_section.memory_address
+| TODO
+
+type: keyword
+
+
+
+| custom
+
+// ===============================================================
+
+| call_stack.memory_section.memory_size
+| TODO
+
+type: keyword
+
+
+
+| custom
+
+// ===============================================================
+
+| call_stack.memory_section.protection
+| TODO
+
+type: keyword
+
+
+
+| custom
+
+// ===============================================================
+
+| call_stack.module_path
+| TODO
+
+type: keyword
+
+
+
+| custom
+
+// ===============================================================
+
+| call_stack.rva
+| TODO
+
+type: keyword
+
+
+
+| custom
+
+// ===============================================================
+
+| call_stack.symbol_info
+| TODO
+
+type: keyword
+
+
+
+| custom
+
+// ===============================================================
+
+|=====
+
+==== Field Reuse
+
+The `call_stack` fields are expected to be nested at: `process.defense_evasions.call_stack`, `thread.call_stack`.
+
+Note also that the `call_stack` fields are not expected to be used directly at the top level.
 
 
 
@@ -3104,19 +3205,19 @@ type: keyword
 
 ==== Field Reuse
 
-The `malware_score` fields are expected to be nested at: `module_info.malware_score`, `process.malware_score`, `process.pe_info.malware_score`.
+The `malware_score` fields are expected to be nested at: `modules.malware_score`, `process.malware_score`, `process.pe_info.malware_score`.
 
 Note also that the `malware_score` fields are not expected to be used directly at the top level.
 
 
 
 
-[[ecs-module_info]]
-=== Module Info Fields
+[[ecs-modules]]
+=== Modules Fields
 
-These fields contain information about a module.
+These fields contain information about a list of modules.
 
-==== Module Info Field Details
+==== Modules Field Details
 
 [options="header"]
 |=====
@@ -3124,7 +3225,7 @@ These fields contain information about a module.
 
 // ===============================================================
 
-| module_info.architecture
+| modules.architecture
 | TODO
 
 type: keyword
@@ -3135,7 +3236,7 @@ type: keyword
 
 // ===============================================================
 
-| module_info.compile_time
+| modules.compile_time
 | TODO
 
 type: date
@@ -3146,7 +3247,7 @@ type: date
 
 // ===============================================================
 
-| module_info.hash.imphash
+| modules.hash.imphash
 | TODO
 
 type: keyword
@@ -3157,7 +3258,7 @@ type: keyword
 
 // ===============================================================
 
-| module_info.hash.md5
+| modules.hash.md5
 | TODO
 
 type: keyword
@@ -3168,7 +3269,7 @@ type: keyword
 
 // ===============================================================
 
-| module_info.hash.sha1
+| modules.hash.sha1
 | TODO
 
 type: keyword
@@ -3179,7 +3280,7 @@ type: keyword
 
 // ===============================================================
 
-| module_info.hash.sha256
+| modules.hash.sha256
 | TODO
 
 type: keyword
@@ -3190,7 +3291,7 @@ type: keyword
 
 // ===============================================================
 
-| module_info.mapped_address
+| modules.mapped_address
 | TODO
 
 type: keyword
@@ -3201,7 +3302,7 @@ type: keyword
 
 // ===============================================================
 
-| module_info.mapped_size
+| modules.mapped_size
 | TODO
 
 type: long
@@ -3212,7 +3313,7 @@ type: long
 
 // ===============================================================
 
-| module_info.path
+| modules.path
 | TODO
 
 type: keyword
@@ -3223,7 +3324,7 @@ type: keyword
 
 // ===============================================================
 
-| module_info.pe_exports
+| modules.pe_exports
 | TODO
 
 type: nested
@@ -3234,7 +3335,7 @@ type: nested
 
 // ===============================================================
 
-| module_info.pe_exports.name
+| modules.pe_exports.name
 | TODO
 
 type: keyword
@@ -3245,7 +3346,7 @@ type: keyword
 
 // ===============================================================
 
-| module_info.pe_exports.ordinal
+| modules.pe_exports.ordinal
 | TODO
 
 type: long
@@ -3256,7 +3357,7 @@ type: long
 
 // ===============================================================
 
-| module_info.pe_imports
+| modules.pe_imports
 | TODO
 
 type: nested
@@ -3267,7 +3368,7 @@ type: nested
 
 // ===============================================================
 
-| module_info.pe_imports.dll_name
+| modules.pe_imports.dll_name
 | TODO
 
 type: keyword
@@ -3278,7 +3379,7 @@ type: keyword
 
 // ===============================================================
 
-| module_info.pe_imports.import_names
+| modules.pe_imports.import_names
 | TODO
 
 type: keyword
@@ -3289,7 +3390,7 @@ type: keyword
 
 // ===============================================================
 
-| module_info.signature_signer
+| modules.signature_signer
 | TODO
 
 type: keyword
@@ -3300,7 +3401,7 @@ type: keyword
 
 // ===============================================================
 
-| module_info.signature_status
+| modules.signature_status
 | TODO
 
 type: keyword
@@ -3315,15 +3416,15 @@ type: keyword
 
 ==== Field Reuse
 
-The `module_info` fields are expected to be nested at: `process.module_info`.
+The `modules` fields are expected to be nested at: `process.modules`.
 
-Note also that the `module_info` fields are not expected to be used directly at the top level.
-
-
+Note also that the `modules` fields are not expected to be used directly at the top level.
 
 
-[[ecs-module_info-nestings]]
-===== Field sets that can be nested under Module Info
+
+
+[[ecs-modules-nestings]]
+===== Field sets that can be nested under Modules
 
 [options="header"]
 |=====
@@ -3332,13 +3433,13 @@ Note also that the `module_info` fields are not expected to be used directly at 
 // ===============================================================
 
 
-| <<ecs-authenticode,module_info.authenticode.*>>
+| <<ecs-authenticode,modules.authenticode.*>>
 | TODO
 
 // ===============================================================
 
 
-| <<ecs-malware_score,module_info.malware_score.*>>
+| <<ecs-malware_score,modules.malware_score.*>>
 | These fields contain the malware score.
 
 // ===============================================================
@@ -4082,17 +4183,6 @@ type: nested
 
 // ===============================================================
 
-| process.defense_evasions.call_stack
-| TODO
-
-type: nested
-
-
-
-| custom
-
-// ===============================================================
-
 | process.defense_evasions.delta_count
 | TODO
 
@@ -4376,7 +4466,7 @@ type: keyword
 
 // ===============================================================
 
-| process.is_sensor
+| process.is_endpoint
 | Is this the Elastic Endpoint process or not.
 
 type: boolean
@@ -6298,107 +6388,6 @@ example: `co.uk`
 
 |=====
 
-[[ecs-stack_frame]]
-=== Stack Frame Fields
-
-TODO
-
-==== Stack Frame Field Details
-
-[options="header"]
-|=====
-| Field  | Description | Level
-
-// ===============================================================
-
-| stack_frame.instruction_pointer
-| TODO
-
-type: keyword
-
-
-
-| custom
-
-// ===============================================================
-
-| stack_frame.memory_section.memory_address
-| TODO
-
-type: keyword
-
-
-
-| custom
-
-// ===============================================================
-
-| stack_frame.memory_section.memory_size
-| TODO
-
-type: keyword
-
-
-
-| custom
-
-// ===============================================================
-
-| stack_frame.memory_section.protection
-| TODO
-
-type: keyword
-
-
-
-| custom
-
-// ===============================================================
-
-| stack_frame.module_path
-| TODO
-
-type: keyword
-
-
-
-| custom
-
-// ===============================================================
-
-| stack_frame.rva
-| TODO
-
-type: keyword
-
-
-
-| custom
-
-// ===============================================================
-
-| stack_frame.symbol_info
-| TODO
-
-type: keyword
-
-
-
-| custom
-
-// ===============================================================
-
-|=====
-
-==== Field Reuse
-
-The `stack_frame` fields are expected to be nested at: `process.defense_evasions.call_stack.stack_frame`, `thread.call_stack.stack_frame`.
-
-Note also that the `stack_frame` fields are not expected to be used directly at the top level.
-
-
-
-
 [[ecs-target]]
 === Target Fields
 
@@ -6457,17 +6446,6 @@ These fields provide more context about the relevant thread related to the data 
 [options="header"]
 |=====
 | Field  | Description | Level
-
-// ===============================================================
-
-| thread.call_stack
-| TODO
-
-type: nested
-
-
-
-| custom
 
 // ===============================================================
 

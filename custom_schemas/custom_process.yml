@@ -21,7 +21,7 @@
       description: >
         Unique process id.
 
-    - name: is_sensor
+    - name: is_endpoint
       level: custom
       type: boolean
       description: >
@@ -198,12 +198,6 @@
     - name: thread.uptime
       level: custom
       type: long
-      description: >
-        TODO
-
-    - name: module_info
-      level: custom
-      type: nested
       description: >
         TODO
 
@@ -612,12 +606,6 @@
     - name: defense_evasions.instruction_pointer
       level: custom
       type: keyword
-      description: >
-        TODO
-
-    - name: defense_evasions.call_stack
-      level: custom
-      type: nested
       description: >
         TODO
 

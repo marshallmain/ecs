@@ -26,6 +26,8 @@ all fields are defined.
 
 | <<ecs-authenticode,Authenticode>> | TODO
 
+| <<ecs-call_stack,Call Stack>> | TODO
+
 | <<ecs-client,Client>> | Fields about the client side of a network connection, used with server.
 
 | <<ecs-cloud,Cloud>> | Fields about the cloud resource.
@@ -60,7 +62,7 @@ all fields are defined.
 
 | <<ecs-malware_score,Malware Score>> | These fields contain the malware score.
 
-| <<ecs-module_info,Module Info>> | These fields contain information about a module.
+| <<ecs-modules,Modules>> | These fields contain information about a list of modules.
 
 | <<ecs-network,Network>> | Fields describing the communication path over which the event happened.
 
@@ -85,8 +87,6 @@ all fields are defined.
 | <<ecs-service,Service>> | Fields describing the service for or from which the data was collected.
 
 | <<ecs-source,Source>> | Fields about the source side of a network connection, used with destination.
-
-| <<ecs-stack_frame,Stack Frame>> | TODO
 
 | <<ecs-target,Target>> | These fields contain information about a target.
 

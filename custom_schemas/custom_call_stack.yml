@@ -1,6 +1,6 @@
 ---
-- name: stack_frame
-  title: Stack Frame
+- name: call_stack
+  title: Call Stack
   group: 2
   short: TODO
   description: >
@@ -8,9 +8,10 @@
   reusable:
     top_level: false
     expected:
-      - thread.call_stack
-      - process.defense_evasions.call_stack
-  type: group
+      - thread
+      - process.defense_evasions
+  type: nested
+  level: custom
   fields:
     - name: module_path
       level: custom
