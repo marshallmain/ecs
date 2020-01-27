@@ -171,31 +171,31 @@
       description: >
         TODO
 
-    - name: thread
+    - name: threads
       level: custom
       type: nested
       description: >
         TODO
 
-    - name: thread.thread_id
+    - name: threads.id
       level: custom
       type: long
       description: >
         TODO
 
-    - name: thread.entrypoint
+    - name: threads.entrypoint
       level: custom
       type: keyword
       description: >
         TODO
 
-    - name: thread.start
+    - name: threads.start
       level: custom
       type: date
       description: >
         TODO
 
-    - name: thread.uptime
+    - name: threads.uptime
       level: custom
       type: long
       description: >
@@ -318,12 +318,6 @@
     - name: session_id
       level: custom
       type: long
-      description: >
-        TODO
-
-    - name: imphash
-      level: custom
-      type: keyword
       description: >
         TODO
 
@@ -615,4 +609,33 @@
       description: >
         TODO
 
-    
+    - name: user
+      level: custom
+      type: keyword
+      description: >
+        TODO
+
+    - name: file_hash.md5
+      level: custom
+      type: keyword
+      description: MD5 hash.
+
+    - name: file_hash.sha1
+      level: custom
+      type: keyword
+      description: SHA1 hash.
+
+    - name: file_hash.sha256
+      level: custom
+      type: keyword
+      description: SHA256 hash.
+
+    - name: file_hash.sha512
+      level: custom
+      type: keyword
+      description: SHA512 hash.
+
+    - name: file_hash.imphash
+      level: custom
+      type: keyword
+      description: Imphash.

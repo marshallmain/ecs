@@ -208,6 +208,15 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,file_classification,file_classification.macro_details.stream_data.raw_code_size,keyword,custom,,TODO
 1.5.0-dev,true,file_classification,file_classification.macro_details.stream_data.sha1,keyword,custom,,TODO
 1.5.0-dev,true,file_classification,file_classification.macro_details.stream_data.sha256,keyword,custom,,TODO
+1.5.0-dev,true,file_classification,file_classification.malware_classification.compressed_malware_features.data_buffer,keyword,custom,,TODO
+1.5.0-dev,true,file_classification,file_classification.malware_classification.compressed_malware_features.decompressed_size,integer,custom,,TODO
+1.5.0-dev,true,file_classification,file_classification.malware_classification.compressed_malware_features.encoding,keyword,custom,,TODO
+1.5.0-dev,true,file_classification,file_classification.malware_classification.identifier,keyword,custom,,TODO
+1.5.0-dev,true,file_classification,file_classification.malware_classification.prevention_threshold,double,custom,,TODO
+1.5.0-dev,true,file_classification,file_classification.malware_classification.score,double,custom,,TODO
+1.5.0-dev,true,file_classification,file_classification.malware_classification.threshold,double,custom,,TODO
+1.5.0-dev,true,file_classification,file_classification.malware_classification.upx_packed,boolean,custom,,TODO
+1.5.0-dev,true,file_classification,file_classification.malware_classification.version,keyword,custom,,TODO
 1.5.0-dev,true,file_classification,file_classification.quarantine_result.alert_correlation_id,keyword,custom,,TODO
 1.5.0-dev,true,file_classification,file_classification.quarantine_result.quarantine_path,keyword,custom,,TODO
 1.5.0-dev,true,file_classification,file_classification.signature_signer,keyword,custom,,TODO
@@ -294,15 +303,15 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,log,log.syslog.priority,long,extended,135,Syslog priority of the event.
 1.5.0-dev,true,log,log.syslog.severity.code,long,extended,3,Syslog numeric severity of the event.
 1.5.0-dev,true,log,log.syslog.severity.name,keyword,extended,Error,Syslog text-based severity of the event.
-1.5.0-dev,true,malware_score,malware_score.compressed_malware_features.data_buffer,keyword,custom,,TODO
-1.5.0-dev,true,malware_score,malware_score.compressed_malware_features.decompressed_size,integer,custom,,TODO
-1.5.0-dev,true,malware_score,malware_score.compressed_malware_features.encoding,keyword,custom,,TODO
-1.5.0-dev,true,malware_score,malware_score.identifier,keyword,custom,,TODO
-1.5.0-dev,true,malware_score,malware_score.prevention_threshold,double,custom,,TODO
-1.5.0-dev,true,malware_score,malware_score.score,double,custom,,TODO
-1.5.0-dev,true,malware_score,malware_score.threshold,double,custom,,TODO
-1.5.0-dev,true,malware_score,malware_score.upx_packed,boolean,custom,,TODO
-1.5.0-dev,true,malware_score,malware_score.version,keyword,custom,,TODO
+1.5.0-dev,true,malware_classification,malware_classification.compressed_malware_features.data_buffer,keyword,custom,,TODO
+1.5.0-dev,true,malware_classification,malware_classification.compressed_malware_features.decompressed_size,integer,custom,,TODO
+1.5.0-dev,true,malware_classification,malware_classification.compressed_malware_features.encoding,keyword,custom,,TODO
+1.5.0-dev,true,malware_classification,malware_classification.identifier,keyword,custom,,TODO
+1.5.0-dev,true,malware_classification,malware_classification.prevention_threshold,double,custom,,TODO
+1.5.0-dev,true,malware_classification,malware_classification.score,double,custom,,TODO
+1.5.0-dev,true,malware_classification,malware_classification.threshold,double,custom,,TODO
+1.5.0-dev,true,malware_classification,malware_classification.upx_packed,boolean,custom,,TODO
+1.5.0-dev,true,malware_classification,malware_classification.version,keyword,custom,,TODO
 1.5.0-dev,true,modules,modules.architecture,keyword,custom,,TODO
 1.5.0-dev,true,modules,modules.authenticode.cert_signer.issuer_name,keyword,custom,,TODO
 1.5.0-dev,true,modules,modules.authenticode.cert_signer.serial_number,keyword,custom,,TODO
@@ -320,15 +329,15 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,modules,modules.hash.md5,keyword,custom,,TODO
 1.5.0-dev,true,modules,modules.hash.sha1,keyword,custom,,TODO
 1.5.0-dev,true,modules,modules.hash.sha256,keyword,custom,,TODO
-1.5.0-dev,true,modules,modules.malware_score.compressed_malware_features.data_buffer,keyword,custom,,TODO
-1.5.0-dev,true,modules,modules.malware_score.compressed_malware_features.decompressed_size,integer,custom,,TODO
-1.5.0-dev,true,modules,modules.malware_score.compressed_malware_features.encoding,keyword,custom,,TODO
-1.5.0-dev,true,modules,modules.malware_score.identifier,keyword,custom,,TODO
-1.5.0-dev,true,modules,modules.malware_score.prevention_threshold,double,custom,,TODO
-1.5.0-dev,true,modules,modules.malware_score.score,double,custom,,TODO
-1.5.0-dev,true,modules,modules.malware_score.threshold,double,custom,,TODO
-1.5.0-dev,true,modules,modules.malware_score.upx_packed,boolean,custom,,TODO
-1.5.0-dev,true,modules,modules.malware_score.version,keyword,custom,,TODO
+1.5.0-dev,true,modules,modules.malware_classification.compressed_malware_features.data_buffer,keyword,custom,,TODO
+1.5.0-dev,true,modules,modules.malware_classification.compressed_malware_features.decompressed_size,integer,custom,,TODO
+1.5.0-dev,true,modules,modules.malware_classification.compressed_malware_features.encoding,keyword,custom,,TODO
+1.5.0-dev,true,modules,modules.malware_classification.identifier,keyword,custom,,TODO
+1.5.0-dev,true,modules,modules.malware_classification.prevention_threshold,double,custom,,TODO
+1.5.0-dev,true,modules,modules.malware_classification.score,double,custom,,TODO
+1.5.0-dev,true,modules,modules.malware_classification.threshold,double,custom,,TODO
+1.5.0-dev,true,modules,modules.malware_classification.upx_packed,boolean,custom,,TODO
+1.5.0-dev,true,modules,modules.malware_classification.version,keyword,custom,,TODO
 1.5.0-dev,true,modules,modules.mapped_address,keyword,custom,,TODO
 1.5.0-dev,true,modules,modules.mapped_size,long,custom,,TODO
 1.5.0-dev,true,modules,modules.path,keyword,custom,,TODO
@@ -444,6 +453,11 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,process,process.executable,keyword,extended,/usr/bin/ssh,Absolute path to the process executable.
 1.5.0-dev,true,process,process.executable.text,text,extended,/usr/bin/ssh,Absolute path to the process executable.
 1.5.0-dev,true,process,process.exit_code,long,extended,137,The exit code of the process.
+1.5.0-dev,true,process,process.file_hash.imphash,keyword,custom,,Imphash.
+1.5.0-dev,true,process,process.file_hash.md5,keyword,custom,,MD5 hash.
+1.5.0-dev,true,process,process.file_hash.sha1,keyword,custom,,SHA1 hash.
+1.5.0-dev,true,process,process.file_hash.sha256,keyword,custom,,SHA256 hash.
+1.5.0-dev,true,process,process.file_hash.sha512,keyword,custom,,SHA512 hash.
 1.5.0-dev,true,process,process.gid,long,custom,,TODO
 1.5.0-dev,true,process,process.group,keyword,custom,,TODO
 1.5.0-dev,true,process,process.handle,nested,custom,,TODO
@@ -457,17 +471,16 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,process,process.hash.sha256,keyword,extended,,SHA256 hash.
 1.5.0-dev,true,process,process.hash.sha512,keyword,extended,,SHA512 hash.
 1.5.0-dev,true,process,process.hash_matched_module,boolean,custom,,TODO
-1.5.0-dev,true,process,process.imphash,keyword,custom,,TODO
 1.5.0-dev,true,process,process.is_endpoint,boolean,custom,,Is this the Elastic Endpoint process or not.
-1.5.0-dev,true,process,process.malware_score.compressed_malware_features.data_buffer,keyword,custom,,TODO
-1.5.0-dev,true,process,process.malware_score.compressed_malware_features.decompressed_size,integer,custom,,TODO
-1.5.0-dev,true,process,process.malware_score.compressed_malware_features.encoding,keyword,custom,,TODO
-1.5.0-dev,true,process,process.malware_score.identifier,keyword,custom,,TODO
-1.5.0-dev,true,process,process.malware_score.prevention_threshold,double,custom,,TODO
-1.5.0-dev,true,process,process.malware_score.score,double,custom,,TODO
-1.5.0-dev,true,process,process.malware_score.threshold,double,custom,,TODO
-1.5.0-dev,true,process,process.malware_score.upx_packed,boolean,custom,,TODO
-1.5.0-dev,true,process,process.malware_score.version,keyword,custom,,TODO
+1.5.0-dev,true,process,process.malware_classification.compressed_malware_features.data_buffer,keyword,custom,,TODO
+1.5.0-dev,true,process,process.malware_classification.compressed_malware_features.decompressed_size,integer,custom,,TODO
+1.5.0-dev,true,process,process.malware_classification.compressed_malware_features.encoding,keyword,custom,,TODO
+1.5.0-dev,true,process,process.malware_classification.identifier,keyword,custom,,TODO
+1.5.0-dev,true,process,process.malware_classification.prevention_threshold,double,custom,,TODO
+1.5.0-dev,true,process,process.malware_classification.score,double,custom,,TODO
+1.5.0-dev,true,process,process.malware_classification.threshold,double,custom,,TODO
+1.5.0-dev,true,process,process.malware_classification.upx_packed,boolean,custom,,TODO
+1.5.0-dev,true,process,process.malware_classification.version,keyword,custom,,TODO
 1.5.0-dev,true,process,process.memory_percent,double,custom,,TODO
 1.5.0-dev,true,process,process.memory_region,nested,custom,,TODO
 1.5.0-dev,true,process,process.memory_region.allocation_base,keyword,custom,,TODO
@@ -506,15 +519,15 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,process,process.modules.hash.md5,keyword,custom,,TODO
 1.5.0-dev,true,process,process.modules.hash.sha1,keyword,custom,,TODO
 1.5.0-dev,true,process,process.modules.hash.sha256,keyword,custom,,TODO
-1.5.0-dev,true,process,process.modules.malware_score.compressed_malware_features.data_buffer,keyword,custom,,TODO
-1.5.0-dev,true,process,process.modules.malware_score.compressed_malware_features.decompressed_size,integer,custom,,TODO
-1.5.0-dev,true,process,process.modules.malware_score.compressed_malware_features.encoding,keyword,custom,,TODO
-1.5.0-dev,true,process,process.modules.malware_score.identifier,keyword,custom,,TODO
-1.5.0-dev,true,process,process.modules.malware_score.prevention_threshold,double,custom,,TODO
-1.5.0-dev,true,process,process.modules.malware_score.score,double,custom,,TODO
-1.5.0-dev,true,process,process.modules.malware_score.threshold,double,custom,,TODO
-1.5.0-dev,true,process,process.modules.malware_score.upx_packed,boolean,custom,,TODO
-1.5.0-dev,true,process,process.modules.malware_score.version,keyword,custom,,TODO
+1.5.0-dev,true,process,process.modules.malware_classification.compressed_malware_features.data_buffer,keyword,custom,,TODO
+1.5.0-dev,true,process,process.modules.malware_classification.compressed_malware_features.decompressed_size,integer,custom,,TODO
+1.5.0-dev,true,process,process.modules.malware_classification.compressed_malware_features.encoding,keyword,custom,,TODO
+1.5.0-dev,true,process,process.modules.malware_classification.identifier,keyword,custom,,TODO
+1.5.0-dev,true,process,process.modules.malware_classification.prevention_threshold,double,custom,,TODO
+1.5.0-dev,true,process,process.modules.malware_classification.score,double,custom,,TODO
+1.5.0-dev,true,process,process.modules.malware_classification.threshold,double,custom,,TODO
+1.5.0-dev,true,process,process.modules.malware_classification.upx_packed,boolean,custom,,TODO
+1.5.0-dev,true,process,process.modules.malware_classification.version,keyword,custom,,TODO
 1.5.0-dev,true,process,process.modules.mapped_address,keyword,custom,,TODO
 1.5.0-dev,true,process,process.modules.mapped_size,long,custom,,TODO
 1.5.0-dev,true,process,process.modules.path,keyword,custom,,TODO
@@ -564,15 +577,15 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,process,process.pe_info.compile_time,long,custom,,TODO
 1.5.0-dev,true,process,process.pe_info.entry_point_address,long,custom,,TODO
 1.5.0-dev,true,process,process.pe_info.is_dll,boolean,custom,,TODO
-1.5.0-dev,true,process,process.pe_info.malware_score.compressed_malware_features.data_buffer,keyword,custom,,TODO
-1.5.0-dev,true,process,process.pe_info.malware_score.compressed_malware_features.decompressed_size,integer,custom,,TODO
-1.5.0-dev,true,process,process.pe_info.malware_score.compressed_malware_features.encoding,keyword,custom,,TODO
-1.5.0-dev,true,process,process.pe_info.malware_score.identifier,keyword,custom,,TODO
-1.5.0-dev,true,process,process.pe_info.malware_score.prevention_threshold,double,custom,,TODO
-1.5.0-dev,true,process,process.pe_info.malware_score.score,double,custom,,TODO
-1.5.0-dev,true,process,process.pe_info.malware_score.threshold,double,custom,,TODO
-1.5.0-dev,true,process,process.pe_info.malware_score.upx_packed,boolean,custom,,TODO
-1.5.0-dev,true,process,process.pe_info.malware_score.version,keyword,custom,,TODO
+1.5.0-dev,true,process,process.pe_info.malware_classification.compressed_malware_features.data_buffer,keyword,custom,,TODO
+1.5.0-dev,true,process,process.pe_info.malware_classification.compressed_malware_features.decompressed_size,integer,custom,,TODO
+1.5.0-dev,true,process,process.pe_info.malware_classification.compressed_malware_features.encoding,keyword,custom,,TODO
+1.5.0-dev,true,process,process.pe_info.malware_classification.identifier,keyword,custom,,TODO
+1.5.0-dev,true,process,process.pe_info.malware_classification.prevention_threshold,double,custom,,TODO
+1.5.0-dev,true,process,process.pe_info.malware_classification.score,double,custom,,TODO
+1.5.0-dev,true,process,process.pe_info.malware_classification.threshold,double,custom,,TODO
+1.5.0-dev,true,process,process.pe_info.malware_classification.upx_packed,boolean,custom,,TODO
+1.5.0-dev,true,process,process.pe_info.malware_classification.version,keyword,custom,,TODO
 1.5.0-dev,true,process,process.pe_info.pe_exports,nested,custom,,TODO
 1.5.0-dev,true,process,process.pe_info.pe_exports.name,keyword,custom,,TODO
 1.5.0-dev,true,process,process.pe_info.pe_exports.ordinal,long,custom,,TODO
@@ -610,13 +623,13 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,process,process.signature_signer,keyword,custom,,TODO
 1.5.0-dev,true,process,process.signature_status,keyword,custom,,TODO
 1.5.0-dev,true,process,process.start,date,extended,2016-05-23T08:05:34.853Z,The time the process started.
-1.5.0-dev,true,process,process.thread,nested,custom,,TODO
-1.5.0-dev,true,process,process.thread.entrypoint,keyword,custom,,TODO
 1.5.0-dev,true,process,process.thread.id,long,extended,4242,Thread ID.
 1.5.0-dev,true,process,process.thread.name,keyword,extended,thread-0,Thread name.
-1.5.0-dev,true,process,process.thread.start,date,custom,,TODO
-1.5.0-dev,true,process,process.thread.thread_id,long,custom,,TODO
-1.5.0-dev,true,process,process.thread.uptime,long,custom,,TODO
+1.5.0-dev,true,process,process.threads,nested,custom,,TODO
+1.5.0-dev,true,process,process.threads.entrypoint,keyword,custom,,TODO
+1.5.0-dev,true,process,process.threads.id,long,custom,,TODO
+1.5.0-dev,true,process,process.threads.start,date,custom,,TODO
+1.5.0-dev,true,process,process.threads.uptime,long,custom,,TODO
 1.5.0-dev,true,process,process.title,keyword,extended,,Process title.
 1.5.0-dev,true,process,process.title.text,text,extended,,Process title.
 1.5.0-dev,true,process,process.token.domain,keyword,extended,,TODO
@@ -640,6 +653,7 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,process,process.unique_pid,keyword,custom,,Unique process id.
 1.5.0-dev,true,process,process.unique_ppid,keyword,custom,,Unique parent process id.
 1.5.0-dev,true,process,process.uptime,long,extended,1325,Seconds the process has been up.
+1.5.0-dev,true,process,process.user,keyword,custom,,TODO
 1.5.0-dev,true,process,process.virt_memory_bytes,keyword,custom,,TODO
 1.5.0-dev,true,process,process.working_directory,keyword,extended,/home/alice,The working directory of the process.
 1.5.0-dev,true,process,process.working_directory.text,text,extended,/home/alice,The working directory of the process.
@@ -778,6 +792,11 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,target,target.process.executable,keyword,extended,/usr/bin/ssh,Absolute path to the process executable.
 1.5.0-dev,true,target,target.process.executable.text,text,extended,/usr/bin/ssh,Absolute path to the process executable.
 1.5.0-dev,true,target,target.process.exit_code,long,extended,137,The exit code of the process.
+1.5.0-dev,true,target,target.process.file_hash.imphash,keyword,custom,,Imphash.
+1.5.0-dev,true,target,target.process.file_hash.md5,keyword,custom,,MD5 hash.
+1.5.0-dev,true,target,target.process.file_hash.sha1,keyword,custom,,SHA1 hash.
+1.5.0-dev,true,target,target.process.file_hash.sha256,keyword,custom,,SHA256 hash.
+1.5.0-dev,true,target,target.process.file_hash.sha512,keyword,custom,,SHA512 hash.
 1.5.0-dev,true,target,target.process.gid,long,custom,,TODO
 1.5.0-dev,true,target,target.process.group,keyword,custom,,TODO
 1.5.0-dev,true,target,target.process.handle,nested,custom,,TODO
@@ -791,17 +810,16 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,target,target.process.hash.sha256,keyword,extended,,SHA256 hash.
 1.5.0-dev,true,target,target.process.hash.sha512,keyword,extended,,SHA512 hash.
 1.5.0-dev,true,target,target.process.hash_matched_module,boolean,custom,,TODO
-1.5.0-dev,true,target,target.process.imphash,keyword,custom,,TODO
 1.5.0-dev,true,target,target.process.is_endpoint,boolean,custom,,Is this the Elastic Endpoint process or not.
-1.5.0-dev,true,target,target.process.malware_score.compressed_malware_features.data_buffer,keyword,custom,,TODO
-1.5.0-dev,true,target,target.process.malware_score.compressed_malware_features.decompressed_size,integer,custom,,TODO
-1.5.0-dev,true,target,target.process.malware_score.compressed_malware_features.encoding,keyword,custom,,TODO
-1.5.0-dev,true,target,target.process.malware_score.identifier,keyword,custom,,TODO
-1.5.0-dev,true,target,target.process.malware_score.prevention_threshold,double,custom,,TODO
-1.5.0-dev,true,target,target.process.malware_score.score,double,custom,,TODO
-1.5.0-dev,true,target,target.process.malware_score.threshold,double,custom,,TODO
-1.5.0-dev,true,target,target.process.malware_score.upx_packed,boolean,custom,,TODO
-1.5.0-dev,true,target,target.process.malware_score.version,keyword,custom,,TODO
+1.5.0-dev,true,target,target.process.malware_classification.compressed_malware_features.data_buffer,keyword,custom,,TODO
+1.5.0-dev,true,target,target.process.malware_classification.compressed_malware_features.decompressed_size,integer,custom,,TODO
+1.5.0-dev,true,target,target.process.malware_classification.compressed_malware_features.encoding,keyword,custom,,TODO
+1.5.0-dev,true,target,target.process.malware_classification.identifier,keyword,custom,,TODO
+1.5.0-dev,true,target,target.process.malware_classification.prevention_threshold,double,custom,,TODO
+1.5.0-dev,true,target,target.process.malware_classification.score,double,custom,,TODO
+1.5.0-dev,true,target,target.process.malware_classification.threshold,double,custom,,TODO
+1.5.0-dev,true,target,target.process.malware_classification.upx_packed,boolean,custom,,TODO
+1.5.0-dev,true,target,target.process.malware_classification.version,keyword,custom,,TODO
 1.5.0-dev,true,target,target.process.memory_percent,double,custom,,TODO
 1.5.0-dev,true,target,target.process.memory_region,nested,custom,,TODO
 1.5.0-dev,true,target,target.process.memory_region.allocation_base,keyword,custom,,TODO
@@ -840,15 +858,15 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,target,target.process.modules.hash.md5,keyword,custom,,TODO
 1.5.0-dev,true,target,target.process.modules.hash.sha1,keyword,custom,,TODO
 1.5.0-dev,true,target,target.process.modules.hash.sha256,keyword,custom,,TODO
-1.5.0-dev,true,target,target.process.modules.malware_score.compressed_malware_features.data_buffer,keyword,custom,,TODO
-1.5.0-dev,true,target,target.process.modules.malware_score.compressed_malware_features.decompressed_size,integer,custom,,TODO
-1.5.0-dev,true,target,target.process.modules.malware_score.compressed_malware_features.encoding,keyword,custom,,TODO
-1.5.0-dev,true,target,target.process.modules.malware_score.identifier,keyword,custom,,TODO
-1.5.0-dev,true,target,target.process.modules.malware_score.prevention_threshold,double,custom,,TODO
-1.5.0-dev,true,target,target.process.modules.malware_score.score,double,custom,,TODO
-1.5.0-dev,true,target,target.process.modules.malware_score.threshold,double,custom,,TODO
-1.5.0-dev,true,target,target.process.modules.malware_score.upx_packed,boolean,custom,,TODO
-1.5.0-dev,true,target,target.process.modules.malware_score.version,keyword,custom,,TODO
+1.5.0-dev,true,target,target.process.modules.malware_classification.compressed_malware_features.data_buffer,keyword,custom,,TODO
+1.5.0-dev,true,target,target.process.modules.malware_classification.compressed_malware_features.decompressed_size,integer,custom,,TODO
+1.5.0-dev,true,target,target.process.modules.malware_classification.compressed_malware_features.encoding,keyword,custom,,TODO
+1.5.0-dev,true,target,target.process.modules.malware_classification.identifier,keyword,custom,,TODO
+1.5.0-dev,true,target,target.process.modules.malware_classification.prevention_threshold,double,custom,,TODO
+1.5.0-dev,true,target,target.process.modules.malware_classification.score,double,custom,,TODO
+1.5.0-dev,true,target,target.process.modules.malware_classification.threshold,double,custom,,TODO
+1.5.0-dev,true,target,target.process.modules.malware_classification.upx_packed,boolean,custom,,TODO
+1.5.0-dev,true,target,target.process.modules.malware_classification.version,keyword,custom,,TODO
 1.5.0-dev,true,target,target.process.modules.mapped_address,keyword,custom,,TODO
 1.5.0-dev,true,target,target.process.modules.mapped_size,long,custom,,TODO
 1.5.0-dev,true,target,target.process.modules.path,keyword,custom,,TODO
@@ -898,15 +916,15 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,target,target.process.pe_info.compile_time,long,custom,,TODO
 1.5.0-dev,true,target,target.process.pe_info.entry_point_address,long,custom,,TODO
 1.5.0-dev,true,target,target.process.pe_info.is_dll,boolean,custom,,TODO
-1.5.0-dev,true,target,target.process.pe_info.malware_score.compressed_malware_features.data_buffer,keyword,custom,,TODO
-1.5.0-dev,true,target,target.process.pe_info.malware_score.compressed_malware_features.decompressed_size,integer,custom,,TODO
-1.5.0-dev,true,target,target.process.pe_info.malware_score.compressed_malware_features.encoding,keyword,custom,,TODO
-1.5.0-dev,true,target,target.process.pe_info.malware_score.identifier,keyword,custom,,TODO
-1.5.0-dev,true,target,target.process.pe_info.malware_score.prevention_threshold,double,custom,,TODO
-1.5.0-dev,true,target,target.process.pe_info.malware_score.score,double,custom,,TODO
-1.5.0-dev,true,target,target.process.pe_info.malware_score.threshold,double,custom,,TODO
-1.5.0-dev,true,target,target.process.pe_info.malware_score.upx_packed,boolean,custom,,TODO
-1.5.0-dev,true,target,target.process.pe_info.malware_score.version,keyword,custom,,TODO
+1.5.0-dev,true,target,target.process.pe_info.malware_classification.compressed_malware_features.data_buffer,keyword,custom,,TODO
+1.5.0-dev,true,target,target.process.pe_info.malware_classification.compressed_malware_features.decompressed_size,integer,custom,,TODO
+1.5.0-dev,true,target,target.process.pe_info.malware_classification.compressed_malware_features.encoding,keyword,custom,,TODO
+1.5.0-dev,true,target,target.process.pe_info.malware_classification.identifier,keyword,custom,,TODO
+1.5.0-dev,true,target,target.process.pe_info.malware_classification.prevention_threshold,double,custom,,TODO
+1.5.0-dev,true,target,target.process.pe_info.malware_classification.score,double,custom,,TODO
+1.5.0-dev,true,target,target.process.pe_info.malware_classification.threshold,double,custom,,TODO
+1.5.0-dev,true,target,target.process.pe_info.malware_classification.upx_packed,boolean,custom,,TODO
+1.5.0-dev,true,target,target.process.pe_info.malware_classification.version,keyword,custom,,TODO
 1.5.0-dev,true,target,target.process.pe_info.pe_exports,nested,custom,,TODO
 1.5.0-dev,true,target,target.process.pe_info.pe_exports.name,keyword,custom,,TODO
 1.5.0-dev,true,target,target.process.pe_info.pe_exports.ordinal,long,custom,,TODO
@@ -944,13 +962,13 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,target,target.process.signature_signer,keyword,custom,,TODO
 1.5.0-dev,true,target,target.process.signature_status,keyword,custom,,TODO
 1.5.0-dev,true,target,target.process.start,date,extended,2016-05-23T08:05:34.853Z,The time the process started.
-1.5.0-dev,true,target,target.process.thread,nested,custom,,TODO
-1.5.0-dev,true,target,target.process.thread.entrypoint,keyword,custom,,TODO
 1.5.0-dev,true,target,target.process.thread.id,long,extended,4242,Thread ID.
 1.5.0-dev,true,target,target.process.thread.name,keyword,extended,thread-0,Thread name.
-1.5.0-dev,true,target,target.process.thread.start,date,custom,,TODO
-1.5.0-dev,true,target,target.process.thread.thread_id,long,custom,,TODO
-1.5.0-dev,true,target,target.process.thread.uptime,long,custom,,TODO
+1.5.0-dev,true,target,target.process.threads,nested,custom,,TODO
+1.5.0-dev,true,target,target.process.threads.entrypoint,keyword,custom,,TODO
+1.5.0-dev,true,target,target.process.threads.id,long,custom,,TODO
+1.5.0-dev,true,target,target.process.threads.start,date,custom,,TODO
+1.5.0-dev,true,target,target.process.threads.uptime,long,custom,,TODO
 1.5.0-dev,true,target,target.process.title,keyword,extended,,Process title.
 1.5.0-dev,true,target,target.process.title.text,text,extended,,Process title.
 1.5.0-dev,true,target,target.process.token.domain,keyword,extended,,TODO
@@ -974,6 +992,7 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Example,Description
 1.5.0-dev,true,target,target.process.unique_pid,keyword,custom,,Unique process id.
 1.5.0-dev,true,target,target.process.unique_ppid,keyword,custom,,Unique parent process id.
 1.5.0-dev,true,target,target.process.uptime,long,extended,1325,Seconds the process has been up.
+1.5.0-dev,true,target,target.process.user,keyword,custom,,TODO
 1.5.0-dev,true,target,target.process.virt_memory_bytes,keyword,custom,,TODO
 1.5.0-dev,true,target,target.process.working_directory,keyword,extended,/home/alice,The working directory of the process.
 1.5.0-dev,true,target,target.process.working_directory.text,text,extended,/home/alice,The working directory of the process.

@@ -977,6 +977,45 @@
                 }
               }
             },
+            "malware_classification": {
+              "properties": {
+                "compressed_malware_features": {
+                  "properties": {
+                    "data_buffer": {
+                      "ignore_above": 1024,
+                      "type": "keyword"
+                    },
+                    "decompressed_size": {
+                      "type": "integer"
+                    },
+                    "encoding": {
+                      "ignore_above": 1024,
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "identifier": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "prevention_threshold": {
+                  "type": "double"
+                },
+                "score": {
+                  "type": "double"
+                },
+                "threshold": {
+                  "type": "double"
+                },
+                "upx_packed": {
+                  "type": "boolean"
+                },
+                "version": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                }
+              }
+            },
             "quarantine_result": {
               "properties": {
                 "alert_correlation_id": {
@@ -1404,7 +1443,7 @@
             }
           }
         },
-        "malware_score": {
+        "malware_classification": {
           "properties": {
             "compressed_malware_features": {
               "properties": {
@@ -1532,7 +1571,7 @@
                 }
               }
             },
-            "malware_score": {
+            "malware_classification": {
               "properties": {
                 "compressed_malware_features": {
                   "properties": {
@@ -2090,6 +2129,30 @@
             "exit_code": {
               "type": "long"
             },
+            "file_hash": {
+              "properties": {
+                "imphash": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "md5": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "sha1": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "sha256": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "sha512": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                }
+              }
+            },
             "gid": {
               "type": "long"
             },
@@ -2143,14 +2206,10 @@
             "hash_matched_module": {
               "type": "boolean"
             },
-            "imphash": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
             "is_endpoint": {
               "type": "boolean"
             },
-            "malware_score": {
+            "malware_classification": {
               "properties": {
                 "compressed_malware_features": {
                   "properties": {
@@ -2354,7 +2413,7 @@
                     }
                   }
                 },
-                "malware_score": {
+                "malware_classification": {
                   "properties": {
                     "compressed_malware_features": {
                       "properties": {
@@ -2614,7 +2673,7 @@
                 "is_dll": {
                   "type": "boolean"
                 },
-                "malware_score": {
+                "malware_classification": {
                   "properties": {
                     "compressed_malware_features": {
                       "properties": {
@@ -2802,6 +2861,17 @@
             },
             "thread": {
               "properties": {
+                "id": {
+                  "type": "long"
+                },
+                "name": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                }
+              }
+            },
+            "threads": {
+              "properties": {
                 "entrypoint": {
                   "ignore_above": 1024,
                   "type": "keyword"
@@ -2809,15 +2879,8 @@
                 "id": {
                   "type": "long"
                 },
-                "name": {
-                  "ignore_above": 1024,
-                  "type": "keyword"
-                },
                 "start": {
                   "type": "date"
-                },
-                "thread_id": {
-                  "type": "long"
                 },
                 "uptime": {
                   "type": "long"
@@ -2916,6 +2979,10 @@
             },
             "uptime": {
               "type": "long"
+            },
+            "user": {
+              "ignore_above": 1024,
+              "type": "keyword"
             },
             "virt_memory_bytes": {
               "ignore_above": 1024,
@@ -3579,6 +3646,30 @@
                 "exit_code": {
                   "type": "long"
                 },
+                "file_hash": {
+                  "properties": {
+                    "imphash": {
+                      "ignore_above": 1024,
+                      "type": "keyword"
+                    },
+                    "md5": {
+                      "ignore_above": 1024,
+                      "type": "keyword"
+                    },
+                    "sha1": {
+                      "ignore_above": 1024,
+                      "type": "keyword"
+                    },
+                    "sha256": {
+                      "ignore_above": 1024,
+                      "type": "keyword"
+                    },
+                    "sha512": {
+                      "ignore_above": 1024,
+                      "type": "keyword"
+                    }
+                  }
+                },
                 "gid": {
                   "type": "long"
                 },
@@ -3632,14 +3723,10 @@
                 "hash_matched_module": {
                   "type": "boolean"
                 },
-                "imphash": {
-                  "ignore_above": 1024,
-                  "type": "keyword"
-                },
                 "is_endpoint": {
                   "type": "boolean"
                 },
-                "malware_score": {
+                "malware_classification": {
                   "properties": {
                     "compressed_malware_features": {
                       "properties": {
@@ -3843,7 +3930,7 @@
                         }
                       }
                     },
-                    "malware_score": {
+                    "malware_classification": {
                       "properties": {
                         "compressed_malware_features": {
                           "properties": {
@@ -4103,7 +4190,7 @@
                     "is_dll": {
                       "type": "boolean"
                     },
-                    "malware_score": {
+                    "malware_classification": {
                       "properties": {
                         "compressed_malware_features": {
                           "properties": {
@@ -4291,6 +4378,17 @@
                 },
                 "thread": {
                   "properties": {
+                    "id": {
+                      "type": "long"
+                    },
+                    "name": {
+                      "ignore_above": 1024,
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "threads": {
+                  "properties": {
                     "entrypoint": {
                       "ignore_above": 1024,
                       "type": "keyword"
@@ -4298,15 +4396,8 @@
                     "id": {
                       "type": "long"
                     },
-                    "name": {
-                      "ignore_above": 1024,
-                      "type": "keyword"
-                    },
                     "start": {
                       "type": "date"
-                    },
-                    "thread_id": {
-                      "type": "long"
                     },
                     "uptime": {
                       "type": "long"
@@ -4405,6 +4496,10 @@
                 },
                 "uptime": {
                   "type": "long"
+                },
+                "user": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
                 },
                 "virt_memory_bytes": {
                   "ignore_above": 1024,

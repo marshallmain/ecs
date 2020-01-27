@@ -2362,6 +2362,29 @@ type: keyword
 
 |=====
 
+==== Field Reuse
+
+
+
+
+[[ecs-file_classification-nestings]]
+===== Field sets that can be nested under File Classification
+
+[options="header"]
+|=====
+| Nested fields | Description
+
+// ===============================================================
+
+
+| <<ecs-malware_classification,file_classification.malware_classification.*>>
+| These fields contain the malware classification.
+
+// ===============================================================
+
+
+|=====
+
 [[ecs-geo]]
 === Geo Fields
 
@@ -3089,12 +3112,12 @@ example: `Error`
 
 |=====
 
-[[ecs-malware_score]]
-=== Malware Score Fields
+[[ecs-malware_classification]]
+=== Malware Classification Fields
 
-These fields contain the malware score.
+These fields contain the malware classification.
 
-==== Malware Score Field Details
+==== Malware Classification Field Details
 
 [options="header"]
 |=====
@@ -3102,7 +3125,7 @@ These fields contain the malware score.
 
 // ===============================================================
 
-| malware_score.compressed_malware_features.data_buffer
+| malware_classification.compressed_malware_features.data_buffer
 | TODO
 
 type: keyword
@@ -3113,7 +3136,7 @@ type: keyword
 
 // ===============================================================
 
-| malware_score.compressed_malware_features.decompressed_size
+| malware_classification.compressed_malware_features.decompressed_size
 | TODO
 
 type: integer
@@ -3124,7 +3147,7 @@ type: integer
 
 // ===============================================================
 
-| malware_score.compressed_malware_features.encoding
+| malware_classification.compressed_malware_features.encoding
 | TODO
 
 type: keyword
@@ -3135,7 +3158,7 @@ type: keyword
 
 // ===============================================================
 
-| malware_score.identifier
+| malware_classification.identifier
 | TODO
 
 type: keyword
@@ -3146,7 +3169,7 @@ type: keyword
 
 // ===============================================================
 
-| malware_score.prevention_threshold
+| malware_classification.prevention_threshold
 | TODO
 
 type: double
@@ -3157,7 +3180,7 @@ type: double
 
 // ===============================================================
 
-| malware_score.score
+| malware_classification.score
 | TODO
 
 type: double
@@ -3168,7 +3191,7 @@ type: double
 
 // ===============================================================
 
-| malware_score.threshold
+| malware_classification.threshold
 | TODO
 
 type: double
@@ -3179,7 +3202,7 @@ type: double
 
 // ===============================================================
 
-| malware_score.upx_packed
+| malware_classification.upx_packed
 | TODO
 
 type: boolean
@@ -3190,7 +3213,7 @@ type: boolean
 
 // ===============================================================
 
-| malware_score.version
+| malware_classification.version
 | TODO
 
 type: keyword
@@ -3205,9 +3228,9 @@ type: keyword
 
 ==== Field Reuse
 
-The `malware_score` fields are expected to be nested at: `modules.malware_score`, `process.malware_score`, `process.pe_info.malware_score`.
+The `malware_classification` fields are expected to be nested at: `file_classification.malware_classification`, `modules.malware_classification`, `process.malware_classification`, `process.pe_info.malware_classification`.
 
-Note also that the `malware_score` fields are not expected to be used directly at the top level.
+Note also that the `malware_classification` fields are not expected to be used directly at the top level.
 
 
 
@@ -3439,8 +3462,8 @@ Note also that the `modules` fields are not expected to be used directly at the 
 // ===============================================================
 
 
-| <<ecs-malware_score,modules.malware_score.*>>
-| These fields contain the malware score.
+| <<ecs-malware_classification,modules.malware_classification.*>>
+| These fields contain the malware classification.
 
 // ===============================================================
 
@@ -4367,6 +4390,61 @@ example: `137`
 
 // ===============================================================
 
+| process.file_hash.imphash
+| Imphash.
+
+type: keyword
+
+
+
+| custom
+
+// ===============================================================
+
+| process.file_hash.md5
+| MD5 hash.
+
+type: keyword
+
+
+
+| custom
+
+// ===============================================================
+
+| process.file_hash.sha1
+| SHA1 hash.
+
+type: keyword
+
+
+
+| custom
+
+// ===============================================================
+
+| process.file_hash.sha256
+| SHA256 hash.
+
+type: keyword
+
+
+
+| custom
+
+// ===============================================================
+
+| process.file_hash.sha512
+| SHA512 hash.
+
+type: keyword
+
+
+
+| custom
+
+// ===============================================================
+
 | process.gid
 | TODO
 
@@ -4448,17 +4526,6 @@ type: boolean
 | TODO
 
 type: boolean
-
-
-
-| custom
-
-// ===============================================================
-
-| process.imphash
-| TODO
-
-type: keyword
 
 
 
@@ -5385,28 +5452,6 @@ example: `2016-05-23T08:05:34.853Z`
 
 // ===============================================================
 
-| process.thread
-| TODO
-
-type: nested
-
-
-
-| custom
-
-// ===============================================================
-
-| process.thread.entrypoint
-| TODO
-
-type: keyword
-
-
-
-| custom
-
-// ===============================================================
-
 | process.thread.id
 | Thread ID.
 
@@ -5429,10 +5474,10 @@ example: `thread-0`
 
 // ===============================================================
 
-| process.thread.start
+| process.threads
 | TODO
 
-type: date
+type: nested
 
 
 
@@ -5440,7 +5485,18 @@ type: date
 
 // ===============================================================
 
-| process.thread.thread_id
+| process.threads.entrypoint
+| TODO
+
+type: keyword
+
+
+
+| custom
+
+// ===============================================================
+
+| process.threads.id
 | TODO
 
 type: long
@@ -5451,7 +5507,18 @@ type: long
 
 // ===============================================================
 
-| process.thread.uptime
+| process.threads.start
+| TODO
+
+type: date
+
+
+
+| custom
+
+// ===============================================================
+
+| process.threads.uptime
 | TODO
 
 type: long
@@ -5577,6 +5644,17 @@ type: long
 example: `1325`
 
 | extended
+
+// ===============================================================
+
+| process.user
+| TODO
+
+type: keyword
+
+
+
+| custom
 
 // ===============================================================
 

@@ -60,7 +60,7 @@ all fields are defined.
 
 | <<ecs-log,Log>> | Details about the event's logging mechanism.
 
-| <<ecs-malware_score,Malware Score>> | These fields contain the malware score.
+| <<ecs-malware_classification,Malware Classification>> | These fields contain the malware classification.
 
 | <<ecs-modules,Modules>> | These fields contain information about a list of modules.
 

@@ -6,7 +6,7 @@
   description: >
     TODO
   reusable:
-    top_level: false
+    top_level: true
     expected:
       - target
   type: group

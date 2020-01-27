@@ -1607,6 +1607,55 @@
       ignore_above: 1024
       description: TODO
       default_field: false
+    - name: malware_classification.compressed_malware_features.data_buffer
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: TODO
+      default_field: false
+    - name: malware_classification.compressed_malware_features.decompressed_size
+      level: custom
+      type: integer
+      description: TODO
+      default_field: false
+    - name: malware_classification.compressed_malware_features.encoding
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: TODO
+      default_field: false
+    - name: malware_classification.identifier
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: TODO
+      default_field: false
+    - name: malware_classification.prevention_threshold
+      level: custom
+      type: double
+      description: TODO
+      default_field: false
+    - name: malware_classification.score
+      level: custom
+      type: double
+      description: TODO
+      default_field: false
+    - name: malware_classification.threshold
+      level: custom
+      type: double
+      description: TODO
+      default_field: false
+    - name: malware_classification.upx_packed
+      level: custom
+      type: boolean
+      description: TODO
+      default_field: false
+    - name: malware_classification.version
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: TODO
+      default_field: false
     - name: quarantine_result.alert_correlation_id
       level: custom
       type: keyword
@@ -2224,10 +2273,10 @@
         If the event source does not specify a distinct severity, you can optionally
         copy the Syslog severity to `log.level`.'
       example: Error
-  - name: malware_score
-    title: Malware Score
+  - name: malware_classification
+    title: Malware Classification
     group: 2
-    description: These fields contain the malware score.
+    description: These fields contain the malware classification.
     type: group
     fields:
     - name: compressed_malware_features.data_buffer
@@ -2386,50 +2435,50 @@
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: malware_score.compressed_malware_features.data_buffer
+    - name: malware_classification.compressed_malware_features.data_buffer
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: malware_score.compressed_malware_features.decompressed_size
+    - name: malware_classification.compressed_malware_features.decompressed_size
       level: custom
       type: integer
       description: TODO
       default_field: false
-    - name: malware_score.compressed_malware_features.encoding
+    - name: malware_classification.compressed_malware_features.encoding
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: malware_score.identifier
+    - name: malware_classification.identifier
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: malware_score.prevention_threshold
+    - name: malware_classification.prevention_threshold
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: malware_score.score
+    - name: malware_classification.score
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: malware_score.threshold
+    - name: malware_classification.threshold
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: malware_score.upx_packed
+    - name: malware_classification.upx_packed
       level: custom
       type: boolean
       description: TODO
       default_field: false
-    - name: malware_score.version
+    - name: malware_classification.version
       level: custom
       type: keyword
       ignore_above: 1024
@@ -3237,6 +3286,36 @@
         start).'
       example: 137
       default_field: false
+    - name: file_hash.imphash
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: Imphash.
+      default_field: false
+    - name: file_hash.md5
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: MD5 hash.
+      default_field: false
+    - name: file_hash.sha1
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: SHA1 hash.
+      default_field: false
+    - name: file_hash.sha256
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: SHA256 hash.
+      default_field: false
+    - name: file_hash.sha512
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: SHA512 hash.
+      default_field: false
     - name: gid
       level: custom
       type: long
@@ -3306,61 +3385,55 @@
       type: boolean
       description: TODO
       default_field: false
-    - name: imphash
-      level: custom
-      type: keyword
-      ignore_above: 1024
-      description: TODO
-      default_field: false
     - name: is_endpoint
       level: custom
       type: boolean
       description: Is this the Elastic Endpoint process or not.
       default_field: false
-    - name: malware_score.compressed_malware_features.data_buffer
+    - name: malware_classification.compressed_malware_features.data_buffer
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: malware_score.compressed_malware_features.decompressed_size
+    - name: malware_classification.compressed_malware_features.decompressed_size
       level: custom
       type: integer
       description: TODO
       default_field: false
-    - name: malware_score.compressed_malware_features.encoding
+    - name: malware_classification.compressed_malware_features.encoding
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: malware_score.identifier
+    - name: malware_classification.identifier
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: malware_score.prevention_threshold
+    - name: malware_classification.prevention_threshold
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: malware_score.score
+    - name: malware_classification.score
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: malware_score.threshold
+    - name: malware_classification.threshold
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: malware_score.upx_packed
+    - name: malware_classification.upx_packed
       level: custom
       type: boolean
       description: TODO
       default_field: false
-    - name: malware_score.version
+    - name: malware_classification.version
       level: custom
       type: keyword
       ignore_above: 1024
@@ -3588,50 +3661,50 @@
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: modules.malware_score.compressed_malware_features.data_buffer
+    - name: modules.malware_classification.compressed_malware_features.data_buffer
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: modules.malware_score.compressed_malware_features.decompressed_size
+    - name: modules.malware_classification.compressed_malware_features.decompressed_size
       level: custom
       type: integer
       description: TODO
       default_field: false
-    - name: modules.malware_score.compressed_malware_features.encoding
+    - name: modules.malware_classification.compressed_malware_features.encoding
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: modules.malware_score.identifier
+    - name: modules.malware_classification.identifier
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: modules.malware_score.prevention_threshold
+    - name: modules.malware_classification.prevention_threshold
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: modules.malware_score.score
+    - name: modules.malware_classification.score
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: modules.malware_score.threshold
+    - name: modules.malware_classification.threshold
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: modules.malware_score.upx_packed
+    - name: modules.malware_classification.upx_packed
       level: custom
       type: boolean
       description: TODO
       default_field: false
-    - name: modules.malware_score.version
+    - name: modules.malware_classification.version
       level: custom
       type: keyword
       ignore_above: 1024
@@ -3944,50 +4017,50 @@
       type: boolean
       description: TODO
       default_field: false
-    - name: pe_info.malware_score.compressed_malware_features.data_buffer
+    - name: pe_info.malware_classification.compressed_malware_features.data_buffer
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: pe_info.malware_score.compressed_malware_features.decompressed_size
+    - name: pe_info.malware_classification.compressed_malware_features.decompressed_size
       level: custom
       type: integer
       description: TODO
       default_field: false
-    - name: pe_info.malware_score.compressed_malware_features.encoding
+    - name: pe_info.malware_classification.compressed_malware_features.encoding
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: pe_info.malware_score.identifier
+    - name: pe_info.malware_classification.identifier
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: pe_info.malware_score.prevention_threshold
+    - name: pe_info.malware_classification.prevention_threshold
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: pe_info.malware_score.score
+    - name: pe_info.malware_classification.score
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: pe_info.malware_score.threshold
+    - name: pe_info.malware_classification.threshold
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: pe_info.malware_score.upx_packed
+    - name: pe_info.malware_classification.upx_packed
       level: custom
       type: boolean
       description: TODO
       default_field: false
-    - name: pe_info.malware_score.version
+    - name: pe_info.malware_classification.version
       level: custom
       type: keyword
       ignore_above: 1024
@@ -4200,17 +4273,6 @@
       type: date
       description: The time the process started.
       example: '2016-05-23T08:05:34.853Z'
-    - name: thread
-      level: custom
-      type: nested
-      description: TODO
-      default_field: false
-    - name: thread.entrypoint
-      level: custom
-      type: keyword
-      ignore_above: 1024
-      description: TODO
-      default_field: false
     - name: thread.id
       level: extended
       type: long
@@ -4223,17 +4285,28 @@
       ignore_above: 1024
       description: Thread name.
       example: thread-0
-    - name: thread.start
+    - name: threads
       level: custom
-      type: date
+      type: nested
       description: TODO
       default_field: false
-    - name: thread.thread_id
+    - name: threads.entrypoint
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: TODO
+      default_field: false
+    - name: threads.id
       level: custom
       type: long
       description: TODO
       default_field: false
-    - name: thread.uptime
+    - name: threads.start
+      level: custom
+      type: date
+      description: TODO
+      default_field: false
+    - name: threads.uptime
       level: custom
       type: long
       description: TODO
@@ -4369,6 +4442,12 @@
       type: long
       description: Seconds the process has been up.
       example: 1325
+    - name: user
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: TODO
+      default_field: false
     - name: virt_memory_bytes
       level: custom
       type: keyword
@@ -5396,6 +5475,36 @@
         start).'
       example: 137
       default_field: false
+    - name: process.file_hash.imphash
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: Imphash.
+      default_field: false
+    - name: process.file_hash.md5
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: MD5 hash.
+      default_field: false
+    - name: process.file_hash.sha1
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: SHA1 hash.
+      default_field: false
+    - name: process.file_hash.sha256
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: SHA256 hash.
+      default_field: false
+    - name: process.file_hash.sha512
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: SHA512 hash.
+      default_field: false
     - name: process.gid
       level: custom
       type: long
@@ -5469,61 +5578,55 @@
       type: boolean
       description: TODO
       default_field: false
-    - name: process.imphash
-      level: custom
-      type: keyword
-      ignore_above: 1024
-      description: TODO
-      default_field: false
     - name: process.is_endpoint
       level: custom
       type: boolean
       description: Is this the Elastic Endpoint process or not.
       default_field: false
-    - name: process.malware_score.compressed_malware_features.data_buffer
+    - name: process.malware_classification.compressed_malware_features.data_buffer
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: process.malware_score.compressed_malware_features.decompressed_size
+    - name: process.malware_classification.compressed_malware_features.decompressed_size
       level: custom
       type: integer
       description: TODO
       default_field: false
-    - name: process.malware_score.compressed_malware_features.encoding
+    - name: process.malware_classification.compressed_malware_features.encoding
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: process.malware_score.identifier
+    - name: process.malware_classification.identifier
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: process.malware_score.prevention_threshold
+    - name: process.malware_classification.prevention_threshold
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: process.malware_score.score
+    - name: process.malware_classification.score
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: process.malware_score.threshold
+    - name: process.malware_classification.threshold
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: process.malware_score.upx_packed
+    - name: process.malware_classification.upx_packed
       level: custom
       type: boolean
       description: TODO
       default_field: false
-    - name: process.malware_score.version
+    - name: process.malware_classification.version
       level: custom
       type: keyword
       ignore_above: 1024
@@ -5751,50 +5854,50 @@
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: process.modules.malware_score.compressed_malware_features.data_buffer
+    - name: process.modules.malware_classification.compressed_malware_features.data_buffer
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: process.modules.malware_score.compressed_malware_features.decompressed_size
+    - name: process.modules.malware_classification.compressed_malware_features.decompressed_size
       level: custom
       type: integer
       description: TODO
       default_field: false
-    - name: process.modules.malware_score.compressed_malware_features.encoding
+    - name: process.modules.malware_classification.compressed_malware_features.encoding
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: process.modules.malware_score.identifier
+    - name: process.modules.malware_classification.identifier
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: process.modules.malware_score.prevention_threshold
+    - name: process.modules.malware_classification.prevention_threshold
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: process.modules.malware_score.score
+    - name: process.modules.malware_classification.score
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: process.modules.malware_score.threshold
+    - name: process.modules.malware_classification.threshold
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: process.modules.malware_score.upx_packed
+    - name: process.modules.malware_classification.upx_packed
       level: custom
       type: boolean
       description: TODO
       default_field: false
-    - name: process.modules.malware_score.version
+    - name: process.modules.malware_classification.version
       level: custom
       type: keyword
       ignore_above: 1024
@@ -6107,50 +6210,50 @@
       type: boolean
       description: TODO
       default_field: false
-    - name: process.pe_info.malware_score.compressed_malware_features.data_buffer
+    - name: process.pe_info.malware_classification.compressed_malware_features.data_buffer
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: process.pe_info.malware_score.compressed_malware_features.decompressed_size
+    - name: process.pe_info.malware_classification.compressed_malware_features.decompressed_size
       level: custom
       type: integer
       description: TODO
       default_field: false
-    - name: process.pe_info.malware_score.compressed_malware_features.encoding
+    - name: process.pe_info.malware_classification.compressed_malware_features.encoding
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: process.pe_info.malware_score.identifier
+    - name: process.pe_info.malware_classification.identifier
       level: custom
       type: keyword
       ignore_above: 1024
       description: TODO
       default_field: false
-    - name: process.pe_info.malware_score.prevention_threshold
+    - name: process.pe_info.malware_classification.prevention_threshold
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: process.pe_info.malware_score.score
+    - name: process.pe_info.malware_classification.score
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: process.pe_info.malware_score.threshold
+    - name: process.pe_info.malware_classification.threshold
       level: custom
       type: double
       description: TODO
       default_field: false
-    - name: process.pe_info.malware_score.upx_packed
+    - name: process.pe_info.malware_classification.upx_packed
       level: custom
       type: boolean
       description: TODO
       default_field: false
-    - name: process.pe_info.malware_score.version
+    - name: process.pe_info.malware_classification.version
       level: custom
       type: keyword
       ignore_above: 1024
@@ -6367,17 +6470,6 @@
       description: The time the process started.
       example: '2016-05-23T08:05:34.853Z'
       default_field: false
-    - name: process.thread
-      level: custom
-      type: nested
-      description: TODO
-      default_field: false
-    - name: process.thread.entrypoint
-      level: custom
-      type: keyword
-      ignore_above: 1024
-      description: TODO
-      default_field: false
     - name: process.thread.id
       level: extended
       type: long
@@ -6392,17 +6484,28 @@
       description: Thread name.
       example: thread-0
       default_field: false
-    - name: process.thread.start
+    - name: process.threads
       level: custom
-      type: date
+      type: nested
       description: TODO
       default_field: false
-    - name: process.thread.thread_id
+    - name: process.threads.entrypoint
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: TODO
+      default_field: false
+    - name: process.threads.id
       level: custom
       type: long
       description: TODO
       default_field: false
-    - name: process.thread.uptime
+    - name: process.threads.start
+      level: custom
+      type: date
+      description: TODO
+      default_field: false
+    - name: process.threads.uptime
       level: custom
       type: long
       description: TODO
@@ -6538,6 +6641,12 @@
       type: long
       description: Seconds the process has been up.
       example: 1325
+      default_field: false
+    - name: process.user
+      level: custom
+      type: keyword
+      ignore_above: 1024
+      description: TODO
       default_field: false
     - name: process.virt_memory_bytes
       level: custom

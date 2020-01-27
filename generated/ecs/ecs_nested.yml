@@ -2946,6 +2946,100 @@ file_classification:
       order: 21
       short: TODO
       type: keyword
+    malware_classification.compressed_malware_features.data_buffer:
+      dashed_name: file-classification-malware-classification-compressed-malware-features-data-buffer
+      description: TODO
+      flat_name: file_classification.malware_classification.compressed_malware_features.data_buffer
+      ignore_above: 1024
+      level: custom
+      name: compressed_malware_features.data_buffer
+      order: 5
+      original_fieldset: malware_classification
+      short: TODO
+      type: keyword
+    malware_classification.compressed_malware_features.decompressed_size:
+      dashed_name: file-classification-malware-classification-compressed-malware-features-decompressed-size
+      description: TODO
+      flat_name: file_classification.malware_classification.compressed_malware_features.decompressed_size
+      level: custom
+      name: compressed_malware_features.decompressed_size
+      order: 6
+      original_fieldset: malware_classification
+      short: TODO
+      type: integer
+    malware_classification.compressed_malware_features.encoding:
+      dashed_name: file-classification-malware-classification-compressed-malware-features-encoding
+      description: TODO
+      flat_name: file_classification.malware_classification.compressed_malware_features.encoding
+      ignore_above: 1024
+      level: custom
+      name: compressed_malware_features.encoding
+      order: 7
+      original_fieldset: malware_classification
+      short: TODO
+      type: keyword
+    malware_classification.identifier:
+      dashed_name: file-classification-malware-classification-identifier
+      description: TODO
+      flat_name: file_classification.malware_classification.identifier
+      ignore_above: 1024
+      level: custom
+      name: identifier
+      order: 2
+      original_fieldset: malware_classification
+      short: TODO
+      type: keyword
+    malware_classification.prevention_threshold:
+      dashed_name: file-classification-malware-classification-prevention-threshold
+      description: TODO
+      flat_name: file_classification.malware_classification.prevention_threshold
+      level: custom
+      name: prevention_threshold
+      order: 4
+      original_fieldset: malware_classification
+      short: TODO
+      type: double
+    malware_classification.score:
+      dashed_name: file-classification-malware-classification-score
+      description: TODO
+      flat_name: file_classification.malware_classification.score
+      level: custom
+      name: score
+      order: 0
+      original_fieldset: malware_classification
+      short: TODO
+      type: double
+    malware_classification.threshold:
+      dashed_name: file-classification-malware-classification-threshold
+      description: TODO
+      flat_name: file_classification.malware_classification.threshold
+      level: custom
+      name: threshold
+      order: 1
+      original_fieldset: malware_classification
+      short: TODO
+      type: double
+    malware_classification.upx_packed:
+      dashed_name: file-classification-malware-classification-upx-packed
+      description: TODO
+      flat_name: file_classification.malware_classification.upx_packed
+      level: custom
+      name: upx_packed
+      order: 8
+      original_fieldset: malware_classification
+      short: TODO
+      type: boolean
+    malware_classification.version:
+      dashed_name: file-classification-malware-classification-version
+      description: TODO
+      flat_name: file_classification.malware_classification.version
+      ignore_above: 1024
+      level: custom
+      name: version
+      order: 3
+      original_fieldset: malware_classification
+      short: TODO
+      type: keyword
     quarantine_result.alert_correlation_id:
       dashed_name: file-classification-quarantine-result-alert-correlation-id
       description: TODO
@@ -3046,6 +3140,8 @@ file_classification:
       type: keyword
   group: 2
   name: file_classification
+  nestings:
+  - malware_classification
   prefix: file_classification.
   short: TODO
   title: File Classification
@@ -4022,13 +4118,13 @@ log:
   short: Details about the event's logging mechanism.
   title: Log
   type: group
-malware_score:
-  description: These fields contain the malware score.
+malware_classification:
+  description: These fields contain the malware classification.
   fields:
     compressed_malware_features.data_buffer:
-      dashed_name: malware-score-compressed-malware-features-data-buffer
+      dashed_name: malware-classification-compressed-malware-features-data-buffer
       description: TODO
-      flat_name: malware_score.compressed_malware_features.data_buffer
+      flat_name: malware_classification.compressed_malware_features.data_buffer
       ignore_above: 1024
       level: custom
       name: compressed_malware_features.data_buffer
@@ -4036,18 +4132,18 @@ malware_score:
       short: TODO
       type: keyword
     compressed_malware_features.decompressed_size:
-      dashed_name: malware-score-compressed-malware-features-decompressed-size
+      dashed_name: malware-classification-compressed-malware-features-decompressed-size
       description: TODO
-      flat_name: malware_score.compressed_malware_features.decompressed_size
+      flat_name: malware_classification.compressed_malware_features.decompressed_size
       level: custom
       name: compressed_malware_features.decompressed_size
       order: 6
       short: TODO
       type: integer
     compressed_malware_features.encoding:
-      dashed_name: malware-score-compressed-malware-features-encoding
+      dashed_name: malware-classification-compressed-malware-features-encoding
       description: TODO
-      flat_name: malware_score.compressed_malware_features.encoding
+      flat_name: malware_classification.compressed_malware_features.encoding
       ignore_above: 1024
       level: custom
       name: compressed_malware_features.encoding
@@ -4055,9 +4151,9 @@ malware_score:
       short: TODO
       type: keyword
     identifier:
-      dashed_name: malware-score-identifier
+      dashed_name: malware-classification-identifier
       description: TODO
-      flat_name: malware_score.identifier
+      flat_name: malware_classification.identifier
       ignore_above: 1024
       level: custom
       name: identifier
@@ -4065,45 +4161,45 @@ malware_score:
       short: TODO
       type: keyword
     prevention_threshold:
-      dashed_name: malware-score-prevention-threshold
+      dashed_name: malware-classification-prevention-threshold
       description: TODO
-      flat_name: malware_score.prevention_threshold
+      flat_name: malware_classification.prevention_threshold
       level: custom
       name: prevention_threshold
       order: 4
       short: TODO
       type: double
     score:
-      dashed_name: malware-score-score
+      dashed_name: malware-classification-score
       description: TODO
-      flat_name: malware_score.score
+      flat_name: malware_classification.score
       level: custom
       name: score
       order: 0
       short: TODO
       type: double
     threshold:
-      dashed_name: malware-score-threshold
+      dashed_name: malware-classification-threshold
       description: TODO
-      flat_name: malware_score.threshold
+      flat_name: malware_classification.threshold
       level: custom
       name: threshold
       order: 1
       short: TODO
       type: double
     upx_packed:
-      dashed_name: malware-score-upx-packed
+      dashed_name: malware-classification-upx-packed
       description: TODO
-      flat_name: malware_score.upx_packed
+      flat_name: malware_classification.upx_packed
       level: custom
       name: upx_packed
       order: 8
       short: TODO
       type: boolean
     version:
-      dashed_name: malware-score-version
+      dashed_name: malware-classification-version
       description: TODO
-      flat_name: malware_score.version
+      flat_name: malware_classification.version
       ignore_above: 1024
       level: custom
       name: version
@@ -4111,16 +4207,17 @@ malware_score:
       short: TODO
       type: keyword
   group: 2
-  name: malware_score
-  prefix: malware_score.
+  name: malware_classification
+  prefix: malware_classification.
   reusable:
     expected:
     - modules
     - process
     - process.pe_info
+    - file_classification
     top_level: false
-  short: These fields contain the malware score.
-  title: Malware Score
+  short: These fields contain the malware classification.
+  title: Malware Classification
   type: group
 modules:
   description: These fields contain information about a list of modules.
@@ -4312,98 +4409,98 @@ modules:
       order: 3
       short: TODO
       type: keyword
-    malware_score.compressed_malware_features.data_buffer:
-      dashed_name: modules-malware-score-compressed-malware-features-data-buffer
+    malware_classification.compressed_malware_features.data_buffer:
+      dashed_name: modules-malware-classification-compressed-malware-features-data-buffer
       description: TODO
-      flat_name: modules.malware_score.compressed_malware_features.data_buffer
+      flat_name: modules.malware_classification.compressed_malware_features.data_buffer
       ignore_above: 1024
       level: custom
       name: compressed_malware_features.data_buffer
       order: 5
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    malware_score.compressed_malware_features.decompressed_size:
-      dashed_name: modules-malware-score-compressed-malware-features-decompressed-size
+    malware_classification.compressed_malware_features.decompressed_size:
+      dashed_name: modules-malware-classification-compressed-malware-features-decompressed-size
       description: TODO
-      flat_name: modules.malware_score.compressed_malware_features.decompressed_size
+      flat_name: modules.malware_classification.compressed_malware_features.decompressed_size
       level: custom
       name: compressed_malware_features.decompressed_size
       order: 6
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: integer
-    malware_score.compressed_malware_features.encoding:
-      dashed_name: modules-malware-score-compressed-malware-features-encoding
+    malware_classification.compressed_malware_features.encoding:
+      dashed_name: modules-malware-classification-compressed-malware-features-encoding
       description: TODO
-      flat_name: modules.malware_score.compressed_malware_features.encoding
+      flat_name: modules.malware_classification.compressed_malware_features.encoding
       ignore_above: 1024
       level: custom
       name: compressed_malware_features.encoding
       order: 7
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    malware_score.identifier:
-      dashed_name: modules-malware-score-identifier
+    malware_classification.identifier:
+      dashed_name: modules-malware-classification-identifier
       description: TODO
-      flat_name: modules.malware_score.identifier
+      flat_name: modules.malware_classification.identifier
       ignore_above: 1024
       level: custom
       name: identifier
       order: 2
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    malware_score.prevention_threshold:
-      dashed_name: modules-malware-score-prevention-threshold
+    malware_classification.prevention_threshold:
+      dashed_name: modules-malware-classification-prevention-threshold
       description: TODO
-      flat_name: modules.malware_score.prevention_threshold
+      flat_name: modules.malware_classification.prevention_threshold
       level: custom
       name: prevention_threshold
       order: 4
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    malware_score.score:
-      dashed_name: modules-malware-score-score
+    malware_classification.score:
+      dashed_name: modules-malware-classification-score
       description: TODO
-      flat_name: modules.malware_score.score
+      flat_name: modules.malware_classification.score
       level: custom
       name: score
       order: 0
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    malware_score.threshold:
-      dashed_name: modules-malware-score-threshold
+    malware_classification.threshold:
+      dashed_name: modules-malware-classification-threshold
       description: TODO
-      flat_name: modules.malware_score.threshold
+      flat_name: modules.malware_classification.threshold
       level: custom
       name: threshold
       order: 1
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    malware_score.upx_packed:
-      dashed_name: modules-malware-score-upx-packed
+    malware_classification.upx_packed:
+      dashed_name: modules-malware-classification-upx-packed
       description: TODO
-      flat_name: modules.malware_score.upx_packed
+      flat_name: modules.malware_classification.upx_packed
       level: custom
       name: upx_packed
       order: 8
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: boolean
-    malware_score.version:
-      dashed_name: modules-malware-score-version
+    malware_classification.version:
+      dashed_name: modules-malware-classification-version
       description: TODO
-      flat_name: modules.malware_score.version
+      flat_name: modules.malware_classification.version
       ignore_above: 1024
       level: custom
       name: version
       order: 3
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
     mapped_address:
@@ -4517,7 +4614,7 @@ modules:
   name: modules
   nestings:
   - authenticode
-  - malware_score
+  - malware_classification
   prefix: modules.
   reusable:
     expected:
@@ -5507,7 +5604,7 @@ process:
       flat_name: process.defense_evasions
       level: custom
       name: defense_evasions
-      order: 86
+      order: 85
       short: TODO
       type: nested
     defense_evasions.call_stack:
@@ -5602,7 +5699,7 @@ process:
       ignore_above: 1024
       level: custom
       name: defense_evasions.delta_count
-      order: 97
+      order: 96
       short: TODO
       type: keyword
     defense_evasions.evasion_subtype:
@@ -5612,7 +5709,7 @@ process:
       ignore_above: 1024
       level: custom
       name: defense_evasions.evasion_subtype
-      order: 88
+      order: 87
       short: TODO
       type: keyword
     defense_evasions.evasion_type:
@@ -5622,7 +5719,7 @@ process:
       ignore_above: 1024
       level: custom
       name: defense_evasions.evasion_type
-      order: 87
+      order: 86
       short: TODO
       type: keyword
     defense_evasions.instruction_pointer:
@@ -5632,7 +5729,7 @@ process:
       ignore_above: 1024
       level: custom
       name: defense_evasions.instruction_pointer
-      order: 98
+      order: 97
       short: TODO
       type: keyword
     defense_evasions.memory_sections:
@@ -5641,7 +5738,7 @@ process:
       flat_name: process.defense_evasions.memory_sections
       level: custom
       name: defense_evasions.memory_sections
-      order: 91
+      order: 90
       short: TODO
       type: nested
     defense_evasions.memory_sections.memory_address:
@@ -5651,7 +5748,7 @@ process:
       ignore_above: 1024
       level: custom
       name: defense_evasions.memory_sections.memory_address
-      order: 92
+      order: 91
       short: TODO
       type: keyword
     defense_evasions.memory_sections.memory_size:
@@ -5661,7 +5758,7 @@ process:
       ignore_above: 1024
       level: custom
       name: defense_evasions.memory_sections.memory_size
-      order: 93
+      order: 92
       short: TODO
       type: keyword
     defense_evasions.memory_sections.protection:
@@ -5671,7 +5768,7 @@ process:
       ignore_above: 1024
       level: custom
       name: defense_evasions.memory_sections.protection
-      order: 94
+      order: 93
       short: TODO
       type: keyword
     defense_evasions.module_path:
@@ -5681,7 +5778,7 @@ process:
       ignore_above: 1024
       level: custom
       name: defense_evasions.module_path
-      order: 89
+      order: 88
       short: TODO
       type: keyword
     defense_evasions.thread.thread_id:
@@ -5690,7 +5787,7 @@ process:
       flat_name: process.defense_evasions.thread.thread_id
       level: custom
       name: defense_evasions.thread.thread_id
-      order: 95
+      order: 94
       short: TODO
       type: long
     defense_evasions.thread.thread_start_address:
@@ -5700,7 +5797,7 @@ process:
       ignore_above: 1024
       level: custom
       name: defense_evasions.thread.thread_start_address
-      order: 96
+      order: 95
       short: TODO
       type: keyword
     defense_evasions.total_memory_size:
@@ -5710,7 +5807,7 @@ process:
       ignore_above: 1024
       level: custom
       name: defense_evasions.total_memory_size
-      order: 90
+      order: 89
       short: TODO
       type: keyword
     domain:
@@ -5720,7 +5817,7 @@ process:
       ignore_above: 1024
       level: custom
       name: domain
-      order: 52
+      order: 51
       short: TODO
       type: keyword
     env_variables:
@@ -5762,6 +5859,56 @@ process:
       order: 28
       short: The exit code of the process.
       type: long
+    file_hash.imphash:
+      dashed_name: process-file-hash-imphash
+      description: Imphash.
+      flat_name: process.file_hash.imphash
+      ignore_above: 1024
+      level: custom
+      name: file_hash.imphash
+      order: 104
+      short: Imphash.
+      type: keyword
+    file_hash.md5:
+      dashed_name: process-file-hash-md5
+      description: MD5 hash.
+      flat_name: process.file_hash.md5
+      ignore_above: 1024
+      level: custom
+      name: file_hash.md5
+      order: 100
+      short: MD5 hash.
+      type: keyword
+    file_hash.sha1:
+      dashed_name: process-file-hash-sha1
+      description: SHA1 hash.
+      flat_name: process.file_hash.sha1
+      ignore_above: 1024
+      level: custom
+      name: file_hash.sha1
+      order: 101
+      short: SHA1 hash.
+      type: keyword
+    file_hash.sha256:
+      dashed_name: process-file-hash-sha256
+      description: SHA256 hash.
+      flat_name: process.file_hash.sha256
+      ignore_above: 1024
+      level: custom
+      name: file_hash.sha256
+      order: 102
+      short: SHA256 hash.
+      type: keyword
+    file_hash.sha512:
+      dashed_name: process-file-hash-sha512
+      description: SHA512 hash.
+      flat_name: process.file_hash.sha512
+      ignore_above: 1024
+      level: custom
+      name: file_hash.sha512
+      order: 103
+      short: SHA512 hash.
+      type: keyword
     gid:
       dashed_name: process-gid
       description: TODO
@@ -5892,16 +6039,6 @@ process:
       order: 3
       short: TODO
       type: boolean
-    imphash:
-      dashed_name: process-imphash
-      description: TODO
-      flat_name: process.imphash
-      ignore_above: 1024
-      level: custom
-      name: imphash
-      order: 51
-      short: TODO
-      type: keyword
     is_endpoint:
       dashed_name: process-is-endpoint
       description: Is this the Elastic Endpoint process or not.
@@ -5911,98 +6048,98 @@ process:
       order: 1
       short: Is this the Elastic Endpoint process or not.
       type: boolean
-    malware_score.compressed_malware_features.data_buffer:
-      dashed_name: process-malware-score-compressed-malware-features-data-buffer
+    malware_classification.compressed_malware_features.data_buffer:
+      dashed_name: process-malware-classification-compressed-malware-features-data-buffer
       description: TODO
-      flat_name: process.malware_score.compressed_malware_features.data_buffer
+      flat_name: process.malware_classification.compressed_malware_features.data_buffer
       ignore_above: 1024
       level: custom
       name: compressed_malware_features.data_buffer
       order: 5
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    malware_score.compressed_malware_features.decompressed_size:
-      dashed_name: process-malware-score-compressed-malware-features-decompressed-size
+    malware_classification.compressed_malware_features.decompressed_size:
+      dashed_name: process-malware-classification-compressed-malware-features-decompressed-size
       description: TODO
-      flat_name: process.malware_score.compressed_malware_features.decompressed_size
+      flat_name: process.malware_classification.compressed_malware_features.decompressed_size
       level: custom
       name: compressed_malware_features.decompressed_size
       order: 6
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: integer
-    malware_score.compressed_malware_features.encoding:
-      dashed_name: process-malware-score-compressed-malware-features-encoding
+    malware_classification.compressed_malware_features.encoding:
+      dashed_name: process-malware-classification-compressed-malware-features-encoding
       description: TODO
-      flat_name: process.malware_score.compressed_malware_features.encoding
+      flat_name: process.malware_classification.compressed_malware_features.encoding
       ignore_above: 1024
       level: custom
       name: compressed_malware_features.encoding
       order: 7
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    malware_score.identifier:
-      dashed_name: process-malware-score-identifier
+    malware_classification.identifier:
+      dashed_name: process-malware-classification-identifier
       description: TODO
-      flat_name: process.malware_score.identifier
+      flat_name: process.malware_classification.identifier
       ignore_above: 1024
       level: custom
       name: identifier
       order: 2
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    malware_score.prevention_threshold:
-      dashed_name: process-malware-score-prevention-threshold
+    malware_classification.prevention_threshold:
+      dashed_name: process-malware-classification-prevention-threshold
       description: TODO
-      flat_name: process.malware_score.prevention_threshold
+      flat_name: process.malware_classification.prevention_threshold
       level: custom
       name: prevention_threshold
       order: 4
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    malware_score.score:
-      dashed_name: process-malware-score-score
+    malware_classification.score:
+      dashed_name: process-malware-classification-score
       description: TODO
-      flat_name: process.malware_score.score
+      flat_name: process.malware_classification.score
       level: custom
       name: score
       order: 0
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    malware_score.threshold:
-      dashed_name: process-malware-score-threshold
+    malware_classification.threshold:
+      dashed_name: process-malware-classification-threshold
       description: TODO
-      flat_name: process.malware_score.threshold
+      flat_name: process.malware_classification.threshold
       level: custom
       name: threshold
       order: 1
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    malware_score.upx_packed:
-      dashed_name: process-malware-score-upx-packed
+    malware_classification.upx_packed:
+      dashed_name: process-malware-classification-upx-packed
       description: TODO
-      flat_name: process.malware_score.upx_packed
+      flat_name: process.malware_classification.upx_packed
       level: custom
       name: upx_packed
       order: 8
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: boolean
-    malware_score.version:
-      dashed_name: process-malware-score-version
+    malware_classification.version:
+      dashed_name: process-malware-classification-version
       description: TODO
-      flat_name: process.malware_score.version
+      flat_name: process.malware_classification.version
       ignore_above: 1024
       level: custom
       name: version
       order: 3
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
     memory_percent:
@@ -6395,98 +6532,98 @@ process:
       original_fieldset: modules
       short: TODO
       type: keyword
-    modules.malware_score.compressed_malware_features.data_buffer:
-      dashed_name: process-modules-malware-score-compressed-malware-features-data-buffer
+    modules.malware_classification.compressed_malware_features.data_buffer:
+      dashed_name: process-modules-malware-classification-compressed-malware-features-data-buffer
       description: TODO
-      flat_name: process.modules.malware_score.compressed_malware_features.data_buffer
+      flat_name: process.modules.malware_classification.compressed_malware_features.data_buffer
       ignore_above: 1024
       level: custom
       name: compressed_malware_features.data_buffer
       order: 5
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    modules.malware_score.compressed_malware_features.decompressed_size:
-      dashed_name: process-modules-malware-score-compressed-malware-features-decompressed-size
+    modules.malware_classification.compressed_malware_features.decompressed_size:
+      dashed_name: process-modules-malware-classification-compressed-malware-features-decompressed-size
       description: TODO
-      flat_name: process.modules.malware_score.compressed_malware_features.decompressed_size
+      flat_name: process.modules.malware_classification.compressed_malware_features.decompressed_size
       level: custom
       name: compressed_malware_features.decompressed_size
       order: 6
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: integer
-    modules.malware_score.compressed_malware_features.encoding:
-      dashed_name: process-modules-malware-score-compressed-malware-features-encoding
+    modules.malware_classification.compressed_malware_features.encoding:
+      dashed_name: process-modules-malware-classification-compressed-malware-features-encoding
       description: TODO
-      flat_name: process.modules.malware_score.compressed_malware_features.encoding
+      flat_name: process.modules.malware_classification.compressed_malware_features.encoding
       ignore_above: 1024
       level: custom
       name: compressed_malware_features.encoding
       order: 7
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    modules.malware_score.identifier:
-      dashed_name: process-modules-malware-score-identifier
+    modules.malware_classification.identifier:
+      dashed_name: process-modules-malware-classification-identifier
       description: TODO
-      flat_name: process.modules.malware_score.identifier
+      flat_name: process.modules.malware_classification.identifier
       ignore_above: 1024
       level: custom
       name: identifier
       order: 2
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    modules.malware_score.prevention_threshold:
-      dashed_name: process-modules-malware-score-prevention-threshold
+    modules.malware_classification.prevention_threshold:
+      dashed_name: process-modules-malware-classification-prevention-threshold
       description: TODO
-      flat_name: process.modules.malware_score.prevention_threshold
+      flat_name: process.modules.malware_classification.prevention_threshold
       level: custom
       name: prevention_threshold
       order: 4
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    modules.malware_score.score:
-      dashed_name: process-modules-malware-score-score
+    modules.malware_classification.score:
+      dashed_name: process-modules-malware-classification-score
       description: TODO
-      flat_name: process.modules.malware_score.score
+      flat_name: process.modules.malware_classification.score
       level: custom
       name: score
       order: 0
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    modules.malware_score.threshold:
-      dashed_name: process-modules-malware-score-threshold
+    modules.malware_classification.threshold:
+      dashed_name: process-modules-malware-classification-threshold
       description: TODO
-      flat_name: process.modules.malware_score.threshold
+      flat_name: process.modules.malware_classification.threshold
       level: custom
       name: threshold
       order: 1
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    modules.malware_score.upx_packed:
-      dashed_name: process-modules-malware-score-upx-packed
+    modules.malware_classification.upx_packed:
+      dashed_name: process-modules-malware-classification-upx-packed
       description: TODO
-      flat_name: process.modules.malware_score.upx_packed
+      flat_name: process.modules.malware_classification.upx_packed
       level: custom
       name: upx_packed
       order: 8
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: boolean
-    modules.malware_score.version:
-      dashed_name: process-modules-malware-score-version
+    modules.malware_classification.version:
+      dashed_name: process-modules-malware-classification-version
       description: TODO
-      flat_name: process.modules.malware_score.version
+      flat_name: process.modules.malware_classification.version
       ignore_above: 1024
       level: custom
       name: version
       order: 3
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
     modules.mapped_address:
@@ -6845,7 +6982,7 @@ process:
       ignore_above: 1024
       level: custom
       name: pe_info.architecture
-      order: 81
+      order: 80
       short: TODO
       type: keyword
     pe_info.authenticode.cert_signer.issuer_name:
@@ -6975,7 +7112,7 @@ process:
       flat_name: process.pe_info.compile_time
       level: custom
       name: pe_info.compile_time
-      order: 54
+      order: 53
       short: TODO
       type: long
     pe_info.entry_point_address:
@@ -6984,7 +7121,7 @@ process:
       flat_name: process.pe_info.entry_point_address
       level: custom
       name: pe_info.entry_point_address
-      order: 55
+      order: 54
       short: TODO
       type: long
     pe_info.is_dll:
@@ -6993,101 +7130,101 @@ process:
       flat_name: process.pe_info.is_dll
       level: custom
       name: pe_info.is_dll
-      order: 56
+      order: 55
       short: TODO
       type: boolean
-    pe_info.malware_score.compressed_malware_features.data_buffer:
-      dashed_name: process-pe-info-malware-score-compressed-malware-features-data-buffer
+    pe_info.malware_classification.compressed_malware_features.data_buffer:
+      dashed_name: process-pe-info-malware-classification-compressed-malware-features-data-buffer
       description: TODO
-      flat_name: process.pe_info.malware_score.compressed_malware_features.data_buffer
+      flat_name: process.pe_info.malware_classification.compressed_malware_features.data_buffer
       ignore_above: 1024
       level: custom
       name: compressed_malware_features.data_buffer
       order: 5
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    pe_info.malware_score.compressed_malware_features.decompressed_size:
-      dashed_name: process-pe-info-malware-score-compressed-malware-features-decompressed-size
+    pe_info.malware_classification.compressed_malware_features.decompressed_size:
+      dashed_name: process-pe-info-malware-classification-compressed-malware-features-decompressed-size
       description: TODO
-      flat_name: process.pe_info.malware_score.compressed_malware_features.decompressed_size
+      flat_name: process.pe_info.malware_classification.compressed_malware_features.decompressed_size
       level: custom
       name: compressed_malware_features.decompressed_size
       order: 6
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: integer
-    pe_info.malware_score.compressed_malware_features.encoding:
-      dashed_name: process-pe-info-malware-score-compressed-malware-features-encoding
+    pe_info.malware_classification.compressed_malware_features.encoding:
+      dashed_name: process-pe-info-malware-classification-compressed-malware-features-encoding
       description: TODO
-      flat_name: process.pe_info.malware_score.compressed_malware_features.encoding
+      flat_name: process.pe_info.malware_classification.compressed_malware_features.encoding
       ignore_above: 1024
       level: custom
       name: compressed_malware_features.encoding
       order: 7
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    pe_info.malware_score.identifier:
-      dashed_name: process-pe-info-malware-score-identifier
+    pe_info.malware_classification.identifier:
+      dashed_name: process-pe-info-malware-classification-identifier
       description: TODO
-      flat_name: process.pe_info.malware_score.identifier
+      flat_name: process.pe_info.malware_classification.identifier
       ignore_above: 1024
       level: custom
       name: identifier
       order: 2
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    pe_info.malware_score.prevention_threshold:
-      dashed_name: process-pe-info-malware-score-prevention-threshold
+    pe_info.malware_classification.prevention_threshold:
+      dashed_name: process-pe-info-malware-classification-prevention-threshold
       description: TODO
-      flat_name: process.pe_info.malware_score.prevention_threshold
+      flat_name: process.pe_info.malware_classification.prevention_threshold
       level: custom
       name: prevention_threshold
       order: 4
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    pe_info.malware_score.score:
-      dashed_name: process-pe-info-malware-score-score
+    pe_info.malware_classification.score:
+      dashed_name: process-pe-info-malware-classification-score
       description: TODO
-      flat_name: process.pe_info.malware_score.score
+      flat_name: process.pe_info.malware_classification.score
       level: custom
       name: score
       order: 0
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    pe_info.malware_score.threshold:
-      dashed_name: process-pe-info-malware-score-threshold
+    pe_info.malware_classification.threshold:
+      dashed_name: process-pe-info-malware-classification-threshold
       description: TODO
-      flat_name: process.pe_info.malware_score.threshold
+      flat_name: process.pe_info.malware_classification.threshold
       level: custom
       name: threshold
       order: 1
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    pe_info.malware_score.upx_packed:
-      dashed_name: process-pe-info-malware-score-upx-packed
+    pe_info.malware_classification.upx_packed:
+      dashed_name: process-pe-info-malware-classification-upx-packed
       description: TODO
-      flat_name: process.pe_info.malware_score.upx_packed
+      flat_name: process.pe_info.malware_classification.upx_packed
       level: custom
       name: upx_packed
       order: 8
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: boolean
-    pe_info.malware_score.version:
-      dashed_name: process-pe-info-malware-score-version
+    pe_info.malware_classification.version:
+      dashed_name: process-pe-info-malware-classification-version
       description: TODO
-      flat_name: process.pe_info.malware_score.version
+      flat_name: process.pe_info.malware_classification.version
       ignore_above: 1024
       level: custom
       name: version
       order: 3
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
     pe_info.pe_exports:
@@ -7096,7 +7233,7 @@ process:
       flat_name: process.pe_info.pe_exports
       level: custom
       name: pe_info.pe_exports
-      order: 67
+      order: 66
       short: TODO
       type: nested
     pe_info.pe_exports.name:
@@ -7106,7 +7243,7 @@ process:
       ignore_above: 1024
       level: custom
       name: pe_info.pe_exports.name
-      order: 69
+      order: 68
       short: TODO
       type: keyword
     pe_info.pe_exports.ordinal:
@@ -7115,7 +7252,7 @@ process:
       flat_name: process.pe_info.pe_exports.ordinal
       level: custom
       name: pe_info.pe_exports.ordinal
-      order: 68
+      order: 67
       short: TODO
       type: long
     pe_info.pe_imports:
@@ -7124,7 +7261,7 @@ process:
       flat_name: process.pe_info.pe_imports
       level: custom
       name: pe_info.pe_imports
-      order: 64
+      order: 63
       short: TODO
       type: nested
     pe_info.pe_imports.dll_name:
@@ -7134,7 +7271,7 @@ process:
       ignore_above: 1024
       level: custom
       name: pe_info.pe_imports.dll_name
-      order: 65
+      order: 64
       short: TODO
       type: keyword
     pe_info.pe_imports.import_names:
@@ -7144,7 +7281,7 @@ process:
       ignore_above: 1024
       level: custom
       name: pe_info.pe_imports.import_names
-      order: 66
+      order: 65
       short: TODO
       type: keyword
     pe_info.resources:
@@ -7153,7 +7290,7 @@ process:
       flat_name: process.pe_info.resources
       level: custom
       name: pe_info.resources
-      order: 70
+      order: 69
       short: TODO
       type: nested
     pe_info.resources.resource_data.entropy:
@@ -7162,7 +7299,7 @@ process:
       flat_name: process.pe_info.resources.resource_data.entropy
       level: custom
       name: pe_info.resources.resource_data.entropy
-      order: 74
+      order: 73
       short: TODO
       type: double
     pe_info.resources.resource_data.size:
@@ -7171,7 +7308,7 @@ process:
       flat_name: process.pe_info.resources.resource_data.size
       level: custom
       name: pe_info.resources.resource_data.size
-      order: 73
+      order: 72
       short: TODO
       type: long
     pe_info.resources.resource_id:
@@ -7180,7 +7317,7 @@ process:
       flat_name: process.pe_info.resources.resource_id
       level: custom
       name: pe_info.resources.resource_id
-      order: 71
+      order: 70
       short: TODO
       type: long
     pe_info.resources.resource_name:
@@ -7190,7 +7327,7 @@ process:
       ignore_above: 1024
       level: custom
       name: pe_info.resources.resource_name
-      order: 75
+      order: 74
       short: TODO
       type: keyword
     pe_info.resources.resource_type:
@@ -7200,7 +7337,7 @@ process:
       ignore_above: 1024
       level: custom
       name: pe_info.resources.resource_type
-      order: 72
+      order: 71
       short: TODO
       type: keyword
     pe_info.sections:
@@ -7209,7 +7346,7 @@ process:
       flat_name: process.pe_info.sections
       level: custom
       name: pe_info.sections
-      order: 57
+      order: 56
       short: TODO
       type: nested
     pe_info.sections.entropy:
@@ -7218,7 +7355,7 @@ process:
       flat_name: process.pe_info.sections.entropy
       level: custom
       name: pe_info.sections.entropy
-      order: 62
+      order: 61
       short: TODO
       type: double
     pe_info.sections.name:
@@ -7228,7 +7365,7 @@ process:
       ignore_above: 1024
       level: custom
       name: pe_info.sections.name
-      order: 63
+      order: 62
       short: TODO
       type: keyword
     pe_info.sections.raw_offset:
@@ -7238,7 +7375,7 @@ process:
       ignore_above: 1024
       level: custom
       name: pe_info.sections.raw_offset
-      order: 60
+      order: 59
       short: TODO
       type: keyword
     pe_info.sections.raw_size:
@@ -7248,7 +7385,7 @@ process:
       ignore_above: 1024
       level: custom
       name: pe_info.sections.raw_size
-      order: 61
+      order: 60
       short: TODO
       type: keyword
     pe_info.sections.virtual_address:
@@ -7258,7 +7395,7 @@ process:
       ignore_above: 1024
       level: custom
       name: pe_info.sections.virtual_address
-      order: 58
+      order: 57
       short: TODO
       type: keyword
     pe_info.sections.virtual_size:
@@ -7268,7 +7405,7 @@ process:
       ignore_above: 1024
       level: custom
       name: pe_info.sections.virtual_size
-      order: 59
+      order: 58
       short: TODO
       type: keyword
     pe_info.signature_signer:
@@ -7278,7 +7415,7 @@ process:
       ignore_above: 1024
       level: custom
       name: pe_info.signature_signer
-      order: 82
+      order: 81
       short: TODO
       type: keyword
     pe_info.signature_status:
@@ -7288,7 +7425,7 @@ process:
       ignore_above: 1024
       level: custom
       name: pe_info.signature_status
-      order: 83
+      order: 82
       short: TODO
       type: keyword
     pe_info.version_info:
@@ -7297,7 +7434,7 @@ process:
       flat_name: process.pe_info.version_info
       level: custom
       name: pe_info.version_info
-      order: 76
+      order: 75
       short: TODO
       type: nested
     pe_info.version_info.code_page:
@@ -7306,7 +7443,7 @@ process:
       flat_name: process.pe_info.version_info.code_page
       level: custom
       name: pe_info.version_info.code_page
-      order: 78
+      order: 77
       short: TODO
       type: long
     pe_info.version_info.key:
@@ -7316,7 +7453,7 @@ process:
       ignore_above: 1024
       level: custom
       name: pe_info.version_info.key
-      order: 79
+      order: 78
       short: TODO
       type: keyword
     pe_info.version_info.language:
@@ -7325,7 +7462,7 @@ process:
       flat_name: process.pe_info.version_info.language
       level: custom
       name: pe_info.version_info.language
-      order: 77
+      order: 76
       short: TODO
       type: long
     pe_info.version_info.value_string:
@@ -7335,7 +7472,7 @@ process:
       ignore_above: 1024
       level: custom
       name: pe_info.version_info.value_string
-      order: 80
+      order: 79
       short: TODO
       type: keyword
     pgid:
@@ -7387,7 +7524,7 @@ process:
       ignore_above: 1024
       level: custom
       name: services
-      order: 99
+      order: 98
       short: TODO
       type: keyword
     session_id:
@@ -7416,7 +7553,7 @@ process:
       ignore_above: 1024
       level: custom
       name: sid
-      order: 53
+      order: 52
       short: TODO
       type: keyword
     signature_signer:
@@ -7426,7 +7563,7 @@ process:
       ignore_above: 1024
       level: custom
       name: signature_signer
-      order: 84
+      order: 83
       short: TODO
       type: keyword
     signature_status:
@@ -7436,7 +7573,7 @@ process:
       ignore_above: 1024
       level: custom
       name: signature_status
-      order: 85
+      order: 84
       short: TODO
       type: keyword
     start:
@@ -7449,25 +7586,6 @@ process:
       order: 22
       short: The time the process started.
       type: date
-    thread:
-      dashed_name: process-thread
-      description: TODO
-      flat_name: process.thread
-      level: custom
-      name: thread
-      order: 26
-      short: TODO
-      type: nested
-    thread.entrypoint:
-      dashed_name: process-thread-entrypoint
-      description: TODO
-      flat_name: process.thread.entrypoint
-      ignore_above: 1024
-      level: custom
-      name: thread.entrypoint
-      order: 28
-      short: TODO
-      type: keyword
     thread.id:
       dashed_name: process-thread-id
       description: Thread ID.
@@ -7490,30 +7608,49 @@ process:
       order: 20
       short: Thread name.
       type: keyword
-    thread.start:
-      dashed_name: process-thread-start
+    threads:
+      dashed_name: process-threads
       description: TODO
-      flat_name: process.thread.start
+      flat_name: process.threads
       level: custom
-      name: thread.start
-      order: 29
+      name: threads
+      order: 26
       short: TODO
-      type: date
-    thread.thread_id:
-      dashed_name: process-thread-thread-id
+      type: nested
+    threads.entrypoint:
+      dashed_name: process-threads-entrypoint
       description: TODO
-      flat_name: process.thread.thread_id
+      flat_name: process.threads.entrypoint
+      ignore_above: 1024
       level: custom
-      name: thread.thread_id
+      name: threads.entrypoint
+      order: 28
+      short: TODO
+      type: keyword
+    threads.id:
+      dashed_name: process-threads-id
+      description: TODO
+      flat_name: process.threads.id
+      level: custom
+      name: threads.id
       order: 27
       short: TODO
       type: long
-    thread.uptime:
-      dashed_name: process-thread-uptime
+    threads.start:
+      dashed_name: process-threads-start
       description: TODO
-      flat_name: process.thread.uptime
+      flat_name: process.threads.start
       level: custom
-      name: thread.uptime
+      name: threads.start
+      order: 29
+      short: TODO
+      type: date
+    threads.uptime:
+      dashed_name: process-threads-uptime
+      description: TODO
+      flat_name: process.threads.uptime
+      level: custom
+      name: threads.uptime
       order: 30
       short: TODO
       type: long
@@ -7750,6 +7887,16 @@ process:
       order: 24
       short: Seconds the process has been up.
       type: long
+    user:
+      dashed_name: process-user
+      description: TODO
+      flat_name: process.user
+      ignore_above: 1024
+      level: custom
+      name: user
+      order: 99
+      short: TODO
+      type: keyword
     virt_memory_bytes:
       dashed_name: process-virt-memory-bytes
       description: TODO
@@ -9207,7 +9354,7 @@ target:
       flat_name: target.process.defense_evasions
       level: custom
       name: defense_evasions
-      order: 86
+      order: 85
       original_fieldset: process
       short: TODO
       type: nested
@@ -9303,7 +9450,7 @@ target:
       ignore_above: 1024
       level: custom
       name: defense_evasions.delta_count
-      order: 97
+      order: 96
       original_fieldset: process
       short: TODO
       type: keyword
@@ -9314,7 +9461,7 @@ target:
       ignore_above: 1024
       level: custom
       name: defense_evasions.evasion_subtype
-      order: 88
+      order: 87
       original_fieldset: process
       short: TODO
       type: keyword
@@ -9325,7 +9472,7 @@ target:
       ignore_above: 1024
       level: custom
       name: defense_evasions.evasion_type
-      order: 87
+      order: 86
       original_fieldset: process
       short: TODO
       type: keyword
@@ -9336,7 +9483,7 @@ target:
       ignore_above: 1024
       level: custom
       name: defense_evasions.instruction_pointer
-      order: 98
+      order: 97
       original_fieldset: process
       short: TODO
       type: keyword
@@ -9346,7 +9493,7 @@ target:
       flat_name: target.process.defense_evasions.memory_sections
       level: custom
       name: defense_evasions.memory_sections
-      order: 91
+      order: 90
       original_fieldset: process
       short: TODO
       type: nested
@@ -9357,7 +9504,7 @@ target:
       ignore_above: 1024
       level: custom
       name: defense_evasions.memory_sections.memory_address
-      order: 92
+      order: 91
       original_fieldset: process
       short: TODO
       type: keyword
@@ -9368,7 +9515,7 @@ target:
       ignore_above: 1024
       level: custom
       name: defense_evasions.memory_sections.memory_size
-      order: 93
+      order: 92
       original_fieldset: process
       short: TODO
       type: keyword
@@ -9379,7 +9526,7 @@ target:
       ignore_above: 1024
       level: custom
       name: defense_evasions.memory_sections.protection
-      order: 94
+      order: 93
       original_fieldset: process
       short: TODO
       type: keyword
@@ -9390,7 +9537,7 @@ target:
       ignore_above: 1024
       level: custom
       name: defense_evasions.module_path
-      order: 89
+      order: 88
       original_fieldset: process
       short: TODO
       type: keyword
@@ -9400,7 +9547,7 @@ target:
       flat_name: target.process.defense_evasions.thread.thread_id
       level: custom
       name: defense_evasions.thread.thread_id
-      order: 95
+      order: 94
       original_fieldset: process
       short: TODO
       type: long
@@ -9411,7 +9558,7 @@ target:
       ignore_above: 1024
       level: custom
       name: defense_evasions.thread.thread_start_address
-      order: 96
+      order: 95
       original_fieldset: process
       short: TODO
       type: keyword
@@ -9422,7 +9569,7 @@ target:
       ignore_above: 1024
       level: custom
       name: defense_evasions.total_memory_size
-      order: 90
+      order: 89
       original_fieldset: process
       short: TODO
       type: keyword
@@ -9433,7 +9580,7 @@ target:
       ignore_above: 1024
       level: custom
       name: domain
-      order: 52
+      order: 51
       original_fieldset: process
       short: TODO
       type: keyword
@@ -9479,6 +9626,61 @@ target:
       original_fieldset: process
       short: The exit code of the process.
       type: long
+    process.file_hash.imphash:
+      dashed_name: target-process-file-hash-imphash
+      description: Imphash.
+      flat_name: target.process.file_hash.imphash
+      ignore_above: 1024
+      level: custom
+      name: file_hash.imphash
+      order: 104
+      original_fieldset: process
+      short: Imphash.
+      type: keyword
+    process.file_hash.md5:
+      dashed_name: target-process-file-hash-md5
+      description: MD5 hash.
+      flat_name: target.process.file_hash.md5
+      ignore_above: 1024
+      level: custom
+      name: file_hash.md5
+      order: 100
+      original_fieldset: process
+      short: MD5 hash.
+      type: keyword
+    process.file_hash.sha1:
+      dashed_name: target-process-file-hash-sha1
+      description: SHA1 hash.
+      flat_name: target.process.file_hash.sha1
+      ignore_above: 1024
+      level: custom
+      name: file_hash.sha1
+      order: 101
+      original_fieldset: process
+      short: SHA1 hash.
+      type: keyword
+    process.file_hash.sha256:
+      dashed_name: target-process-file-hash-sha256
+      description: SHA256 hash.
+      flat_name: target.process.file_hash.sha256
+      ignore_above: 1024
+      level: custom
+      name: file_hash.sha256
+      order: 102
+      original_fieldset: process
+      short: SHA256 hash.
+      type: keyword
+    process.file_hash.sha512:
+      dashed_name: target-process-file-hash-sha512
+      description: SHA512 hash.
+      flat_name: target.process.file_hash.sha512
+      ignore_above: 1024
+      level: custom
+      name: file_hash.sha512
+      order: 103
+      original_fieldset: process
+      short: SHA512 hash.
+      type: keyword
     process.gid:
       dashed_name: target-process-gid
       description: TODO
@@ -9617,17 +9819,6 @@ target:
       original_fieldset: process
       short: TODO
       type: boolean
-    process.imphash:
-      dashed_name: target-process-imphash
-      description: TODO
-      flat_name: target.process.imphash
-      ignore_above: 1024
-      level: custom
-      name: imphash
-      order: 51
-      original_fieldset: process
-      short: TODO
-      type: keyword
     process.is_endpoint:
       dashed_name: target-process-is-endpoint
       description: Is this the Elastic Endpoint process or not.
@@ -9638,98 +9829,98 @@ target:
       original_fieldset: process
       short: Is this the Elastic Endpoint process or not.
       type: boolean
-    process.malware_score.compressed_malware_features.data_buffer:
-      dashed_name: target-process-malware-score-compressed-malware-features-data-buffer
+    process.malware_classification.compressed_malware_features.data_buffer:
+      dashed_name: target-process-malware-classification-compressed-malware-features-data-buffer
       description: TODO
-      flat_name: target.process.malware_score.compressed_malware_features.data_buffer
+      flat_name: target.process.malware_classification.compressed_malware_features.data_buffer
       ignore_above: 1024
       level: custom
       name: compressed_malware_features.data_buffer
       order: 5
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    process.malware_score.compressed_malware_features.decompressed_size:
-      dashed_name: target-process-malware-score-compressed-malware-features-decompressed-size
+    process.malware_classification.compressed_malware_features.decompressed_size:
+      dashed_name: target-process-malware-classification-compressed-malware-features-decompressed-size
       description: TODO
-      flat_name: target.process.malware_score.compressed_malware_features.decompressed_size
+      flat_name: target.process.malware_classification.compressed_malware_features.decompressed_size
       level: custom
       name: compressed_malware_features.decompressed_size
       order: 6
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: integer
-    process.malware_score.compressed_malware_features.encoding:
-      dashed_name: target-process-malware-score-compressed-malware-features-encoding
+    process.malware_classification.compressed_malware_features.encoding:
+      dashed_name: target-process-malware-classification-compressed-malware-features-encoding
       description: TODO
-      flat_name: target.process.malware_score.compressed_malware_features.encoding
+      flat_name: target.process.malware_classification.compressed_malware_features.encoding
       ignore_above: 1024
       level: custom
       name: compressed_malware_features.encoding
       order: 7
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    process.malware_score.identifier:
-      dashed_name: target-process-malware-score-identifier
+    process.malware_classification.identifier:
+      dashed_name: target-process-malware-classification-identifier
       description: TODO
-      flat_name: target.process.malware_score.identifier
+      flat_name: target.process.malware_classification.identifier
       ignore_above: 1024
       level: custom
       name: identifier
       order: 2
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    process.malware_score.prevention_threshold:
-      dashed_name: target-process-malware-score-prevention-threshold
+    process.malware_classification.prevention_threshold:
+      dashed_name: target-process-malware-classification-prevention-threshold
       description: TODO
-      flat_name: target.process.malware_score.prevention_threshold
+      flat_name: target.process.malware_classification.prevention_threshold
       level: custom
       name: prevention_threshold
       order: 4
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    process.malware_score.score:
-      dashed_name: target-process-malware-score-score
+    process.malware_classification.score:
+      dashed_name: target-process-malware-classification-score
       description: TODO
-      flat_name: target.process.malware_score.score
+      flat_name: target.process.malware_classification.score
       level: custom
       name: score
       order: 0
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    process.malware_score.threshold:
-      dashed_name: target-process-malware-score-threshold
+    process.malware_classification.threshold:
+      dashed_name: target-process-malware-classification-threshold
       description: TODO
-      flat_name: target.process.malware_score.threshold
+      flat_name: target.process.malware_classification.threshold
       level: custom
       name: threshold
       order: 1
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    process.malware_score.upx_packed:
-      dashed_name: target-process-malware-score-upx-packed
+    process.malware_classification.upx_packed:
+      dashed_name: target-process-malware-classification-upx-packed
       description: TODO
-      flat_name: target.process.malware_score.upx_packed
+      flat_name: target.process.malware_classification.upx_packed
       level: custom
       name: upx_packed
       order: 8
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: boolean
-    process.malware_score.version:
-      dashed_name: target-process-malware-score-version
+    process.malware_classification.version:
+      dashed_name: target-process-malware-classification-version
       description: TODO
-      flat_name: target.process.malware_score.version
+      flat_name: target.process.malware_classification.version
       ignore_above: 1024
       level: custom
       name: version
       order: 3
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
     process.memory_percent:
@@ -10142,98 +10333,98 @@ target:
       original_fieldset: modules
       short: TODO
       type: keyword
-    process.modules.malware_score.compressed_malware_features.data_buffer:
-      dashed_name: target-process-modules-malware-score-compressed-malware-features-data-buffer
+    process.modules.malware_classification.compressed_malware_features.data_buffer:
+      dashed_name: target-process-modules-malware-classification-compressed-malware-features-data-buffer
       description: TODO
-      flat_name: target.process.modules.malware_score.compressed_malware_features.data_buffer
+      flat_name: target.process.modules.malware_classification.compressed_malware_features.data_buffer
       ignore_above: 1024
       level: custom
       name: compressed_malware_features.data_buffer
       order: 5
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    process.modules.malware_score.compressed_malware_features.decompressed_size:
-      dashed_name: target-process-modules-malware-score-compressed-malware-features-decompressed-size
+    process.modules.malware_classification.compressed_malware_features.decompressed_size:
+      dashed_name: target-process-modules-malware-classification-compressed-malware-features-decompressed-size
       description: TODO
-      flat_name: target.process.modules.malware_score.compressed_malware_features.decompressed_size
+      flat_name: target.process.modules.malware_classification.compressed_malware_features.decompressed_size
       level: custom
       name: compressed_malware_features.decompressed_size
       order: 6
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: integer
-    process.modules.malware_score.compressed_malware_features.encoding:
-      dashed_name: target-process-modules-malware-score-compressed-malware-features-encoding
+    process.modules.malware_classification.compressed_malware_features.encoding:
+      dashed_name: target-process-modules-malware-classification-compressed-malware-features-encoding
       description: TODO
-      flat_name: target.process.modules.malware_score.compressed_malware_features.encoding
+      flat_name: target.process.modules.malware_classification.compressed_malware_features.encoding
       ignore_above: 1024
       level: custom
       name: compressed_malware_features.encoding
       order: 7
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    process.modules.malware_score.identifier:
-      dashed_name: target-process-modules-malware-score-identifier
+    process.modules.malware_classification.identifier:
+      dashed_name: target-process-modules-malware-classification-identifier
       description: TODO
-      flat_name: target.process.modules.malware_score.identifier
+      flat_name: target.process.modules.malware_classification.identifier
       ignore_above: 1024
       level: custom
       name: identifier
       order: 2
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    process.modules.malware_score.prevention_threshold:
-      dashed_name: target-process-modules-malware-score-prevention-threshold
+    process.modules.malware_classification.prevention_threshold:
+      dashed_name: target-process-modules-malware-classification-prevention-threshold
       description: TODO
-      flat_name: target.process.modules.malware_score.prevention_threshold
+      flat_name: target.process.modules.malware_classification.prevention_threshold
       level: custom
       name: prevention_threshold
       order: 4
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    process.modules.malware_score.score:
-      dashed_name: target-process-modules-malware-score-score
+    process.modules.malware_classification.score:
+      dashed_name: target-process-modules-malware-classification-score
       description: TODO
-      flat_name: target.process.modules.malware_score.score
+      flat_name: target.process.modules.malware_classification.score
       level: custom
       name: score
       order: 0
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    process.modules.malware_score.threshold:
-      dashed_name: target-process-modules-malware-score-threshold
+    process.modules.malware_classification.threshold:
+      dashed_name: target-process-modules-malware-classification-threshold
       description: TODO
-      flat_name: target.process.modules.malware_score.threshold
+      flat_name: target.process.modules.malware_classification.threshold
       level: custom
       name: threshold
       order: 1
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    process.modules.malware_score.upx_packed:
-      dashed_name: target-process-modules-malware-score-upx-packed
+    process.modules.malware_classification.upx_packed:
+      dashed_name: target-process-modules-malware-classification-upx-packed
       description: TODO
-      flat_name: target.process.modules.malware_score.upx_packed
+      flat_name: target.process.modules.malware_classification.upx_packed
       level: custom
       name: upx_packed
       order: 8
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: boolean
-    process.modules.malware_score.version:
-      dashed_name: target-process-modules-malware-score-version
+    process.modules.malware_classification.version:
+      dashed_name: target-process-modules-malware-classification-version
       description: TODO
-      flat_name: target.process.modules.malware_score.version
+      flat_name: target.process.modules.malware_classification.version
       ignore_above: 1024
       level: custom
       name: version
       order: 3
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
     process.modules.mapped_address:
@@ -10609,7 +10800,7 @@ target:
       ignore_above: 1024
       level: custom
       name: pe_info.architecture
-      order: 81
+      order: 80
       original_fieldset: process
       short: TODO
       type: keyword
@@ -10740,7 +10931,7 @@ target:
       flat_name: target.process.pe_info.compile_time
       level: custom
       name: pe_info.compile_time
-      order: 54
+      order: 53
       original_fieldset: process
       short: TODO
       type: long
@@ -10750,7 +10941,7 @@ target:
       flat_name: target.process.pe_info.entry_point_address
       level: custom
       name: pe_info.entry_point_address
-      order: 55
+      order: 54
       original_fieldset: process
       short: TODO
       type: long
@@ -10760,102 +10951,102 @@ target:
       flat_name: target.process.pe_info.is_dll
       level: custom
       name: pe_info.is_dll
-      order: 56
+      order: 55
       original_fieldset: process
       short: TODO
       type: boolean
-    process.pe_info.malware_score.compressed_malware_features.data_buffer:
-      dashed_name: target-process-pe-info-malware-score-compressed-malware-features-data-buffer
+    process.pe_info.malware_classification.compressed_malware_features.data_buffer:
+      dashed_name: target-process-pe-info-malware-classification-compressed-malware-features-data-buffer
       description: TODO
-      flat_name: target.process.pe_info.malware_score.compressed_malware_features.data_buffer
+      flat_name: target.process.pe_info.malware_classification.compressed_malware_features.data_buffer
       ignore_above: 1024
       level: custom
       name: compressed_malware_features.data_buffer
       order: 5
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    process.pe_info.malware_score.compressed_malware_features.decompressed_size:
-      dashed_name: target-process-pe-info-malware-score-compressed-malware-features-decompressed-size
+    process.pe_info.malware_classification.compressed_malware_features.decompressed_size:
+      dashed_name: target-process-pe-info-malware-classification-compressed-malware-features-decompressed-size
       description: TODO
-      flat_name: target.process.pe_info.malware_score.compressed_malware_features.decompressed_size
+      flat_name: target.process.pe_info.malware_classification.compressed_malware_features.decompressed_size
       level: custom
       name: compressed_malware_features.decompressed_size
       order: 6
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: integer
-    process.pe_info.malware_score.compressed_malware_features.encoding:
-      dashed_name: target-process-pe-info-malware-score-compressed-malware-features-encoding
+    process.pe_info.malware_classification.compressed_malware_features.encoding:
+      dashed_name: target-process-pe-info-malware-classification-compressed-malware-features-encoding
       description: TODO
-      flat_name: target.process.pe_info.malware_score.compressed_malware_features.encoding
+      flat_name: target.process.pe_info.malware_classification.compressed_malware_features.encoding
       ignore_above: 1024
       level: custom
       name: compressed_malware_features.encoding
       order: 7
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    process.pe_info.malware_score.identifier:
-      dashed_name: target-process-pe-info-malware-score-identifier
+    process.pe_info.malware_classification.identifier:
+      dashed_name: target-process-pe-info-malware-classification-identifier
       description: TODO
-      flat_name: target.process.pe_info.malware_score.identifier
+      flat_name: target.process.pe_info.malware_classification.identifier
       ignore_above: 1024
       level: custom
       name: identifier
       order: 2
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
-    process.pe_info.malware_score.prevention_threshold:
-      dashed_name: target-process-pe-info-malware-score-prevention-threshold
+    process.pe_info.malware_classification.prevention_threshold:
+      dashed_name: target-process-pe-info-malware-classification-prevention-threshold
       description: TODO
-      flat_name: target.process.pe_info.malware_score.prevention_threshold
+      flat_name: target.process.pe_info.malware_classification.prevention_threshold
       level: custom
       name: prevention_threshold
       order: 4
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    process.pe_info.malware_score.score:
-      dashed_name: target-process-pe-info-malware-score-score
+    process.pe_info.malware_classification.score:
+      dashed_name: target-process-pe-info-malware-classification-score
       description: TODO
-      flat_name: target.process.pe_info.malware_score.score
+      flat_name: target.process.pe_info.malware_classification.score
       level: custom
       name: score
       order: 0
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    process.pe_info.malware_score.threshold:
-      dashed_name: target-process-pe-info-malware-score-threshold
+    process.pe_info.malware_classification.threshold:
+      dashed_name: target-process-pe-info-malware-classification-threshold
       description: TODO
-      flat_name: target.process.pe_info.malware_score.threshold
+      flat_name: target.process.pe_info.malware_classification.threshold
       level: custom
       name: threshold
       order: 1
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: double
-    process.pe_info.malware_score.upx_packed:
-      dashed_name: target-process-pe-info-malware-score-upx-packed
+    process.pe_info.malware_classification.upx_packed:
+      dashed_name: target-process-pe-info-malware-classification-upx-packed
       description: TODO
-      flat_name: target.process.pe_info.malware_score.upx_packed
+      flat_name: target.process.pe_info.malware_classification.upx_packed
       level: custom
       name: upx_packed
       order: 8
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: boolean
-    process.pe_info.malware_score.version:
-      dashed_name: target-process-pe-info-malware-score-version
+    process.pe_info.malware_classification.version:
+      dashed_name: target-process-pe-info-malware-classification-version
       description: TODO
-      flat_name: target.process.pe_info.malware_score.version
+      flat_name: target.process.pe_info.malware_classification.version
       ignore_above: 1024
       level: custom
       name: version
       order: 3
-      original_fieldset: malware_score
+      original_fieldset: malware_classification
       short: TODO
       type: keyword
     process.pe_info.pe_exports:
@@ -10864,7 +11055,7 @@ target:
       flat_name: target.process.pe_info.pe_exports
       level: custom
       name: pe_info.pe_exports
-      order: 67
+      order: 66
       original_fieldset: process
       short: TODO
       type: nested
@@ -10875,7 +11066,7 @@ target:
       ignore_above: 1024
       level: custom
       name: pe_info.pe_exports.name
-      order: 69
+      order: 68
       original_fieldset: process
       short: TODO
       type: keyword
@@ -10885,7 +11076,7 @@ target:
       flat_name: target.process.pe_info.pe_exports.ordinal
       level: custom
       name: pe_info.pe_exports.ordinal
-      order: 68
+      order: 67
       original_fieldset: process
       short: TODO
       type: long
@@ -10895,7 +11086,7 @@ target:
       flat_name: target.process.pe_info.pe_imports
       level: custom
       name: pe_info.pe_imports
-      order: 64
+      order: 63
       original_fieldset: process
       short: TODO
       type: nested
@@ -10906,7 +11097,7 @@ target:
       ignore_above: 1024
       level: custom
       name: pe_info.pe_imports.dll_name
-      order: 65
+      order: 64
       original_fieldset: process
       short: TODO
       type: keyword
@@ -10917,7 +11108,7 @@ target:
       ignore_above: 1024
       level: custom
       name: pe_info.pe_imports.import_names
-      order: 66
+      order: 65
       original_fieldset: process
       short: TODO
       type: keyword
@@ -10927,7 +11118,7 @@ target:
       flat_name: target.process.pe_info.resources
       level: custom
       name: pe_info.resources
-      order: 70
+      order: 69
       original_fieldset: process
       short: TODO
       type: nested
@@ -10937,7 +11128,7 @@ target:
       flat_name: target.process.pe_info.resources.resource_data.entropy
       level: custom
       name: pe_info.resources.resource_data.entropy
-      order: 74
+      order: 73
       original_fieldset: process
       short: TODO
       type: double
@@ -10947,7 +11138,7 @@ target:
       flat_name: target.process.pe_info.resources.resource_data.size
       level: custom
       name: pe_info.resources.resource_data.size
-      order: 73
+      order: 72
       original_fieldset: process
       short: TODO
       type: long
@@ -10957,7 +11148,7 @@ target:
       flat_name: target.process.pe_info.resources.resource_id
       level: custom
       name: pe_info.resources.resource_id
-      order: 71
+      order: 70
       original_fieldset: process
       short: TODO
       type: long
@@ -10968,7 +11159,7 @@ target:
       ignore_above: 1024
       level: custom
       name: pe_info.resources.resource_name
-      order: 75
+      order: 74
       original_fieldset: process
       short: TODO
       type: keyword
@@ -10979,7 +11170,7 @@ target:
       ignore_above: 1024
       level: custom
       name: pe_info.resources.resource_type
-      order: 72
+      order: 71
       original_fieldset: process
       short: TODO
       type: keyword
@@ -10989,7 +11180,7 @@ target:
       flat_name: target.process.pe_info.sections
       level: custom
       name: pe_info.sections
-      order: 57
+      order: 56
       original_fieldset: process
       short: TODO
       type: nested
@@ -10999,7 +11190,7 @@ target:
       flat_name: target.process.pe_info.sections.entropy
       level: custom
       name: pe_info.sections.entropy
-      order: 62
+      order: 61
       original_fieldset: process
       short: TODO
       type: double
@@ -11010,7 +11201,7 @@ target:
       ignore_above: 1024
       level: custom
       name: pe_info.sections.name
-      order: 63
+      order: 62
       original_fieldset: process
       short: TODO
       type: keyword
@@ -11021,7 +11212,7 @@ target:
       ignore_above: 1024
       level: custom
       name: pe_info.sections.raw_offset
-      order: 60
+      order: 59
       original_fieldset: process
       short: TODO
       type: keyword
@@ -11032,7 +11223,7 @@ target:
       ignore_above: 1024
       level: custom
       name: pe_info.sections.raw_size
-      order: 61
+      order: 60
       original_fieldset: process
       short: TODO
       type: keyword
@@ -11043,7 +11234,7 @@ target:
       ignore_above: 1024
       level: custom
       name: pe_info.sections.virtual_address
-      order: 58
+      order: 57
       original_fieldset: process
       short: TODO
       type: keyword
@@ -11054,7 +11245,7 @@ target:
       ignore_above: 1024
       level: custom
       name: pe_info.sections.virtual_size
-      order: 59
+      order: 58
       original_fieldset: process
       short: TODO
       type: keyword
@@ -11065,7 +11256,7 @@ target:
       ignore_above: 1024
       level: custom
       name: pe_info.signature_signer
-      order: 82
+      order: 81
       original_fieldset: process
       short: TODO
       type: keyword
@@ -11076,7 +11267,7 @@ target:
       ignore_above: 1024
       level: custom
       name: pe_info.signature_status
-      order: 83
+      order: 82
       original_fieldset: process
       short: TODO
       type: keyword
@@ -11086,7 +11277,7 @@ target:
       flat_name: target.process.pe_info.version_info
       level: custom
       name: pe_info.version_info
-      order: 76
+      order: 75
       original_fieldset: process
       short: TODO
       type: nested
@@ -11096,7 +11287,7 @@ target:
       flat_name: target.process.pe_info.version_info.code_page
       level: custom
       name: pe_info.version_info.code_page
-      order: 78
+      order: 77
       original_fieldset: process
       short: TODO
       type: long
@@ -11107,7 +11298,7 @@ target:
       ignore_above: 1024
       level: custom
       name: pe_info.version_info.key
-      order: 79
+      order: 78
       original_fieldset: process
       short: TODO
       type: keyword
@@ -11117,7 +11308,7 @@ target:
       flat_name: target.process.pe_info.version_info.language
       level: custom
       name: pe_info.version_info.language
-      order: 77
+      order: 76
       original_fieldset: process
       short: TODO
       type: long
@@ -11128,7 +11319,7 @@ target:
       ignore_above: 1024
       level: custom
       name: pe_info.version_info.value_string
-      order: 80
+      order: 79
       original_fieldset: process
       short: TODO
       type: keyword
@@ -11185,7 +11376,7 @@ target:
       ignore_above: 1024
       level: custom
       name: services
-      order: 99
+      order: 98
       original_fieldset: process
       short: TODO
       type: keyword
@@ -11217,7 +11408,7 @@ target:
       ignore_above: 1024
       level: custom
       name: sid
-      order: 53
+      order: 52
       original_fieldset: process
       short: TODO
       type: keyword
@@ -11228,7 +11419,7 @@ target:
       ignore_above: 1024
       level: custom
       name: signature_signer
-      order: 84
+      order: 83
       original_fieldset: process
       short: TODO
       type: keyword
@@ -11239,7 +11430,7 @@ target:
       ignore_above: 1024
       level: custom
       name: signature_status
-      order: 85
+      order: 84
       original_fieldset: process
       short: TODO
       type: keyword
@@ -11254,27 +11445,6 @@ target:
       original_fieldset: process
       short: The time the process started.
       type: date
-    process.thread:
-      dashed_name: target-process-thread
-      description: TODO
-      flat_name: target.process.thread
-      level: custom
-      name: thread
-      order: 26
-      original_fieldset: process
-      short: TODO
-      type: nested
-    process.thread.entrypoint:
-      dashed_name: target-process-thread-entrypoint
-      description: TODO
-      flat_name: target.process.thread.entrypoint
-      ignore_above: 1024
-      level: custom
-      name: thread.entrypoint
-      order: 28
-      original_fieldset: process
-      short: TODO
-      type: keyword
     process.thread.id:
       dashed_name: target-process-thread-id
       description: Thread ID.
@@ -11299,32 +11469,53 @@ target:
       original_fieldset: process
       short: Thread name.
       type: keyword
-    process.thread.start:
-      dashed_name: target-process-thread-start
+    process.threads:
+      dashed_name: target-process-threads
       description: TODO
-      flat_name: target.process.thread.start
+      flat_name: target.process.threads
       level: custom
-      name: thread.start
-      order: 29
+      name: threads
+      order: 26
       original_fieldset: process
       short: TODO
-      type: date
-    process.thread.thread_id:
-      dashed_name: target-process-thread-thread-id
+      type: nested
+    process.threads.entrypoint:
+      dashed_name: target-process-threads-entrypoint
       description: TODO
-      flat_name: target.process.thread.thread_id
+      flat_name: target.process.threads.entrypoint
+      ignore_above: 1024
       level: custom
-      name: thread.thread_id
+      name: threads.entrypoint
+      order: 28
+      original_fieldset: process
+      short: TODO
+      type: keyword
+    process.threads.id:
+      dashed_name: target-process-threads-id
+      description: TODO
+      flat_name: target.process.threads.id
+      level: custom
+      name: threads.id
       order: 27
       original_fieldset: process
       short: TODO
       type: long
-    process.thread.uptime:
-      dashed_name: target-process-thread-uptime
+    process.threads.start:
+      dashed_name: target-process-threads-start
       description: TODO
-      flat_name: target.process.thread.uptime
+      flat_name: target.process.threads.start
       level: custom
-      name: thread.uptime
+      name: threads.start
+      order: 29
+      original_fieldset: process
+      short: TODO
+      type: date
+    process.threads.uptime:
+      dashed_name: target-process-threads-uptime
+      description: TODO
+      flat_name: target.process.threads.uptime
+      level: custom
+      name: threads.uptime
       order: 30
       original_fieldset: process
       short: TODO
@@ -11572,6 +11763,17 @@ target:
       original_fieldset: process
       short: Seconds the process has been up.
       type: long
+    process.user:
+      dashed_name: target-process-user
+      description: TODO
+      flat_name: target.process.user
+      ignore_above: 1024
+      level: custom
+      name: user
+      order: 99
+      original_fieldset: process
+      short: TODO
+      type: keyword
     process.virt_memory_bytes:
       dashed_name: target-process-virt-memory-bytes
       description: TODO
