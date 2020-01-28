@@ -1,0 +1,13 @@
+---
+- process
+- host
+- "@timestamp"
+- agent
+- ecs
+- event
+- rule
+- threat
+- file
+- file_classification
+- thread
+- target
