@@ -37,7 +37,7 @@ def main():
         exit()
 
     csv_generator.generate(flat, ecs_version)
-    es_template.generate(flat, ecs_version)
+    es_template.generate(nested, ecs_version)
     beats.generate(nested, ecs_version)
     asciidoc_fields.generate(nested, flat, ecs_version)
 

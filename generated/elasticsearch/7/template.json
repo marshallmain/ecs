@@ -46,27 +46,6 @@
           }
         }
       },
-      "as": {
-        "properties": {
-          "number": {
-            "type": "long"
-          },
-          "organization": {
-            "properties": {
-              "name": {
-                "fields": {
-                  "text": {
-                    "norms": false,
-                    "type": "text"
-                  }
-                },
-                "ignore_above": 1024,
-                "type": "keyword"
-              }
-            }
-          }
-        }
-      },
       "client": {
         "properties": {
           "address": {
@@ -773,41 +752,6 @@
           }
         }
       },
-      "geo": {
-        "properties": {
-          "city_name": {
-            "ignore_above": 1024,
-            "type": "keyword"
-          },
-          "continent_name": {
-            "ignore_above": 1024,
-            "type": "keyword"
-          },
-          "country_iso_code": {
-            "ignore_above": 1024,
-            "type": "keyword"
-          },
-          "country_name": {
-            "ignore_above": 1024,
-            "type": "keyword"
-          },
-          "location": {
-            "type": "geo_point"
-          },
-          "name": {
-            "ignore_above": 1024,
-            "type": "keyword"
-          },
-          "region_iso_code": {
-            "ignore_above": 1024,
-            "type": "keyword"
-          },
-          "region_name": {
-            "ignore_above": 1024,
-            "type": "keyword"
-          }
-        }
-      },
       "group": {
         "properties": {
           "domain": {
@@ -819,26 +763,6 @@
             "type": "keyword"
           },
           "name": {
-            "ignore_above": 1024,
-            "type": "keyword"
-          }
-        }
-      },
-      "hash": {
-        "properties": {
-          "md5": {
-            "ignore_above": 1024,
-            "type": "keyword"
-          },
-          "sha1": {
-            "ignore_above": 1024,
-            "type": "keyword"
-          },
-          "sha256": {
-            "ignore_above": 1024,
-            "type": "keyword"
-          },
-          "sha512": {
             "ignore_above": 1024,
             "type": "keyword"
           }
@@ -1326,46 +1250,6 @@
                 "type": "text"
               }
             },
-            "ignore_above": 1024,
-            "type": "keyword"
-          }
-        }
-      },
-      "os": {
-        "properties": {
-          "family": {
-            "ignore_above": 1024,
-            "type": "keyword"
-          },
-          "full": {
-            "fields": {
-              "text": {
-                "norms": false,
-                "type": "text"
-              }
-            },
-            "ignore_above": 1024,
-            "type": "keyword"
-          },
-          "kernel": {
-            "ignore_above": 1024,
-            "type": "keyword"
-          },
-          "name": {
-            "fields": {
-              "text": {
-                "norms": false,
-                "type": "text"
-              }
-            },
-            "ignore_above": 1024,
-            "type": "keyword"
-          },
-          "platform": {
-            "ignore_above": 1024,
-            "type": "keyword"
-          },
-          "version": {
             "ignore_above": 1024,
             "type": "keyword"
           }

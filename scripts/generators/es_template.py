@@ -4,12 +4,21 @@ import sys
 from generators import ecs_helpers
 
 
-def generate(ecs_flat, ecs_version):
+def generate(ecs_nested, ecs_version):
     field_mappings = {}
-    for flat_name in sorted(ecs_flat):
-        field = ecs_flat[flat_name]
-        nestings = flat_name.split('.')
-        dict_add_nested(field_mappings, nestings, entry_for(field))
+    for key, val in ecs_nested.items():
+        if val.get('reusable', {}).get('top_level', True):
+            root = val.get('root', False)
+            if not root:
+                field_mappings[key] = entry_for(val)
+                field_mappings[key]['properties'] = {}
+            for flat_name in sorted(val['fields']):
+                field = val['fields'][flat_name]
+                nestings = flat_name.split('.')
+                if not root:
+                    dict_add_nested(field_mappings[key]['properties'], nestings, entry_for(field))
+                else:
+                    dict_add_nested(field_mappings, nestings, entry_for(field))
 
     mappings_section = mapping_settings(ecs_version)
     mappings_section['properties'] = field_mappings
@@ -39,7 +48,10 @@ def dict_add_nested(dct, nestings, value):
 
 
 def entry_for(field):
-    field_entry = {'type': field['type']}
+    if field['type'] != 'group':
+        field_entry = {'type': field['type']}
+    else:
+        field_entry = {}
     try:
         if 'index' in field and not field['index']:
             ecs_helpers.dict_copy_existing_keys(field, field_entry, ['index', 'doc_values'])
