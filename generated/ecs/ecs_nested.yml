@@ -7926,7 +7926,11 @@ process:
   group: 2
   name: process
   nestings:
+  - authenticode
+  - call_stack
   - hash
+  - malware_classification
+  - modules
   - token
   prefix: process.
   reusable:
@@ -12380,6 +12384,7 @@ thread:
   group: 2
   name: thread
   nestings:
+  - call_stack
   - token
   prefix: thread.
   reusable:

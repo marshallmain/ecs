@@ -1,13 +1,17 @@
 ---
-- process
-- host
-- "@timestamp"
-- agent
-- ecs
-- event
-- rule
-- threat
-- file
-- file_classification
-- thread
-- target
+process:
+  test1: "*"
+  test2: "*"
+host: "*"
+"@timestamp": "*"
+agent:
+  test1: "*"
+  test2: "*"
+ecs: "*"
+event: "*"
+rule: "*"
+threat: "*"
+file: "*"
+file_classification: "*"
+thread: "*"
+target: "*"

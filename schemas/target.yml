@@ -17,6 +17,7 @@
       type: object
       description: >
         Process.
+
     - name: thread
       level: extended
       type: object

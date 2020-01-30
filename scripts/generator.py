@@ -10,6 +10,16 @@ from generators import beats
 from generators import asciidoc_fields
 from generators import ecs_helpers
 
+def fields_subset(subset, fields):
+    retained_fields = {}
+    for key, val in subset.items():
+        if isinstance(val, dict):
+            retained_fields[key] = fields_subset(val, fields[key])
+        elif val == '*':
+            retained_fields[key] = fields[key]
+    return retained_fields
+
+
 
 def main():
     args = argument_parser()
@@ -19,7 +29,7 @@ def main():
 
     # Load the default schemas
     print('Loading default schemas')
-    (nested, flat) = schema_reader.load_schemas()
+    intermediate_fields = schema_reader.load_schemas()
 
     # Maybe load user specified directory of schemas
     if args.include:
@@ -27,40 +37,16 @@ def main():
 
         print('Loading user defined schemas: {0}'.format(include_glob))
 
-        (custom_nested, custom_flat) = schema_reader.load_schemas(sorted(glob.glob(include_glob)))
+        intermediate_custom = schema_reader.load_schemas(sorted(glob.glob(include_glob)))
+        schema_reader.merge_schema_fields(intermediate_fields, intermediate_custom)
 
-        if args.validate:
-            for field in custom_flat:
-                if field in flat and custom_flat[field]['type'] != flat[field]['type']:
-                    print('Validation failed: field {} has type {} in custom schema but type {} in ECS'.format(field, custom_flat[field]['type'], flat[field]['type']))
-                    exit()
-            nested = custom_nested
-            flat = custom_flat
-        else:
-            # Merge without allowing user schemas to overwrite default schemas
-            nested = ecs_helpers.safe_merge_dicts(nested, custom_nested)
-            flat = ecs_helpers.safe_merge_dicts(flat, custom_flat)
-        new_nested = {}
-        new_flat = {}
-        if args.object:
-            with open(args.object) as f:
-                raw = yaml.safe_load(f.read())
-                for (group, field) in nested.items():
-                    inner_fields = field.pop('fields')
-                    for (name, inner_field) in inner_fields.items():
-                        for prefix in raw:
-                            if inner_field['flat_name'].startswith(prefix):
-                                new_nested.setdefault(group, field)
-                                new_nested[group].setdefault('fields', {})
-                                new_nested[group]['fields'][name] = inner_field
-                
-                for field_name in flat:
-                    for prefix in raw:
-                        if field_name.startswith(prefix):
-                            new_flat[field_name] = flat[field_name]
-                nested = new_nested
-                flat = new_flat
-            
+    if args.object:
+        with open(args.object) as f:
+            raw = yaml.safe_load(f.read())
+            intermediate_fields = fields_subset(intermediate_fields, raw)
+
+    (nested, flat) = schema_reader.generate_nested_flat(intermediate_fields)
+
     stripped_flat = {}
     retained_fields = ['description', 'example', 'type']
     for (name, field) in flat.items():

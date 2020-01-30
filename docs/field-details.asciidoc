@@ -38,7 +38,7 @@ Example: `docker` and `k8s` labels.
 
 type: object
 
-example: `{'env': 'production', 'application': 'foo-bar'}`
+example: `{'application': 'foo-bar', 'env': 'production'}`
 
 | core
 
@@ -5707,8 +5707,32 @@ Note also that the `process` fields may be used directly at the top level.
 // ===============================================================
 
 
+| <<ecs-authenticode,process.authenticode.*>>
+| TODO
+
+// ===============================================================
+
+
+| <<ecs-call_stack,process.call_stack.*>>
+| TODO
+
+// ===============================================================
+
+
 | <<ecs-hash,process.hash.*>>
 | Hashes, usually file hashes.
+
+// ===============================================================
+
+
+| <<ecs-malware_classification,process.malware_classification.*>>
+| These fields contain the malware classification.
+
+// ===============================================================
+
+
+| <<ecs-modules,process.modules.*>>
+| These fields contain information about a list of modules.
 
 // ===============================================================
 
@@ -6610,6 +6634,12 @@ Note also that the `thread` fields may be used directly at the top level.
 [options="header"]
 |=====
 | Nested fields | Description
+
+// ===============================================================
+
+
+| <<ecs-call_stack,thread.call_stack.*>>
+| TODO
 
 // ===============================================================
 
