@@ -40,10 +40,13 @@ def main():
         intermediate_custom = schema_reader.load_schemas(sorted(glob.glob(include_glob)))
         schema_reader.merge_schema_fields(intermediate_fields, intermediate_custom)
 
-    if args.object:
-        with open(args.object) as f:
-            raw = yaml.safe_load(f.read())
-            intermediate_fields = fields_subset(intermediate_fields, raw)
+    if args.subset:
+        subset = {}
+        for file in glob.glob(args.subset):
+            with open(file) as f:
+                raw = yaml.safe_load(f.read())
+                ecs_helpers.recursive_merge_subset_dicts(subset, raw)
+        intermediate_fields = ecs_helpers.fields_subset(subset, intermediate_fields)
 
     (nested, flat) = schema_reader.generate_nested_flat(intermediate_fields)
 
@@ -62,8 +65,6 @@ def main():
 
     csv_generator.generate(flat, ecs_version)
     es_template.generate(flat, ecs_version)
-    if args.validate or args.object:
-        exit()
     beats.generate(nested, ecs_version)
     asciidoc_fields.generate(nested, flat, ecs_version)
 
@@ -74,10 +75,8 @@ def argument_parser():
                         help='generate intermediary files only')
     parser.add_argument('--include', action='store',
                         help='include user specified directory of custom field definitions')
-    parser.add_argument('--validate', action='store_true',
-                        help='build user specified directory of custom field definitions and validate against ECS')
-    parser.add_argument('--object', action='store',
-                        help='build only fields with prefixes specified in object file')
+    parser.add_argument('--subset', action='store',
+                        help='render a subset of the schema')
     return parser.parse_args()
 
 

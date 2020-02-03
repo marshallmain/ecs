@@ -50,6 +50,27 @@ def safe_merge_dicts(a, b):
     return a
 
 
+def fields_subset(subset, fields):
+    retained_fields = {}
+    for key, val in subset.items():
+        if isinstance(val, dict):
+            retained_fields[key] = fields[key]
+            retained_fields[key]['fields'] = fields_subset(val, fields[key]['fields'])
+        elif val == '*':
+            retained_fields[key] = fields[key]
+    return retained_fields
+
+
+def recursive_merge_subset_dicts(a, b):
+    for key in b:
+        if key not in a:
+            a[key] = b[key]
+        elif isinstance(a[key], dict) and isinstance(b[key], dict):
+            recursive_merge_subset_dicts(a[key], b[key])
+        elif b[key] == "*":
+            a[key] = b[key]
+
+
 def yaml_ordereddict(dumper, data):
     # YAML representation of an OrderedDict will be like a dictionary, but
     # respecting the order of the dictionary.
