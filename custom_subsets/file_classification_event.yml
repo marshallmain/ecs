@@ -2,6 +2,7 @@
 base:
   "@timestamp": "*"
 agent: "*"
+ecs: "*"
 event:
   action: "*"
   category: "*"

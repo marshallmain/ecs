@@ -44,6 +44,15 @@ agent.version:
   description: Version of the agent.
   example: 6.0.0-rc2
   type: keyword
+ecs.version:
+  description: 'ECS version this event conforms to. `ecs.version` is a required field
+    and must exist in all events.
+
+    When querying across multiple indices -- which may conform to slightly different
+    ECS versions -- this field lets integrations adjust to the schema version of the
+    events.'
+  example: 1.0.0
+  type: keyword
 event.action:
   description: 'The action captured by the event.
 

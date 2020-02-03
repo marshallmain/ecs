@@ -22,6 +22,8 @@ all fields are defined.
 
 | <<ecs-agent,Agent>> | Fields about the monitoring agent.
 
+| <<ecs-ecs,ECS>> | Meta-information specific to ECS.
+
 | <<ecs-event,Event>> | Fields breaking down the event details.
 
 | <<ecs-file,File>> | Fields describing files.
