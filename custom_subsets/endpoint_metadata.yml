@@ -1,0 +1,22 @@
+---
+base:
+  "@timestamp": "*"
+agent:
+  version: "*"
+  id: "*"
+ecs: "*"
+event:
+  created: "*"
+endpoint:
+  policy:
+    id: "*"
+host:
+  id: "*"
+  ip: "*"
+  hostname: "*"
+  mac: "*"
+  architecture: "*"
+  os:
+    name: "*"
+    full: "*"
+    version: "*"

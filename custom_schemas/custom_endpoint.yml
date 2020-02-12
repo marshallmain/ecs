@@ -1,0 +1,14 @@
+---
+- name: endpoint
+  title: Endpoint
+  group: 2
+  short: TODO
+  description: >
+    TODO
+  type: group
+  fields:
+    - name: policy.id
+      level: custom
+      type: keyword
+      description: >
+        TODO
