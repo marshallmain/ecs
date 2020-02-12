@@ -1,0 +1,62 @@
+---
+base:
+  "@timestamp": "*"
+  message: "*"
+ecs:
+  version: "*"
+host:
+  geo: "*"
+  os:
+    platform: "*"
+    name: "*"
+    verson: "*"
+  ip: "*"
+  hostname: "*"
+  name: "*"
+event:
+  module: "*"
+  kind: "*"
+  category: "*"
+  type: "*"
+  action: "*"
+agent:
+  version: "*"
+  type: "*"
+  id: "*"
+group:
+  id: "*"
+  name: "*"
+user:
+  id: "*"
+  name: "*"
+process:
+  pid: "*"
+  name: "*"
+  executable: "*"
+  thread:
+    id: "*"
+file:
+  name: "*"
+  path: "*"
+  hash:
+    md5: "*"
+    sha1: "*"
+    sha256: "*"
+endpoint:
+  group:
+    real:
+      id: "*"
+      name: "*"
+  user:
+    real:
+      id: "*"
+      name: "*"
+  process:
+    entity_id: "*"
+  pe:
+    original_file_name: "*"
+    file_version: "*"
+    product_version: "*"
+    signature: "*"
+      signer: "*"
+      status: "*"
